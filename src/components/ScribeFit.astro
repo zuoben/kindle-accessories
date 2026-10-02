@@ -1,0 +1,37 @@
+---
+// Scaled silhouettes from published outer dimensions (1 px = 0.95 mm). Bezels, pen position and buttons are schematic.
+const s = 0.95;
+const devices = [
+  { label: '2022 Scribe', sub: '10.2-inch · 196 × 230 mm', w: 196, h: 230, grip: true, pen: 162, fill: '#8d8a86', pos: 'older' },
+  { label: '2024 Scribe', sub: '10.2-inch · 196 × 230 mm', w: 196, h: 230, grip: true, pen: 162, fill: '#7a8f8b', pos: 'older' },
+  { label: '2025 Scribe / Colorsoft', sub: '11-inch · 189 × 245 mm', w: 189, h: 245, grip: false, pen: 155, fill: '#9c9078', pos: 'new' },
+];
+---
+<figure class="fig">
+  <svg viewBox="0 0 760 330" role="img" aria-labelledby="sf-t sf-d" width="760" height="330">
+    <title id="sf-t">Kindle Scribe body sizes and pen positions by model year</title>
+    <desc id="sf-d">Three outlines drawn to scale from published outer dimensions. The 2022 and 2024 Scribes are 196 by 230 millimeters with a wide grip bezel on one side. The 2025 Scribe and Scribe Colorsoft are 189 by 245 millimeters with even narrow bezels. The pen attaches magnetically to the side on all of them.</desc>
+    <g font-family="sans-serif" font-size="13" fill="#1d1b18" text-anchor="middle">
+      {devices.map((d, i) => {
+        const W = d.w * s, H = d.h * s;
+        const x = 30 + i * 240 + (210 - W) / 2, y = 18;
+        const left = d.grip ? 40 : 13, right = d.grip ? 13 : 13;
+        const penLen = d.pen * s;
+        const penY = d.pos === 'new' ? y + 62 : y + 30;
+        return (
+          <g>
+            <rect x={x} y={y} width={W} height={H} rx="10" fill={d.fill} stroke="#1d1b18" stroke-width="2" />
+            <rect x={x + left} y={y + 13} width={W - left - right} height={H - 26} rx="3" fill="#faf6ee" stroke="#1d1b18" />
+            <rect x={x + W - 1} y={penY} width="8" height={penLen} rx="4" fill="#faf6ee" stroke="#9a3b1f" stroke-width="2" />
+            {d.pos === 'new'
+              ? <rect x={x + W - 2} y={y + 22} width="6" height="22" rx="2" fill="#9a3b1f" />
+              : <rect x={x - 4} y={y + 22} width="6" height="22" rx="2" fill="#9a3b1f" />}
+            <text x={x + W / 2} y={y + H + 28} font-weight="700">{d.label}</text>
+            <text x={x + W / 2} y={y + H + 46} font-size="11.5" fill="#4a453d">{d.sub}</text>
+          </g>
+        );
+      })}
+    </g>
+  </svg>
+  <figcaption>Our own drawing, outer size to scale from Amazon's listings (2022: 230 × 196 × 5.8 mm per Ebook Friendly's spec table; 2024: 230 × 196 × 5.7 mm per Amazon UK; 2025: 245 × 189 × 5.4 mm per Amazon). Bezel widths, button and pen placement are schematic. Outlined bar = the Premium Pen docked magnetically on the side (about 162 mm for the 2024 pen and 155 mm for the 2025 pen); red tab = power button. On the 2022 and 2024 models the button and USB-C port sit on the wide grip-bezel side, on the 2025 models the button is at the upper right with USB-C at the bottom. Exact positions along the edge are not drawn.</figcaption>
+</figure>

@@ -1,0 +1,188 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import Table from '../components/Table.astro';
+import Disclosure from '../components/Disclosure.astro';
+import ScribeFit from '../components/ScribeFit.astro';
+import { breadcrumbs, faqPage, article } from '../data/schema';
+import { amazonSearch, LINK_REL } from '../data/links';
+import { FACTS_AS_OF } from '../data/site.mjs';
+
+const path = '/kindle-scribe-case/';
+const title = 'Kindle Scribe Case: Fit and Pen Storage by Model Year';
+const description = 'Choose a Kindle Scribe case by model year: 2022, 2024 and 2025 (11-inch) Scribe and Scribe Colorsoft compared, with pen storage, folios and magnet cautions.';
+
+const faq = [
+  { q: 'Does a 2022 Kindle Scribe case fit the 2024 Scribe?', a: `Usually yes, if the listing names both. Amazon lists its plant-based leather folio as "compatible only with Kindle Scribe 2024 and 2022 releases," and PCMag's 2024 review says the two Scribes are close enough in size to fit Amazon's accessory case interchangeably. Many third-party listings are titled "2024/2022" as well. The 2024 model is the same 10.2-inch panel in a body that is only fractions of a millimeter different, so the risk is low, but still read the listing.` },
+  { q: 'Will a 2024 Scribe case fit the 2025 Kindle Scribe or Scribe Colorsoft?', a: `No. The 2025 models have an 11-inch screen and a different body (189 × 245 × 5.4 mm against 196 × 230 × 5.7 mm for 2024), and Amazon's 2025 folio listings say "compatible only with 2025 Kindle Scribe releases." The 2024 cover is listed for 2024 and 2022 only. The two bodies are shaped differently as well, because the 2025 models dropped the wide grip bezel, so there is no pushing a 2024 case onto a 2025 device.` },
+  { q: 'Is the Kindle Scribe Colorsoft the same size as the 2025 Kindle Scribe?', a: `Amazon's announcement gives the same 5.4 mm thickness and 400 g for the redesigned lineup, and the Colorsoft spec listings we found give the same 189 × 245 × 5.4 mm body as the black-and-white 2025 Scribe. Third-party cases from MoKo and Fintie are listed for both in one title. We did not measure either device, and independent reviews report slightly different weights, so a case listed for both is a sensible filter, not a guarantee.` },
+  { q: 'Where does the pen go, and does the Scribe have a pen slot?', a: `There is no built-in pen garage on any Scribe. The Premium Pen clings to the side of the device with a magnet (Amazon: "attaches magnetically"). On the 2025 models it sits on the right side, just below the power button. Trusted Reviews says the magnet is not the strongest and the pen will likely fall off in a bag, and TechRadar dislikes the placement. That is why most folios add a pen loop, holder, clasp or flap. See <a href="#pen">the pen section</a>.` },
+  { q: 'Do magnets in a Scribe folio affect the pen?', a: `They can, in some positions. The Scribe's pen uses a pen-sensing layer, and several Amazon reviewers of the 2025 plant-based folio say its magnets interfered with the pen when the cover was folded behind into a stand, with errors partway down the page. Others report no problem. This is anecdotal, not a test, but it is the reason to check the return window and to try the case in your usual writing position straight away.` },
+  { q: 'Is the Kindle Scribe waterproof, and does it need a case?', a: `Amazon's own Scribe FAQ says no: the Scribe is not waterproof and Amazon does not recommend using it in a tub or pool. One review's spec table lists an IPX8 rating for the 2024 model, which contradicts Amazon, so we follow Amazon. A cover will not make it waterproof. What a case does is protect a thin, expensive screen from scratches and knocks, and Trusted Reviews, who used the Colorsoft without one, still recommend one given the price.` },
+  { q: 'Which Scribe do I have?', a: `If one side has a wide, textured grip bezel and the other side is narrow, you have the 2022 or 2024 model (10.2-inch). The 2024 model has white bezels around the screen. If the bezels are even and narrow all round and the screen is 11 inches, it is a 2025 Scribe or Scribe Colorsoft. A note on labels: the device information screen for the 2024 model has been reported to read "1st generation, 2024 release," and Amazon's UK listing uses the same wording, while the 2025 listings say "3rd Generation," so use release year, not generation number, when matching a case.` },
+  { q: 'Are Amazon\'s Scribe folios worth the price compared with third-party cases?', a: `That is a value judgment, and Amazon\'s own reviewers are split. On the listings we checked, the 2025 plant-based folio is $89.99 and the Executive Folio is $139.99; the 2022/2024 plant-based folio showed $79.99. Reviewers on those pages call them nicely made but overpriced, and a large share of the reviews on the 2022/2024 folio say the magnets do not hold the device securely enough. Third-party folios with a snap-in or hard back are cheaper (for example, a MoKo 2025 listing at $47.49) but vary in fit. Buy where returns are easy.` },
+  { q: 'Do I need a screen protector on a Scribe?', a: `We have no tested recommendation. Amazon says the 2025 Scribe has texture-molded glass to give the pen friction, so a film could change the writing feel, and we have not verified how any film behaves. A folio that closes over the screen already guards it in a bag. If you add a protector anyway, buy one made for your exact size, because a 10.2-inch film will not cover an 11-inch panel.` },
+];
+const ld = [
+  article({ headline: title, description, path }),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle case', path: '/kindle-case/' }, { name: 'Kindle Scribe case', path }]),
+  faqPage(faq),
+];
+---
+<Base title={title} description={description} path={path} jsonld={ld} ogType="article">
+  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-case/">Kindle cases</a> › Kindle Scribe case</p>
+  <h1>Kindle Scribe Case: How to Choose by Model Year and Pen</h1>
+  <p class="meta">Facts checked {FACTS_AS_OF}. Independent guide based on Amazon's announcements and listings, plus press and review coverage. We have not hands-on tested the cases mentioned or handled any Scribe.</p>
+  <Disclosure />
+
+  <p class="lede">A Kindle Scribe is the one Kindle where the case has a second job: keeping the pen with the device. It is also the one where model year matters most, because Amazon has now sold three Scribe models in about four years, and the newest is a different size from the older two. A case for the 10.2-inch Scribe will not fit the 11-inch Scribe, and a case that holds the screen well may still let the pen fall off in a bag. This page sorts the choices by model year, explains how the pen is stored on each, and shows which kinds of case suit how you write.</p>
+
+  <div class="box">
+    <h2>The short answer</h2>
+    <ul>
+      <li><strong>2025 Kindle Scribe or Scribe Colorsoft (11-inch):</strong> buy a case that names the 2025 release (the third-generation Scribe) and, for the Colorsoft, a listing that names it too. Amazon's own folios start at $89.99; third-party folios with pen holders cost less.</li>
+      <li><strong>2024 Kindle Scribe (10.2-inch, white bezels):</strong> buy a case that names 2024. Many are titled "2024/2022."</li>
+      <li><strong>2022 Kindle Scribe (10.2-inch, first model):</strong> same body family as 2024. Listings naming "2022" or "2024/2022" are the match.</li>
+      <li><strong>All of them:</strong> pick the pen storage you will actually use (loop, holder, clasp, or flap), check the cutouts and the auto sleep/wake, and try the folded-stand position quickly for pen interference.</li>
+      <li><strong>Do not mix up the Paperwhite and the Scribe.</strong> The Paperwhite is 7-inch; see our <a href="/kindle-paperwhite-case/">Paperwhite case guide</a>. For styles and materials that apply to every Kindle, see the <a href="/kindle-case/">Kindle case buying guide</a>.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="On this page">
+    <strong>On this page</strong>
+    <ol>
+      <li><a href="#identify">Step 1: Identify your Scribe</a></li>
+      <li><a href="#by-year">Which case by model year (table)</a></li>
+      <li><a href="#y2025">2025 Scribe and Scribe Colorsoft cases</a></li>
+      <li><a href="#y2024">2024 Scribe cases</a></li>
+      <li><a href="#y2022">2022 Scribe cases</a></li>
+      <li><a href="#pen">The pen: how it attaches and how cases hold it</a></li>
+      <li><a href="#styles">Case styles for the Scribe</a></li>
+      <li><a href="#magnets">Magnets, stands and the pen</a></li>
+      <li><a href="#materials">Materials</a></li>
+      <li><a href="#red-flags">Listing red flags</a></li>
+      <li><a href="#method">How we researched this</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="identify">Step 1: Identify your Scribe</h2>
+  <p>"Kindle Scribe" covers three models now across two body sizes, and the generation numbers on listings are confusing. Start from what you can see:</p>
+  <ul>
+    <li><strong>10.2-inch screen, wide grip bezel along one side, narrow bezel on the other:</strong> the 2022 or 2024 model. The Verge describes the redesign as doing "away with the asymmetrical chin on one side," which is what the old models had. If the bezel around the screen is white, it is the 2024 model; the 2022 model shipped only in Tungsten, a gray-metal color.</li>
+    <li><strong>11-inch screen with even, narrow bezels and a power button at the upper right:</strong> the 2025 Kindle Scribe or Kindle Scribe Colorsoft. IGN and TechRadar both place the power button on the upper right side, the USB-C port at the bottom, and the pen on the right side just under the button.</li>
+  </ul>
+  <p>Then check the generation text in your device settings and your Amazon account's device list. Be careful with the numbers: Amazon's UK listing for the 2024 model reads "Kindle Scribe 1st generation - 2024 release," and a reader on a Kindle blog reports the device itself shows "1st generation, 2024 Release," whereas Amazon's 2025 listings read "3rd Generation" for the black-and-white model and "1st Gen" for the Colorsoft. The release year is the safer matching key. A listing that says only "fits Kindle Scribe" is not specific enough.</p>
+
+  <ScribeFit />
+
+  <h2 id="by-year">Which case by model year</h2>
+  <Table
+    caption={`Specs from Amazon's 2022 press release and Amazon's UK and US listings, Ebook Friendly's 2022 spec table, Digital Trends and Serious Insights' 2024 review tables, Amazon's 2025 announcement and listing, TechRadar and IGN's 2025 reviews. Case compatibility wording is taken from the Amazon listings named in the text. Checked ${FACTS_AS_OF}. Case availability changes daily.`}
+    head={['Model', 'Screen', 'Size (W × H × D)', 'Weight', 'Pen in the box', 'Pen docks', 'Amazon folio listing says']}
+    rows={[
+      ['2025 Kindle Scribe (3rd gen) and Scribe Colorsoft (1st gen)', '11-inch', '189 × 245 × 5.4 mm', '400 g (Amazon)', 'Premium Pen, about 155 mm long', 'Magnetically on the right side, below the power button', '"Compatible only with 2025 Kindle Scribe releases"'],
+      ['2024 Kindle Scribe', '10.2-inch', '196 × 230 × 5.7 mm', '433 g', 'Premium Pen only, about 162 mm', 'Magnetically on the side opposite the grip bezel', 'Plant-based folio: "compatible only with Kindle Scribe 2024 and 2022 releases"'],
+      ['2022 Kindle Scribe (first model)', '10.2-inch', '196 × 230 × 5.8 mm (per Ebook Friendly; PCMag gives 9.06 × 7.72 × 0.23 in)', '433 g', 'Basic Pen or Premium Pen, depending on the configuration', 'Magnetically on the side opposite the grip bezel', 'Amazon\'s plant-based folio lists 2024 and 2022 together; the original 2022 covers had a pen loop on the front cover'],
+    ]}
+  />
+  <p>The takeaway is that 2022 and 2024 are one case family, and 2025 is another. Going from 2024 to 2025 the screen grew from 10.2 to 11 inches, the body got about 7 mm narrower and 15 mm taller, and the wide grip bezel was removed, so the case shape changed and cannot be matched by an old cover. Weight fell from 433 g to 400 g and thickness from about 5.7 mm to 5.4 mm.</p>
+  <p>As of our check, Amazon's October 1, 2026 announcement covered the new Kindle, Paperwhite and Colorsoft only, and we found no newer Scribe than the 2025 models. The 2025 Scribe and Colorsoft are therefore the latest we could verify. Check Amazon's product page for anything announced after {FACTS_AS_OF}.</p>
+
+  <h2 id="y2025">2025 Scribe and Scribe Colorsoft cases</h2>
+  <p>Amazon announced the redesigned Scribe lineup on September 30, 2025: the Kindle Scribe, a Kindle Scribe without a front light, and the first color Scribe, the Kindle Scribe Colorsoft, all 11-inch, 5.4 mm thick and 400 g by Amazon's figures. At announcement, The Verge listed prices of $499.99 for the standard Scribe, $629.99 for the Colorsoft and $429.99 for the no-front-light model, which was due early in 2026. Amazon's Australian page for the same lineup is dated May 14, 2026, so launch timing differs by country.</p>
+  <p>What a case buyer needs to know:</p>
+  <ul>
+    <li><strong>New body:</strong> 189 × 245 mm, 5.4 mm thick (Amazon's and TechRadar's figures for the Colorsoft; Amazon's listing for the no-front-light model gives the same numbers). It has no wide grip bezel, so it is closer to a tablet shape than the old Scribes.</li>
+    <li><strong>Pen on the right side:</strong> the pen attaches magnetically just below the power button, per IGN. TechRadar calls this placement "a silly design choice" given the pen is short enough to sit on top, and Trusted Reviews says the magnet is not the strongest.</li>
+    <li><strong>Amazon's covers:</strong> a plant-based leather folio ($89.99 on its listing today) with a pen holder, a magnetic-attach body, a stand with low and high angles and auto wake; and the Executive Folio ($139.99), a notebook-style folio in pebbled leather with a magnetic flap that secures the pen or tucks away. Both are described as "compatible only with 2025 Kindle Scribe releases."</li>
+    <li><strong>Third-party:</strong> MoKo, Fintie and CoBak all list 2025 Scribe cases that also name the Colorsoft, with pen holders, clasps or flaps, and auto sleep/wake. We saw a MoKo listing at $47.49 with 4.4 stars from 287 reviews. We have not tested any of them.</li>
+  </ul>
+  <div class="box warn">
+    <h3>What we could not confirm</h3>
+    <p>We could not confirm a separate case size for the Colorsoft: the spec listings we found match the 2025 black-and-white Scribe, but independent reviewers report slightly different weights (Trusted Reviews gives 393 g against Amazon's 400 g), and we have not measured either device. We also could not verify how a screen protector affects writing on the new textured glass. If you buy a case listed for the Colorsoft, check that the listing names your exact device.</p>
+  </div>
+  <p><a class="btn alt" href={amazonSearch('kindle scribe case 11 inch 2025 colorsoft')} rel={LINK_REL} target="_blank">Search Amazon: 11-inch Scribe cases</a></p>
+
+  <h2 id="y2024">2024 Scribe cases</h2>
+  <p>Amazon announced the reimagined Kindle Scribe on October 16, 2024, with shipping from December 4 and pre-orders from $399.99. It is 10.2 inches with white screen borders, 196 × 230 × 5.7 mm and 433 g, and it comes only with the Premium Pen, whose eraser is soft and whose body is aluminum, per Digital Trends. The pen is 162 × 8.8 × 8.4 mm by Amazon's UK listing, and it attaches magnetically to the side. Amazon's FAQ says the pen never needs to be charged.</p>
+  <p>For cases, the choices are wide because the body is shared with the 2022 model. Amazon's own plant-based leather folio (with a microfiber interior) lists a $79.99 price today, with a pen holder, stand angles and auto wake; the listing says it is compatible with 2024 and 2022. Third-party "2024/2022" cases are common, with hard back shells, PU leather, built-in pen holders and card slots.</p>
+  <p>Two cautions. First, the secure fit of Amazon's folio: On Amazon's listing, 32 of the 53 reviews that mention secure fit are negative, with some saying the magnets let the Scribe come loose. Second, since the 2025 models look like the same product family, relabelled listings that add 2025 to a 2024 case are worth treating with suspicion; read the title and the recent reviews and make sure the dimensions in the listing say 10.2-inch for the 2024 model.</p>
+  <p><a class="btn alt" href={amazonSearch('kindle scribe case 2024 2022 10.2 inch pen holder')} rel={LINK_REL} target="_blank">Search Amazon: 10.2-inch Scribe cases</a></p>
+
+  <h2 id="y2022">2022 Scribe cases</h2>
+  <p>The first Kindle Scribe was announced on September 28, 2022 and shipped on November 30, 2022 from $339. It has the same 10.2-inch 300 ppi display, 433 g weight and 5.8 mm thickness per Amazon's press release and Ebook Friendly's spec table. It shipped with a choice of Basic Pen or Premium Pen, both battery-free and magnetically attached on the side. The Basic Pen has no eraser or shortcut button.</p>
+  <p>Amazon launched fabric, leather and premium leather covers with it, which fold to prop the Scribe up at an angle; Ebook Friendly describes a stylus loop on the front cover. Ebook Friendly also notes that the port and power button are on the wide grip side of the old design and the pen magnet on the opposite one, so third-party cases need a long cutout or an open edge for the pen. Those original covers are older stock now. Today the plant-based folio that lists both years is the one that is easy to find. If you have a 2022 Scribe and a working case, there is no need to buy another for the new software, since The eBook Reader reports that Amazon pushed the new note-taking and AI features to the 2022 model by software update on the 2024 model's launch day.</p>
+
+  <h2 id="pen">The pen: how it attaches and how cases hold it</h2>
+  <p>Every Scribe pen is battery-free and clings to the side by a magnet. A Kindle Scribe has no pen slot or garage, so storage is a case feature. These are the common approaches.</p>
+  <Table
+    caption="Based on Amazon's listings and press descriptions and review coverage. General comparison, not test results."
+    head={['Pen storage', 'How it works', 'Good for', 'Watch out for']}
+    rows={[
+      ['Magnet only (no case feature)', 'Pen sits on the Scribe side magnetically.', 'Desk use at home', 'Trusted Reviews says the magnet is not the strongest and the pen will likely fall off in a bag.'],
+      ['Pen loop or holder on the cover', 'Amazon\'s plant-based folios and many third-party folios have a loop or holder.', 'Carrying the pen with the cover; works open or closed', 'Loop sized for one pen may be loose or tight for another: the 2024 pen is about 162 mm long, the 2025 pen about 155 mm.'],
+      ['Wide clasp or strap', 'A band wraps over the docked pen (for example, a MoKo 2025 listing describes a wide clasp covering the pen).', 'Keeping the magnet-attached pen secure in a bag', 'Add a little bulk on the pen side.'],
+      ['Magnetic flap (Amazon Executive Folio)', 'A flap secures the pen to the device, or tucks away.', 'Notebook-style folio that lies flat', 'Another magnet near the screen; test the pen.'],
+    ]}
+  />
+  <p>If you carry the Scribe in a bag, a loop, clasp or flap is more useful than any other feature. If you mostly write at a desk, a case that lies flat and leaves the pen edge open matters more. A pen can also be replaced separately, and The eBook Reader blog reports that the 2022 and 2024 Premium Pens are interchangeable because both use the same pen technology (Wacom). Reports that an older pen also works with the 2025 models come from retailer Q&A and user threads, not from Amazon's pages that we found; if you plan to reuse an old pen, check Amazon's compatibility notes first.</p>
+
+  <h2 id="styles">Case styles for the Scribe</h2>
+  <p>Style options are narrower here than for the Paperwhite, because the big screen and the pen push most people toward a folio. Our <a href="/kindle-case/#types">general case styles comparison</a> covers the basics; this version is tuned to the Scribe.</p>
+  <Table
+    caption="General comparison. Individual products vary, and these are our reasoning, not test results."
+    head={['Style', 'Protects the screen?', 'Pen storage', 'Best for', 'Scribe-specific watch-outs']}
+    rows={[
+      ['Magnetic-attach folio (Amazon style)', 'Yes, cover closes over it', 'Loop or holder; or flap', 'Light carry, the closest match to the device\'s slim body', 'Device is held on by magnets rather than a shell, so fall protection depends on the magnets; reviewers are split on grip strength.'],
+      ['Snap-in or hard-back folio (third-party)', 'Yes', 'Built-in pen holder is common', 'Everyday carry in a bag; a stronger hold on the device', 'Exact model year fit; cutouts for the power button and USB-C; extra weight.'],
+      ['Notebook-style folio (executive)', 'Yes', 'Flap or elastic', 'People who write more than they read; lays flat', 'Highest prices; only 2025 listed for Amazon\'s.'],
+      ['Sleeve or pouch', 'No, if it is loose', 'None unless it has a pocket', 'Moving the Scribe between bags with a separate pen', 'The Scribe is large; check inside dimensions against your size, and the sleeve will not hold the pen on the device.'],
+      ['Stand-style folio', 'Yes', 'Varies', 'Typing or reading hands-free on a table', 'The stand position can bring magnets close to the writing area; see the next section.'],
+    ]}
+  />
+  <p>A sleeve is the one style that does not need the generation named in the title, because it holds a generic size; but we did not find a Scribe-specific sleeve listing to check, so verify the inner dimensions against your device yourself. For everyone else, the question is whether the folio is magnetic-attach or snap-in. Amazon's own listing says its device "magnetically attaches to a slim folio, rather than snapping into a plastic back like a traditional Kindle cover." That is slim, but it explains why reviewers on that listing are divided on how securely it holds the Scribe, and why people who drop things may prefer a snap-in shell.</p>
+
+  <h2 id="magnets">Magnets, stands and the pen</h2>
+  <p>The Scribe senses the pen through the screen, and some owners report that magnets in a cover can disturb it. Several Amazon reviewers of the 2025 plant-based folio say the magnets interfered with the pen when the cover was folded behind the device as a stand, with problems about 60% of the way down the page in one account, while others of the same cover found the magnets strong and trouble free. Forum threads of the same kind exist for the older models. We have not tested this, so treat it as a risk to check, not a fact about any product.</p>
+  <ul>
+    <li>Test the case in the position you will actually write in, for example folded behind with the stand angle, within the first days of owning it.</li>
+    <li>If the pen lines drift or skip in one area, remove the case and test again. If the issue goes away, the case is the cause and it is time for a return.</li>
+    <li>A case with a non-magnetic closure (elastic, snap) avoids the problem, but its pen storage may differ.</li>
+    <li>Buy where a return is easy; this is not something a listing page can promise.</li>
+  </ul>
+
+  <h2 id="materials">Materials</h2>
+  <p>The same trade-offs apply as on other Kindles, with a few Scribe twists. Amazon's plant-based leather is made from more than 70% renewable bio-materials, with the rest polyurethane, according to the 2025 folio listing. Its Executive Folio is described as full-grain pebbled leather from suppliers rated Gold by the Leather Working Group, although some reviewers on that listing say it feels like PU, so the material label alone is a poor guide. The PU leather in many third-party cases is common and cheaper; hard shells add protection and weight.</p>
+  <p>Weight matters here more than on a small Kindle. The 2025 Scribe is 400 g and the 2024 model 433 g, and MoKo's 2025 listing states 400 g, which would double the weight if it refers to the case (we could not confirm what the figure covers). Check what the cover adds before you decide, and look for "microfiber lining" or similar if you want something soft against the glass. Our <a href="/kindle-case/#materials">materials section</a> on the general guide has the basic comparison.</p>
+
+  <h2 id="red-flags">Listing red flags</h2>
+  <ul>
+    <li><strong>"Fits Kindle Scribe" with no year.</strong> There are two body sizes (10.2-inch and 11-inch) and three model years; one case does not fit all.</li>
+    <li><strong>"10.2-inch and 11-inch" or a listing that spans both families.</strong> No fitted case is cut for both.</li>
+    <li><strong>A 2024 case that suddenly claims to fit the 2025 models,</strong> without reviews from 2025 owners.</li>
+    <li><strong>No pen storage shown for the model year you own.</strong> A pen loop sized for another pen length can be loose.</li>
+    <li><strong>Reviews complaining that the Scribe falls out or that the pen skips.</strong> Sort by recent and search "magnet," "falls," "pen."</li>
+    <li><strong>Language suggesting official approval.</strong> A third-party case is a third-party case; we do not use "official" or "Amazon certified" for anything here.</li>
+    <li><strong>A return window you cannot see.</strong> Fit and magnet behavior are hard to judge from photos.</li>
+  </ul>
+  <p>Ready to browse? Here is a <a href={amazonSearch('kindle scribe case')} rel={LINK_REL} target="_blank">Kindle Scribe case search on Amazon</a>; always confirm the model year in the title before you add to cart.</p>
+
+  <h2 id="method">How we researched this</h2>
+  <p>This guide uses Amazon's announcements, product pages and listings, and coverage from The Verge, TechRadar, IGN, Trusted Reviews, PCMag, Digital Trends and Ebook Friendly. We do not review products in a lab and we have not tested individual cases or handled any Scribe. We do not rank third-party cases or claim any is endorsed by Amazon; the third-party brands named above are ones we saw in listings, not recommendations. Prices change and are a snapshot from {FACTS_AS_OF}. Where sources disagree (such as the 2024 model's water rating, or small weight differences) we say so. To report a mistake, use our <a href="/contact/">contact page</a>; our approach is described in our <a href="/about/">editorial policy</a>.</p>
+  <ul class="sources">
+    <li>Amazon press releases: "Introducing Amazon Kindle Scribe" (Sept 28, 2022) and "Amazon Launches Entirely New Kindle Lineup" (Oct 16, 2024): launch dates, prices, pen description.</li>
+    <li>Amazon, "Kindle Scribe FAQ" and "Amazon unveils redesigned Kindle Scribe lineup" (aboutamazon.com): pen, waterproofing, 2025 lineup details.</li>
+    <li>Amazon.com listings: Kindle Scribe without Front Light (2025), the plant-based and Executive folios for 2022/2024 and 2025, and Amazon UK's 2024 Scribe listing: dimensions, compatibility wording, prices checked {FACTS_AS_OF}.</li>
+    <li>The Verge, Sept 30, 2025 announcement; TechRadar, IGN and Trusted Reviews on the Scribe Colorsoft: size, button and pen placement, weak magnet.</li>
+    <li>PCMag and Digital Trends reviews of the 2024 Scribe; Ebook Friendly's 2022 spec table; The eBook Reader's 2022-vs-2024 comparison: size, pen interchangeability.</li>
+    <li>Amazon's "new Kindle lineup" announcement (aboutamazon.com, Oct 1, 2026): used to confirm no newer Scribe was announced with it.</li>
+  </ul>
+
+  <Faq items={faq} />
+
+  <div class="box">
+    <h2>Next step</h2>
+    <p>Not a Scribe owner? <a class="btn" href="/kindle-paperwhite-case/">Kindle Paperwhite case guide</a> <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a></p>
+  </div>
+</Base>
