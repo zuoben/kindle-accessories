@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import { breadcrumbs } from '../data/schema';
+import { SITE_NAME, AMAZON_TAG, FACTS_AS_OF } from '../data/site.mjs';
+const path = '/affiliate-disclosure/';
+const title = 'Affiliate Disclosure | Dogear';
+const description = 'How Dogear handles Amazon links and potential affiliate commissions, and what we do and do not claim about our relationship with Amazon.';
+const active = Boolean(AMAZON_TAG);
+---
+<Base title={title} description={description} path={path} jsonld={[breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Affiliate disclosure', path }])]}>
+  <p class="crumbs"><a href="/">Home</a> › Affiliate disclosure</p>
+  <h1>Affiliate disclosure</h1>
+  <p class="meta">Last updated: {FACTS_AS_OF}</p>
+
+  <div class="box">
+    <h2>Current status</h2>
+    {active
+      ? <p>Some Amazon links on this site include our Amazon Associates tracking ID. If you buy through them, we may earn a commission at no extra cost to you. Links with a tracking ID are marked with rel="sponsored".</p>
+      : <p>At the time of writing, the Amazon links on this site are plain Amazon.com links without a tracking ID, so we do not earn commissions from them.</p>}
+  </div>
+
+  <h2>If that changes</h2>
+  <p>We may join the Amazon Associates program. If we do, qualifying links will carry our tracking ID, we may earn a commission from qualifying purchases at no extra cost to you, and this page will say so. As an Amazon Associate we would earn from qualifying purchases.</p>
+
+  <h2>What commissions do not do</h2>
+  <ul>
+    <li>They do not change our recommendations. We write about what is useful to a buyer, including when the answer is "wait" or "you do not need to buy anything."</li>
+    <li>They do not change prices. You pay the same price on Amazon either way.</li>
+    <li>No manufacturer or seller pays us for placement.</li>
+  </ul>
+
+  <h2>Our relationship with Amazon</h2>
+  <p>{SITE_NAME} is an independent site. We are not Amazon, not an authorized Amazon reseller, and not endorsed by, sponsored by or affiliated with Amazon. We do not sell products. Kindle, Paperwhite and Colorsoft are trademarks of Amazon.com, Inc. or its affiliates.</p>
+
+  <h2>Prices and availability</h2>
+  <p>Prices and specs are checked on the date shown on each page and change often. The Amazon listing is always the source of truth. Questions? See the <a href="/contact/">contact page</a>.</p>
+</Base>

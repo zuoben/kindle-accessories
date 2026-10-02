@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import Disclosure from '../components/Disclosure.astro';
+import { org } from '../data/schema';
+import { SITE_URL, SITE_NAME, FACTS_AS_OF } from '../data/site.mjs';
+
+const title = 'Dogear: Kindle Paperwhite and Kindle Case Buying Guides';
+const description = 'Independent, plain-English buying guides for the Kindle Paperwhite and the cases that fit it. Specs checked against Amazon, no hype, clear sourcing.';
+const ld = [
+  { '@context': 'https://schema.org', '@graph': [
+    org,
+    { '@type': 'WebSite', '@id': new URL('/#website', SITE_URL).toString(), url: SITE_URL + '/', name: SITE_NAME, inLanguage: 'en-US', publisher: { '@id': org['@id'] } },
+  ] },
+];
+---
+<Base title={title} description={description} path="/" jsonld={ld}>
+  <h1>Kindle buying guides that show their sources</h1>
+  <p class="lede">{SITE_NAME} helps you pick a Kindle Paperwhite and the right case for it, without the guesswork. We check specs and prices against Amazon's own pages, tell you what we could not verify, and keep the advice practical.</p>
+  <Disclosure />
+
+  <div class="cards">
+    <article class="card">
+      <span class="pill new">Updated {FACTS_AS_OF}</span>
+      <h2><a href="/kindle-paperwhite/">Kindle Paperwhite: which one to buy</a></h2>
+      <p>The new 2026 Paperwhite versus the 2024 and 2021 models, Signature Edition versus standard, ads, storage, and who should wait.</p>
+      <a class="btn" href="/kindle-paperwhite/">Read the Paperwhite guide</a>
+    </article>
+    <article class="card">
+      <span class="pill">Buying guide</span>
+      <h2><a href="/kindle-case/">Kindle case buying guide</a></h2>
+      <p>Why model year decides fit, the four main case styles compared, materials, features, and the red flags to look for in a listing.</p>
+      <a class="btn" href="/kindle-case/">Read the case guide</a>
+    </article>
+  </div>
+
+  <h2>How we work</h2>
+  <ul>
+    <li><strong>Sources first.</strong> Specs and prices come from Amazon's listings and announcements, backed by reputable press coverage, and each page lists them.</li>
+    <li><strong>No invented numbers.</strong> If a spec is not published, we say so and send you to the Amazon listing.</li>
+    <li><strong>Honest about testing.</strong> We do not claim to have tested products we have not handled.</li>
+    <li><strong>Clear on money.</strong> We are an independent site, not Amazon or an authorized reseller. Read our <a href="/affiliate-disclosure/">affiliate disclosure</a> and <a href="/about/">editorial policy</a>.</li>
+  </ul>
+
+  <h2>Start here</h2>
+  <p>New to Kindle? Read the <a href="/kindle-paperwhite/#short">Paperwhite short answer</a>, then check <a href="/kindle-case/#fit">case fit</a> before buying anything. Questions? See the <a href="/faq/">FAQ</a>.</p>
+</Base>

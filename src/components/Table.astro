@@ -1,0 +1,17 @@
+---
+interface Props { head: string[]; rows: string[][]; caption?: string; rowHeads?: boolean }
+const { head, rows, caption, rowHeads = true } = Astro.props;
+---
+<div class="tablewrap" role="region" tabindex="0" aria-label={caption ?? 'Comparison table'}>
+  <table>
+    {caption && <caption>{caption}</caption>}
+    <thead><tr>{head.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+    <tbody>
+      {rows.map((r) => (
+        <tr>
+          {r.map((c, i) => (rowHeads && i === 0 ? <th scope="row" set:html={c} /> : <td set:html={c} />))}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

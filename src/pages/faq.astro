@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import { breadcrumbs, faqPage } from '../data/schema';
+import { SITE_NAME } from '../data/site.mjs';
+
+const path = '/faq/';
+const title = 'FAQ: Kindle Buying Guides, Sources and Policies | Dogear';
+const description = 'Answers about how Dogear researches Kindle guides, how we make money, whether we are affiliated with Amazon, and how to report errors.';
+const faq = [
+  { q: `What is ${SITE_NAME}?`, a: `${SITE_NAME} is an independent publication with buying guides for the Kindle Paperwhite and the cases and accessories that go with it. We focus on e-readers and their accessories only.` },
+  { q: 'Are you affiliated with Amazon?', a: `No. We are not Amazon, not an authorized Amazon reseller, and not endorsed by Amazon. Kindle, Paperwhite and Colorsoft are trademarks of Amazon.com, Inc. or its affiliates.` },
+  { q: 'Do you sell anything?', a: `No. We do not sell products or take payments. Links go to Amazon.com, where you buy from Amazon or its sellers under their terms.` },
+  { q: 'How do you make money?', a: `Today, this site earns nothing from the links on it. We may join the Amazon Associates program in the future; if we do, qualifying links will carry a tracking tag, we may earn a commission at no extra cost to you, and we will say so on our <a href="/affiliate-disclosure/">affiliate disclosure page</a>.` },
+  { q: 'Do you test the products you write about?', a: `Not in a lab. Our guides are research-based, built from Amazon's own pages and reputable press coverage, and each page lists its sources. We state clearly when we have not handled a product, and we do not publish invented test results.` },
+  { q: 'Where do your specs and prices come from?', a: `From Amazon's product pages and announcements, supplemented by launch coverage from outlets such as WIRED, The Verge and TechRadar. Prices change often; each page shows the date we checked. The Amazon listing is always the source of truth.` },
+  { q: 'Which Kindle Paperwhite should I buy?', a: `It depends on timing and budget. The 2024 model is shipping and fully reviewed; the redesigned 2026 model ships October 28, 2026 at the same starting price. See our <a href="/kindle-paperwhite/">Paperwhite buying guide</a>.` },
+  { q: 'Which Kindle case should I buy?', a: `Match the exact model year first, then choose a style. See our <a href="/kindle-case/">Kindle case guide</a>.` },
+  { q: 'I found a mistake. How do I report it?', a: `Please tell us through the <a href="/contact/">contact page</a>. We correct factual errors promptly and note significant corrections on the page.` },
+  { q: 'Do you use cookies or analytics?', a: `The site does not set cookies of its own and we have not added analytics at this time. See our <a href="/privacy/">privacy page</a> for detail.` },
+];
+const ld = [breadcrumbs([{ name: 'Home', path: '/' }, { name: 'FAQ', path }]), faqPage(faq)];
+---
+<Base title={title} description={description} path={path} jsonld={ld}>
+  <p class="crumbs"><a href="/">Home</a> › FAQ</p>
+  <h1>Frequently asked questions</h1>
+  <p class="lede">Quick answers about {SITE_NAME}, how we research, and how to use the guides.</p>
+  <Faq items={faq} heading="Common questions" />
+</Base>

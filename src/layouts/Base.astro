@@ -1,0 +1,91 @@
+---
+import '../styles/global.css';
+import { SITE_URL, SITE_NAME, SITE_TAGLINE } from '../data/site.mjs';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string; // e.g. "/kindle-case/"
+  jsonld?: object[];
+  noindex?: boolean;
+  ogType?: 'website' | 'article';
+}
+const { title, description, path, jsonld = [], noindex = false, ogType = 'website' } = Astro.props;
+const canonical = new URL(path, SITE_URL).toString();
+const ogImage = new URL('/og-default.png', SITE_URL).toString();
+const nav = [
+  { href: '/kindle-paperwhite/', label: 'Kindle Paperwhite' },
+  { href: '/kindle-case/', label: 'Kindle cases' },
+  { href: '/faq/', label: 'FAQ' },
+  { href: '/about/', label: 'About' },
+];
+---
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large'} />
+    <meta name="theme-color" content="#faf6ee" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
+  </head>
+  <body>
+    <a href="#main" style="position:absolute;left:-999px">Skip to content</a>
+    <header class="site">
+      <div class="wrap">
+        <a class="brand" href="/">
+          <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="2" width="20" height="28" rx="3" fill="#1d1b18"/><rect x="9" y="5" width="14" height="19" rx="1" fill="#faf6ee"/><path d="M26 2v9l-3-2-3 2V2z" fill="#9a3b1f"/></svg>
+          <span>{SITE_NAME} <small>{SITE_TAGLINE}</small></span>
+        </a>
+        <nav class="main" aria-label="Main">
+          {nav.map((n) => <a href={n.href} aria-current={path === n.href ? 'page' : undefined}>{n.label}</a>)}
+        </nav>
+      </div>
+    </header>
+    <main id="main"><div class="wrap"><slot /></div></main>
+    <footer class="site">
+      <div class="wrap">
+        <div class="cols">
+          <div>
+            <h2>Guides</h2>
+            <ul>
+              <li><a href="/kindle-paperwhite/">Kindle Paperwhite: which one to buy</a></li>
+              <li><a href="/kindle-case/">Kindle case buying guide</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Site</h2>
+            <ul>
+              <li><a href="/about/">About &amp; editorial policy</a></li>
+              <li><a href="/contact/">Contact</a></li>
+              <li><a href="/privacy/">Privacy</a></li>
+              <li><a href="/affiliate-disclosure/">Affiliate disclosure</a></li>
+              <li><a href="/sitemap.xml">Sitemap</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Legal</h2>
+            <p class="small">{SITE_NAME} is an independent publication. It is not affiliated with, endorsed by, or sponsored by Amazon. Kindle, Paperwhite, Colorsoft, and Amazon are trademarks of Amazon.com, Inc. or its affiliates. Product names are used only to identify the products discussed.</p>
+          </div>
+        </div>
+        <p class="small">© 2026 {SITE_NAME}. Content is for general information; always confirm specs, price, and compatibility on the Amazon listing before buying.</p>
+      </div>
+    </footer>
+  </body>
+</html>

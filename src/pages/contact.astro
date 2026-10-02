@@ -1,0 +1,27 @@
+---
+import Base from '../layouts/Base.astro';
+import { breadcrumbs } from '../data/schema';
+import { CONTACT_URL, REPO_URL, SITE_NAME } from '../data/site.mjs';
+const path = '/contact/';
+const title = 'Contact Dogear: Report an Error or Suggest a Guide';
+const description = 'How to contact Dogear to report a factual error in a Kindle guide, suggest a topic, or ask a question about our policies.';
+---
+<Base title={title} description={description} path={path} jsonld={[breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Contact', path }])]}>
+  <p class="crumbs"><a href="/">Home</a> › Contact</p>
+  <h1>Contact {SITE_NAME}</h1>
+  <p class="lede">The best way to reach us right now is a public note on our project page. It is how we track corrections.</p>
+  <div class="box">
+    <h2>Report an error or suggest a topic</h2>
+    <p><a class="btn" href={CONTACT_URL} rel="noopener">Open a note on GitHub</a></p>
+    <p class="small">You need a free GitHub account. Notes are public, so please do not include personal information. Project page: <a href={REPO_URL} rel="noopener">{REPO_URL.replace('https://','')}</a>.</p>
+  </div>
+  <h2>What to include</h2>
+  <ul>
+    <li>The page address and the sentence or number you think is wrong.</li>
+    <li>A link to a source, ideally Amazon's own listing or announcement.</li>
+    <li>Your Kindle model year if you are reporting a fit problem.</li>
+  </ul>
+  <h2>What we can and cannot help with</h2>
+  <p>We can fix factual mistakes and consider topic suggestions. We cannot help with orders, returns, shipping, warranty or device troubleshooting, because we do not sell or support products. For those, contact Amazon directly through your Amazon account.</p>
+  <p>We do not accept paid placement or sponsored review requests. See our <a href="/about/">editorial policy</a>.</p>
+</Base>

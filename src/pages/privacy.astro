@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import { breadcrumbs } from '../data/schema';
+import { SITE_NAME, FACTS_AS_OF } from '../data/site.mjs';
+const path = '/privacy/';
+const title = 'Privacy Policy | Dogear';
+const description = 'What data Dogear collects (very little), how our static site is hosted, what happens when you click Amazon links, and how to contact us about privacy.';
+---
+<Base title={title} description={description} path={path} jsonld={[breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Privacy', path }])]}>
+  <p class="crumbs"><a href="/">Home</a> › Privacy</p>
+  <h1>Privacy policy</h1>
+  <p class="meta">Last updated: {FACTS_AS_OF}</p>
+  <p class="lede">Short version: {SITE_NAME} is a static information website. We do not have accounts, forms, comments or ads, and we have not added analytics.</p>
+
+  <h2>What we collect</h2>
+  <p>We do not ask for or store personal information on this site. There is no sign-up, newsletter or contact form. We do not set our own cookies.</p>
+
+  <h2>Hosting and server logs</h2>
+  <p>The site is served through Cloudflare. Like any web host, Cloudflare processes technical data such as IP address, browser type and requested pages to deliver the site and protect it from abuse, under <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare's privacy policy</a>. We do not use that data to identify individual visitors.</p>
+
+  <h2>Analytics</h2>
+  <p>We have not added analytics tools at this time. If we add privacy-friendly analytics in future, we will update this page before doing so.</p>
+
+  <h2>Links to Amazon and other sites</h2>
+  <p>Our guides link to Amazon.com. When you click, you leave our site and Amazon's policies apply, including any cookies it sets. If we join an affiliate program, Amazon may use a tracking tag in the link to credit us for a qualifying purchase; see our <a href="/affiliate-disclosure/">affiliate disclosure</a>. Amazon, not us, handles your order, payment and account data.</p>
+
+  <h2>Contacting us</h2>
+  <p>If you send us a note through our public project page on GitHub, GitHub's policies apply, and your note is public. Please do not post personal information. See the <a href="/contact/">contact page</a>.</p>
+
+  <h2>Children</h2>
+  <p>This site is general-audience and is not directed at children under 13. We do not knowingly collect information from children.</p>
+
+  <h2>Changes</h2>
+  <p>If we change how this site handles data, we will update this page and its date.</p>
+</Base>

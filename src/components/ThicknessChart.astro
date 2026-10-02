@@ -1,0 +1,27 @@
+---
+// Bar chart drawn from published figures only.
+const data = [
+  { label: '2021 Paperwhite (11th gen)', mm: 8.1, g: 205, color: '#b9ad94' },
+  { label: '2024 Paperwhite (12th gen)', mm: 7.8, g: 211, color: '#7a8f8b' },
+  { label: '2026 Paperwhite (new)', mm: 6.8, g: 204, color: '#9a3b1f' },
+];
+const maxMm = 9, maxG = 220;
+---
+<figure class="fig">
+  <svg viewBox="0 0 720 300" role="img" aria-labelledby="tc-t tc-d" width="720" height="300">
+    <title id="tc-t">Thickness and weight of three Paperwhite generations</title>
+    <desc id="tc-d">Bar chart. Thickness in millimeters: 2021 model 8.1, 2024 model 7.8, 2026 model 6.8. Weight in grams: 205, 211, 204.</desc>
+    <text x="10" y="22" font-family="sans-serif" font-size="14" font-weight="700" fill="#1d1b18">Thickness (mm)</text>
+    <text x="380" y="22" font-family="sans-serif" font-size="14" font-weight="700" fill="#1d1b18">Weight (g, standard model)</text>
+    {data.map((d, i) => (
+      <g>
+        <rect x="10" y={40 + i * 80} width={(d.mm / maxMm) * 300} height="30" fill={d.color} rx="3" />
+        <text x="14" y={60 + i * 80} font-family="sans-serif" font-size="13" font-weight="700" fill="#fff">{d.mm} mm</text>
+        <text x="10" y={88 + i * 80} font-family="sans-serif" font-size="12" fill="#4a453d">{d.label}</text>
+        <rect x="380" y={40 + i * 80} width={(d.g / maxG) * 320} height="30" fill={d.color} rx="3" />
+        <text x="384" y={60 + i * 80} font-family="sans-serif" font-size="13" font-weight="700" fill="#fff">{d.g} g</text>
+      </g>
+    ))}
+  </svg>
+  <figcaption>Published specs: 2021 and 2024 from Amazon's listings and launch coverage; 2026 from WIRED's launch report (Oct 1, 2026). The 2026 model ships Oct 28, so independent measurements are not available yet.</figcaption>
+</figure>

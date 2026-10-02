@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import { breadcrumbs } from '../data/schema';
+import { SITE_NAME, REPO_URL } from '../data/site.mjs';
+const path = '/about/';
+const title = 'About Dogear and Our Editorial Policy';
+const description = 'Who is behind Dogear, how we research Kindle buying guides, how we handle sourcing, corrections and affiliate links, and what we do not claim.';
+---
+<Base title={title} description={description} path={path} jsonld={[breadcrumbs([{ name: 'Home', path: '/' }, { name: 'About', path }])]}>
+  <p class="crumbs"><a href="/">Home</a> › About</p>
+  <h1>About {SITE_NAME}</h1>
+  <p class="lede">{SITE_NAME} is a small, independent publication about Kindle e-readers and the accessories that go with them. We write buying guides, not news.</p>
+
+  <h2>What we do</h2>
+  <p>Our aim is simple: help a US shopper choose a Kindle Paperwhite and a case without wading through a hundred near-identical listings. We keep the scope narrow on purpose. Right now that means the <a href="/kindle-paperwhite/">Kindle Paperwhite</a> and <a href="/kindle-case/">Kindle cases</a>, with more e-reader accessory topics to follow as we can do them properly.</p>
+
+  <h2>Editorial policy</h2>
+  <ul>
+    <li><strong>Sources over opinion.</strong> Specs, prices and release details come from Amazon's own pages and announcements, supported by reputable press. Each guide lists its sources and the date facts were checked.</li>
+    <li><strong>We say what we do not know.</strong> If a spec is unpublished or sources disagree, we say so rather than guess. When a product has not shipped, we say we have not handled it.</li>
+    <li><strong>No invented testing.</strong> We do not claim lab results, test scores or hands-on experience we do not have. Our guides are research-based.</li>
+    <li><strong>No paid placement.</strong> No manufacturer or seller pays for a mention or a ranking. Brand names that appear are there to help you recognize listings, not as endorsements.</li>
+    <li><strong>Not a news site.</strong> We update guides when facts change, such as a new model launch, but we do not chase headlines.</li>
+    <li><strong>Corrections.</strong> If you spot an error, tell us on the <a href="/contact/">contact page</a>. We fix factual errors promptly.</li>
+  </ul>
+
+  <h2>Money and independence</h2>
+  <p>{SITE_NAME} is not Amazon, is not an authorized Amazon reseller, and has no official relationship with Amazon. We may use Amazon affiliate links in future; see the <a href="/affiliate-disclosure/">affiliate disclosure</a>. If we do, it will not change what we recommend.</p>
+
+  <h2>Trademarks</h2>
+  <p>Kindle, Kindle Paperwhite, Kindle Colorsoft, Kindle Scribe and Amazon are trademarks of Amazon.com, Inc. or its affiliates. We use these names only to identify the products we discuss.</p>
+
+  <h2>The site itself</h2>
+  <p>This is a static website built with <a href="https://astro.build" rel="noopener">Astro</a>. The diagrams are our own drawings, so there are no stolen product photos. The source code is public at <a href={REPO_URL} rel="noopener">{REPO_URL.replace('https://','')}</a>.</p>
+</Base>

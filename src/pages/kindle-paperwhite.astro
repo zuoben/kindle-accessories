@@ -1,0 +1,203 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import Table from '../components/Table.astro';
+import Disclosure from '../components/Disclosure.astro';
+import ThicknessChart from '../components/ThicknessChart.astro';
+import { breadcrumbs, faqPage, article } from '../data/schema';
+import { amazonSearch, amazonDp, LINK_REL } from '../data/links';
+import { FACTS_AS_OF } from '../data/site.mjs';
+
+const path = '/kindle-paperwhite/';
+const title = 'Kindle Paperwhite 2026: New vs 2024 vs 2021 Compared';
+const description = 'Which Kindle Paperwhite should you buy? New 2026 model vs the 2024 and 2021 versions, Signature Edition vs standard, specs, prices and who each one suits.';
+
+const faq = [
+  { q: 'Is there a new Kindle Paperwhite in 2026?', a: `Yes. Amazon announced a redesigned Kindle Paperwhite on October 1, 2026. It is available to pre-order and is scheduled to ship October 28, 2026. It is thinner and lighter than the 2024 model, keeps the 7-inch size and up to 12 weeks of rated battery life, and starts at $199.99 (16 GB) with a $249.99 Signature Edition (32 GB, aluminum back). Because it has not shipped, independent hands-on reviews were not yet available when this page was written.` },
+  { q: 'Should I buy the 2024 Kindle Paperwhite or wait for the 2026 one?', a: `If both are the same price when you check, the newer one is the better long-term pick on paper: it is about 1 mm thinner and a few grams lighter, with the same advertised battery life. If you need a Kindle this week, the 2024 model is a well-reviewed, fully tested device. If you find the 2024 model discounted, the savings can easily outweigh the 2026 refinements, which are mostly physical rather than a leap in reading quality.` },
+  { q: 'What is the difference between the Kindle Paperwhite and the Signature Edition?', a: `Across generations the Signature Edition adds 32 GB of storage, an auto-adjusting front light, and a premium finish, and drops lock screen ads. On the 2024 model it also added wireless charging. On the 2026 model Amazon lists an aluminum rear housing, double-tap page turns, and pogo-pin dock charging instead; news coverage says wireless charging is not offered on the new Signature Edition. See the <a href="#signature">Signature section</a>.` },
+  { q: 'Is the Kindle Paperwhite waterproof?', a: `The 2024 Paperwhite has an IPX8 rating: Amazon says it is tested to withstand immersion in 2 meters of fresh water for 60 minutes. That is a fresh-water test; it does not mean you should drop it in the ocean or a hot tub. Amazon describes the 2026 model as waterproof as well, but check the rating on the final product listing.` },
+  { q: 'How long does the Paperwhite battery last?', a: `Amazon rates both the 2024 and 2026 models at up to 12 weeks. That figure is based on 30 minutes of reading per day with wireless off and the light at setting 13. If you read for hours daily, use a bright front light, or stream audiobooks over Bluetooth, expect to charge more often.` },
+  { q: 'Does the Kindle Paperwhite come with ads?', a: `Standard Paperwhites are sold with lock screen ads unless the listing says otherwise; WIRED's launch report says the plastic 2026 Paperwhite has lock screen ads and the Signature Edition does not. When the 2024 model launched, Amazon charged $20 more for an ad-free version, so check which version the listing you are on actually sells.` },
+  { q: 'Will my old Kindle Paperwhite case fit the new model?', a: `Do not assume so. Amazon's own cover for the 2024 Paperwhite is listed as fitting the 2024 release only, and the 2021 and 2024 bodies differ in width, height and thickness. The 2026 body is thinner again and has a moved power button. Buy only a case whose listing explicitly names your model year. More on this in our <a href="/kindle-case/">Kindle case guide</a>.` },
+  { q: 'Can I read EPUB files on a Kindle Paperwhite?', a: `Per Amazon's 2024 listing, the Paperwhite natively handles AZW3, AZW, TXT, PDF, unprotected MOBI and PRC, and supports formats such as EPUB, DOCX, HTML and image files through conversion (for example via Amazon's send-to-Kindle tools). Library and store-bought books with DRM from other retailers will not simply open on a Kindle.` },
+  { q: 'Which Kindle is best for most people?', a: `For most readers who want a sharp screen, a warm light and waterproofing, the Paperwhite is the sensible middle of the lineup. The base 6-inch Kindle is cheaper and smaller but has a shorter rated battery life (up to 6 weeks). The Colorsoft costs more and is mainly for people who want color for covers, comics, or graphic content.` },
+];
+const ld = [
+  article({ headline: title, description, path }),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle Paperwhite', path }]),
+  faqPage(faq),
+];
+---
+<Base title={title} description={description} path={path} jsonld={ld} ogType="article">
+  <p class="crumbs"><a href="/">Home</a> › Kindle Paperwhite</p>
+  <h1>Kindle Paperwhite: Which One Should You Buy in 2026?</h1>
+  <p class="meta">Facts checked {FACTS_AS_OF} against Amazon's announcement and listings and launch coverage from WIRED, The Verge, TechRadar and Engadget. Independent buying guide, not affiliated with Amazon.</p>
+  <Disclosure />
+
+  <p class="lede">The Kindle Paperwhite is the one most people end up buying: a 7-inch glare-free screen, an adjustable warm front light, waterproofing, and battery life measured in weeks. The tricky part right now is timing. Amazon just announced a redesigned Paperwhite, the 2024 model is still on sale, and the 2021 model is what a lot of people still own. This page sorts out what changed, what did not, and which one makes sense for you.</p>
+
+  <div class="box">
+    <h2 id="short">The short answer</h2>
+    <ul>
+      <li><strong>Want a Paperwhite right now?</strong> The 2024 model (12th generation) is the one that is shipping and fully reviewed. Amazon lists it at $199.99 today. <a href={amazonDp('B0CFPJYX7P')} rel={LINK_REL} target="_blank">See the 2024 Kindle Paperwhite (16 GB) on Amazon</a>.</li>
+      <li><strong>Can wait until late October?</strong> The 2026 Paperwhite ships October 28 at the same starting prices ($199.99 / $249.99 Signature). It is thinner and lighter with the same rated battery life. Wait for the first independent reviews before you pre-order if you are cautious.</li>
+      <li><strong>Own the 2021 Paperwhite and it works?</strong> Upgrading is a comfort and speed decision, not a necessity. Plenty of readers will not notice enough to justify $200.</li>
+      <li><strong>Buying a case?</strong> Fit is model-year specific. Read our <a href="/kindle-case/">Kindle case guide</a> before you order anything.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="On this page">
+    <strong>On this page</strong>
+    <ol>
+      <li><a href="#lineup">The Paperwhite lineup at a glance</a></li>
+      <li><a href="#new-2026">What is new in the 2026 Paperwhite</a></li>
+      <li><a href="#vs-2024">2026 vs 2024: head to head</a></li>
+      <li><a href="#signature">Signature Edition vs standard</a></li>
+      <li><a href="#ads">Ads, storage and the "which version" trap</a></li>
+      <li><a href="#other-kindles">Paperwhite vs Kindle, Colorsoft and Scribe</a></li>
+      <li><a href="#who">Who should buy which</a></li>
+      <li><a href="#checklist">Before you buy: a short checklist</a></li>
+      <li><a href="#accessories">Accessories to plan for</a></li>
+      <li><a href="#method">How we researched this page</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="lineup">The Paperwhite lineup at a glance</h2>
+  <p>Amazon does not print generation numbers on the box, but the community and several publications do, so you will see "11th generation" for 2021, "12th generation" for 2024, and "13th generation" used by TechRadar for the 2026 refresh. This table uses model years because that is how most case and accessory listings are written.</p>
+  <Table
+    caption={`Specs from Amazon's own listings and announcement unless noted. Status and prices as of ${FACTS_AS_OF}; they change.`}
+    head={['', '2026 Paperwhite (new)', '2024 Paperwhite (12th gen)', '2021 Paperwhite (11th gen)']}
+    rows={[
+      ['Status', 'Pre-order; ships Oct 28, 2026', 'On sale now', 'Older model; availability varies by seller'],
+      ['Screen', '7-inch; Amazon calls it its largest Paperwhite display with the highest contrast ratio', '7-inch, 300 ppi, glare-free', '6.8-inch, 300 ppi, glare-free'],
+      ['Storage', '16 GB; 32 GB Signature Edition', '16 GB; 32 GB Signature Edition', '8 GB; 32 GB Signature Edition'],
+      ['Rated battery', 'Up to 12 weeks', 'Up to 12 weeks', 'Up to 10 weeks'],
+      ['Thickness', '6.8 mm (WIRED)', '7.8 mm', '8.1 mm'],
+      ['Weight', '204 g (WIRED)', '211 g (214 g Signature)', '205 g (208 g Signature)'],
+      ['Waterproofing', 'Waterproof per Amazon; confirm rating on final listing', 'IPX8, 2 m fresh water for 60 min', 'IPX8, 2 m fresh water for 60 min'],
+      ['Charging port', 'USB-C on Signature Edition (confirmed by The Verge)', 'USB-C', 'USB-C'],
+      ['Launch / current price', '$199.99 · Signature $249.99', 'Launched at $159.99; listed at $199.99 on Oct 2, 2026 · Signature $249.99', 'Launched at $139.99 (8 GB) and $189.99 (Signature)'],
+    ]}
+  />
+  <p>Notice the price line. The 2024 Paperwhite launched at $159.99 and is now $199.99, and the new model starts at the same $199.99. WIRED reports that Amazon raised prices on existing Kindles earlier this year and cites memory costs as the reason. In other words, you are not paying a premium for the new model over the old one right now. Whether that stays true once retailers start discounting the 2024 version is something only time will answer.</p>
+
+  <h2 id="new-2026">What is new in the 2026 Paperwhite</h2>
+  <p>Amazon's announcement describes a redesigned family rather than a new display. Here is what is actually different, based on the announcement and launch coverage:</p>
+  <ul>
+    <li><strong>Thinner and lighter.</strong> WIRED lists the new Paperwhite at 6.8 mm and 204 g, versus 7.8 mm and 211 g for the 2024 model. That is a millimeter and a few grams. You will feel the thickness more than the weight.</li>
+    <li><strong>Flush-front, edge-to-edge look.</strong> Amazon says it built a new "reverse stack" display construction across the whole lineup, with no raised border interrupting the reading surface, and device color that wraps from the front to the back.</li>
+    <li><strong>Oxide TFT backplane.</strong> Amazon says the Paperwhite uses an oxide thin-film transistor backplane and has its highest contrast ratio yet. The Verge notes the core display specs, such as size, did not change.</li>
+    <li><strong>Power button moved.</strong> Every new Kindle now has the power button on the right edge near the top instead of the bottom. This is the kind of detail that makes old cases a poor bet.</li>
+    <li><strong>User-replaceable battery.</strong> The Verge reports Amazon says the new Kindles have user-replaceable batteries to comply with EU rules. Treat that as a nice-to-have, not something to plan around.</li>
+    <li><strong>New colors and a metal option.</strong> The standard Paperwhite comes in Graphite. The Signature Edition is aluminum, in Graphite and Seaglass Green.</li>
+  </ul>
+  <p>What did not change is just as important. The screen size is still 7 inches, the advertised battery life is still up to 12 weeks, it is still waterproof, and the starting price is the same. If you were hoping for a color screen on the Paperwhite, that is still the Colorsoft's job.</p>
+  <div class="box warn">
+    <h3>A note on trust</h3>
+    <p>The new Paperwhite had not shipped when we checked, and we have no hands-on time with it. Everything above comes from Amazon's announcement and from journalists who handled pre-release units. We will not claim the new screen "looks better" or the page turns are "faster" than the 2024 model, because we do not know yet, and the one speed figure Amazon initially gave to press was corrected after publication.</p>
+  </div>
+
+  <ThicknessChart />
+
+  <h2 id="vs-2024">2026 vs 2024: head to head</h2>
+  <Table
+    caption="Where the two models differ in ways that affect a purchase."
+    head={['', '2026 Paperwhite', '2024 Paperwhite']}
+    rows={[
+      ['Availability', 'Ships Oct 28', 'Ships now'],
+      ['Body', 'Thinner (6.8 mm); Amazon says color now wraps from front to back', '7.8 mm'],
+      ['Power button', 'Right edge, near the top', 'Bottom edge'],
+      ['Signature Edition back', 'Aluminum', 'Plastic'],
+      ['Signature charging', 'Pogo-pin dock ($59.99 accessory); no wireless charging reported', 'Qi wireless charging'],
+      ['Signature extras', 'Auto-adjusting light, double-tap page turns, landscape rotation (WIRED)', 'Auto-adjusting light'],
+      ['Replaceable battery', 'Reported as user-replaceable (The Verge)', 'Not advertised'],
+      ['Official covers', 'New covers from $39.99; Page-Turn Cover ($79.99) for Signature only', 'Existing covers list "fits 2024 release only"'],
+      ['Works with Kindle Click remote ($34.99)', 'Yes', 'Yes (Amazon says any Kindle from 2024 or later)'],
+      ['Independent reviews', 'Not yet', 'Many'],
+    ]}
+  />
+  <h3>Should you wait?</h3>
+  <p>Think of it as three scenarios. If you are buying a gift for the next two weeks, the 2024 model is the safe choice because it exists and has been reviewed to death. If you are buying for yourself and can wait four weeks, wait: the new one costs the same on paper, is slimmer, and you will get to read real reviews before spending. If you are a bargain hunter, keep an eye on the 2024 model's price once the new one ships. Retailers often clear previous-generation stock, but we are not going to promise a discount we cannot see.</p>
+  <p>One more consideration is accessories. A new body means new cases. If you already own a case, a dock, or a wireless charger for a 2024 Paperwhite, factor in that some of it may not work with the 2026 one. The Signature Edition, for instance, trades wireless charging for pogo pins. That is a reason to stay on the 2024 model if you have invested in Qi chargers.</p>
+
+  <h2 id="signature">Signature Edition vs standard</h2>
+  <p>The Signature Edition has been the premium Paperwhite since 2021, and the extras have shifted a little each generation. The things that have stayed constant are 32 GB of storage and an auto-adjusting front light, plus a no-ads lock screen. The pricing gap has also been steady: roughly $50 over the standard model.</p>
+  <ul>
+    <li><strong>Storage:</strong> 32 GB versus 16 GB on the current models. For ordinary ebooks, 16 GB is plenty (Amazon says thousands of books). It matters if you keep a lot of audiobooks, comics or large PDFs on the device. TechRadar notes the operating system uses a chunk of the 16 GB, so the usable figure is lower.</li>
+    <li><strong>Auto-adjusting front light:</strong> a sensor changes brightness for you. Some readers love it; others turn it off and set a schedule instead.</li>
+    <li><strong>Charging:</strong> wireless on the 2024 Signature Edition; pogo-pin dock on the 2026 one.</li>
+    <li><strong>Build:</strong> plastic in 2024, aluminum in 2026.</li>
+  </ul>
+  <p>The honest value test: if you read mostly novels and rarely use audiobooks on the device, the standard model does the job and the $50 difference is better spent on a decent case. If you want the best build, no ads, and you do not want to think about brightness at night, the Signature Edition is the one to pick.</p>
+
+  <h2 id="ads">Ads, storage and the "which version" trap</h2>
+  <p>The Kindle product pages are a maze of near-identical listings. A few habits keep you out of trouble.</p>
+  <ol>
+    <li><strong>Check the ad status.</strong> Lock screen ads are sold as an option on standard Kindles. When the 2024 Paperwhite launched, Amazon priced the ad-free version $20 higher ($159.99 with ads, $179.99 without). WIRED's 2026 rundown lists the plastic Paperwhite as having lock screen ads and the aluminum Signature Edition as having none.</li>
+    <li><strong>Check the storage.</strong> The standard and Signature Editions are different SKUs. Make sure the capacity in the title is the one you want.</li>
+    <li><strong>Check the color.</strong> The 2024 model came in Black, Raspberry and Jade; the Signature Edition in Metallic versions of those. The 2026 lineup has different colors, and the standard model is Graphite only at launch.</li>
+    <li><strong>Check the seller.</strong> A listing shipped and sold by Amazon.com is the simplest for returns and warranty. Amazon's 2024 listing mentions a 1-year limited warranty and a 30-day refund and replacement window; confirm the terms on the listing you buy from.</li>
+  </ol>
+
+  <h2 id="other-kindles">Paperwhite vs Kindle, Colorsoft and Scribe</h2>
+  <p>The Paperwhite sits in the middle of the range. Here is how it compares with the others on Amazon's own comparison table (as of {FACTS_AS_OF}), plus the 2026 refresh of the base Kindle and Colorsoft.</p>
+  <Table
+    caption="Prices and key specs from Amazon's current comparison chart and Oct 1, 2026 announcement. Check the listing for exact configuration."
+    head={['', 'Kindle (6-inch)', 'Kindle Paperwhite', 'Paperwhite Signature', 'Kindle Colorsoft', 'Kindle Scribe']}
+    rows={[
+      ['Screen', '6-inch glare-free', '7-inch glare-free', '7-inch glare-free', '7-inch with color display', '10.2-inch glare-free'],
+      ['Starting price', '$149.99', '$199.99', '$249.99', '$289.99', '$399.99 (Amazon chart)'],
+      ['Storage', '16 GB', '16 GB', '32 GB', '16 GB', '16, 32 or 64 GB'],
+      ['Rated battery', 'Up to 6 weeks', 'Up to 12 weeks', 'Up to 12 weeks', 'Up to 8 weeks (earlier listing)', 'Up to 12 weeks'],
+      ['Best for', 'Budget, pocketable reading', 'Most readers', 'Heavy readers who want the nicest build', 'Covers, comics, cookbooks, travel guides', 'Reading plus handwritten notes'],
+    ]}
+  />
+  <p>The 2026 refresh pushes the base Kindle to 140 g and 6.8 mm with 30% faster book opening (per Amazon), and adds a 32 GB aluminum version at $189.99. WIRED and The Verge both point out that this puts the aluminum base Kindle close to the Paperwhite's price once you add a cover, and the Paperwhite is the one with the denser, auto-dimming screen. If you have narrowed it to "Paperwhite or plain Kindle," the Paperwhite is usually worth the extra $50. If it is "Paperwhite or Colorsoft," ask yourself honestly how much of what you read has color.</p>
+
+  <h2 id="who">Who should buy which</h2>
+  <h3>Commuters and travelers</h3>
+  <p>Anything in the Paperwhite family. The size is the draw: bigger than a phone, smaller than a paperback. The 2026 model's lower weight and thickness are an advantage if you carry it in a small bag all day, though a 1 mm difference will not change your life.</p>
+  <h3>Bedtime readers</h3>
+  <p>The warm light is the main event here, and every Paperwhite has it. The Signature Edition's automatic light adjustment saves you from fiddling at night. Pair it with a case that wraps the back and edges so the device does not slip off the pillow.</p>
+  <h3>Pool, beach and bath readers</h3>
+  <p>All Paperwhites listed here are waterproof. Be sensible: Amazon's rating is for fresh water, and a case that holds water against the device will make it slower to dry. See our <a href="/kindle-case/#water">case guide's water section</a>.</p>
+  <h3>Students and people with big PDFs</h3>
+  <p>A 7-inch screen is better than 6 for PDFs, but it is still not a document reader. If you annotate heavily, look at the Scribe; if you mostly read novels with the occasional PDF, the Paperwhite is fine.</p>
+  <h3>Gift buyers</h3>
+  <p>Standard Paperwhite plus a good case is the default answer. Check the ad status and, if the recipient reads in bed, consider the Signature Edition's auto light. Our <a href="/kindle-case/">case guide</a> has what to avoid when buying for a model you cannot hold.</p>
+
+  <h2 id="checklist">Before you buy: a short checklist</h2>
+  <ul>
+    <li>Confirm the model year on the listing and in your cart.</li>
+    <li>Decide on 16 GB vs 32 GB. If you do not use audiobooks or comics on the device, 16 GB is enough.</li>
+    <li>Decide whether ads on the lock screen bother you.</li>
+    <li>Check the exact color and finish you want, and that it is the one in stock.</li>
+    <li>Plan the case before you buy the device, not after.</li>
+    <li>Read the rated battery conditions: half an hour a day, wireless off, light at 13. Your use may differ.</li>
+    <li>Check the return window and warranty on the listing.</li>
+  </ul>
+
+  <h2 id="accessories">Accessories to plan for</h2>
+  <p>The case is the accessory that matters most, and the one where model-year mismatches cost people money. Amazon's 2026 accessories include covers from $39.99 in knit fabric, plant-based leather and pebbled leather; a Page-Turn Cover at $79.99 for the Signature Edition; a $59.99 charging dock for the Signature Edition; and the $34.99 Kindle Click Bluetooth remote, which Amazon says works with all new Kindles and any Kindle from 2024 or later.</p>
+  <p>The Kindle Click is the interesting one if you like physical page-turn buttons but do not want to upgrade, since it works with the 2024 Paperwhite too. For everything else, start with <a href="/kindle-case/">our Kindle case guide</a>. If you want to browse, here is a <a href={amazonSearch('kindle paperwhite case')} rel={LINK_REL} target="_blank">Kindle Paperwhite case search on Amazon</a>; always check the model year in the title.</p>
+
+  <h2 id="method">How we researched this page</h2>
+  <p>We do not review products in a lab, and we have not handled the 2026 models. This page is built from primary sources where possible: Amazon's own product pages and its October 1, 2026 announcement for specs and prices, plus launch reporting from WIRED, The Verge, TechRadar and Engadget for details Amazon did not spell out. Where sources differ or a spec is not published, we say so. Prices were checked on {FACTS_AS_OF} and will drift. If something is wrong, please tell us on our <a href="/contact/">contact page</a>. More on this in our <a href="/about/">editorial policy</a>.</p>
+  <ul class="sources">
+    <li>Amazon, "The new Amazon Kindle lineup" announcement (aboutamazon.com), Oct 1, 2026.</li>
+    <li>Amazon.com listing for Kindle Paperwhite 16 GB (2024), checked {FACTS_AS_OF}.</li>
+    <li>WIRED, "Amazon's New Kindle Lineup Is Lighter, Thinner, and More Metal," Oct 1, 2026.</li>
+    <li>The Verge, "Amazon is launching colorful new Kindles," Oct 1, 2026.</li>
+    <li>TechRadar, new Kindles for 2026 coverage, and 2024 Paperwhite review.</li>
+    <li>Amazon press release for the 2021 Paperwhite (Sept 2021) and PCWorld's 2021 review.</li>
+  </ul>
+
+  <Faq items={faq} />
+
+  <div class="box">
+    <h2>Next step</h2>
+    <p>Picked your Paperwhite? Choose its case next: <a class="btn" href="/kindle-case/">Kindle case buying guide</a></p>
+  </div>
+</Base>

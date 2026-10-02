@@ -1,0 +1,179 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import Table from '../components/Table.astro';
+import Disclosure from '../components/Disclosure.astro';
+import CaseTypes from '../components/CaseTypes.astro';
+import { breadcrumbs, faqPage, article } from '../data/schema';
+import { amazonSearch, LINK_REL } from '../data/links';
+import { FACTS_AS_OF } from '../data/site.mjs';
+
+const path = '/kindle-case/';
+const title = 'Kindle Case Buying Guide: Fit, Types and What to Skip';
+const description = 'How to choose a Kindle case: match your exact model year, pick the right style (folio, shell, sleeve, stand), and avoid fit mistakes, especially with the new 2026 Paperwhite.';
+
+const faq = [
+  { q: 'Do I need a case for my Kindle?', a: `Not strictly. Kindles are built to be used bare, and the Paperwhite is waterproof. A case helps with scratches in a bag, grip, and comfort, and many people like the auto sleep/wake that a magnetic folio provides. If your Kindle lives at home, you can skip it. If it travels in a backpack, get something.` },
+  { q: 'How do I know which case fits my Kindle?', a: `Match the model year and screen size, not just the name. "Kindle Paperwhite" has been several different sizes. The 2021 Paperwhite is 6.8 inches and 124.6 × 175.2 × 8.1 mm; the 2024 model is 7 inches and 127.6 × 176.7 × 7.8 mm; the 2026 model is thinner again at 6.8 mm. A listing that names your exact model year and generation is the one to buy. See the <a href="#fit">fit section</a>.` },
+  { q: 'Will a 2024 Paperwhite case fit the new 2026 Paperwhite?', a: `Assume no until a listing says it does. Amazon's own cover for the 2024 model is listed as fitting the 2024 release only, and the 2026 body is a different shape: thinner, with the power button moved to the right edge. Amazon says its new 2026 covers wrap fully around the device. Wait for listings that explicitly name the 2026 model.` },
+  { q: 'Can I charge my Kindle with the case on?', a: `Most folio and shell cases have a USB-C cutout, and Amazon's own fabric cover for the 2024 Paperwhite is described as able to remain on the device while charging. Check the listing for a charging-port cutout. Wireless charging through a thick case or a case with a metal plate or magnet layout may not work, and the 2026 Signature Edition uses pogo-pin charging rather than Qi, so check that too.` },
+  { q: 'Is a leather or fabric case better?', a: `Neither is better in every situation. Fabric is typically lighter and friendlier to damp hands; synthetic or plant-based leather feels more premium and wipes clean but can be heavier. Genuine leather is rare at lower prices. What matters more is fit, weight and whether the cover folds back flat for one-handed reading.` },
+  { q: 'Do magnetic covers hurt the Kindle?', a: `The wake/sleep feature in Kindle covers is designed around a small magnet in the cover, and Amazon sells magnetic covers itself. Normal use is fine. Just keep the Kindle away from strong magnets and do not store it with cards or items you do not want near a magnet.` },
+  { q: 'What about a case for a Kindle Colorsoft or a base Kindle?', a: `The same rules apply: model year first. Several 2024 Paperwhite case listings also name the Colorsoft Signature Edition because the bodies are shared, but verify on the listing. The base 6-inch Kindle is a different size and has been redesigned for 2026.` },
+  { q: 'Should I buy a screen protector as well?', a: `Optional. If you already have a folio cover that closes over the screen, a screen protector adds little. If you use a shell or a bare Kindle in a bag, a protector made specifically for your model can help against scratches, but choose one that does not add glare or reduce touch response, and read reviews.` },
+];
+const ld = [
+  article({ headline: title, description, path }),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle Paperwhite', path: '/kindle-paperwhite/' }, { name: 'Kindle cases', path }]),
+  faqPage(faq),
+];
+---
+<Base title={title} description={description} path={path} jsonld={ld} ogType="article">
+  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-paperwhite/">Kindle Paperwhite</a> › Kindle cases</p>
+  <h1>Kindle Case Buying Guide: Fit First, Style Second</h1>
+  <p class="meta">Facts checked {FACTS_AS_OF}. Independent guide based on Amazon listings and launch coverage; we have not hands-on tested every case mentioned.</p>
+  <Disclosure />
+
+  <p class="lede">Buying a Kindle case should be easy, and it mostly is, as long as you get one thing right: the model year. The most common reason a case ends up in a drawer is that it was made for a different generation. This guide shows how to avoid that, how the main styles compare, and what to check before you order, with extra attention to the brand-new 2026 Paperwhite, which almost certainly will not fit cases made for the one before.</p>
+
+  <div class="box">
+    <h2>The short answer</h2>
+    <ol>
+      <li><strong>Match the exact model year</strong> named in the listing to your Kindle. If it does not name one, move on.</li>
+      <li><strong>Pick the style by how you read:</strong> a magnetic folio for most people, a slim shell if you hate bulk, a stand or strap case for hands-free or one-handed reading, a sleeve if the Kindle just lives in a bag.</li>
+      <li><strong>Check the cutouts and charging</strong> (power button, USB-C) and whether it has auto sleep/wake.</li>
+      <li><strong>On the 2026 Paperwhite?</strong> Buy only a case that explicitly names the 2026 model, or Amazon's own covers (from $39.99).</li>
+    </ol>
+    <p>Need help choosing the Kindle first? See our <a href="/kindle-paperwhite/">Kindle Paperwhite buying guide</a>.</p>
+  </div>
+
+  <nav class="toc" aria-label="On this page">
+    <strong>On this page</strong>
+    <ol>
+      <li><a href="#fit">Fit: why model year matters</a></li>
+      <li><a href="#types">Case styles compared</a></li>
+      <li><a href="#materials">Materials</a></li>
+      <li><a href="#features">Features that matter</a></li>
+      <li><a href="#water">Water, sand and the Paperwhite's waterproofing</a></li>
+      <li><a href="#official">Amazon covers vs third-party cases</a></li>
+      <li><a href="#new-2026">Buying for the new 2026 Paperwhite</a></li>
+      <li><a href="#by-use">Best style by situation</a></li>
+      <li><a href="#red-flags">Listing red flags</a></li>
+      <li><a href="#method">How we researched this</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="fit">Fit: why model year matters</h2>
+  <p>Amazon sells devices called "Kindle Paperwhite" in several sizes. They share a name and a general shape, but not dimensions, and a case cut for one will pinch, gap or block the buttons on another. Here is what the published numbers say:</p>
+  <Table
+    caption="Dimensions and weights from Amazon's 2024 listing, PCWorld's 2021 review, and WIRED's Oct 1, 2026 launch report. The 2026 width and height were not in the sources we checked."
+    head={['Model', 'Screen', 'Size (W × H × D)', 'Weight', 'Notes that affect fit']}
+    rows={[
+      ['Paperwhite 2021 (11th gen)', '6.8-inch', '124.6 × 175.2 × 8.1 mm', '205 g', 'Cases for this model are listed for 6.8-inch / 11th generation'],
+      ['Paperwhite 2024 (12th gen)', '7-inch', '127.6 × 176.7 × 7.8 mm', '211 g (214 g Signature)', 'Amazon fabric cover listed as fitting the 2024 release only'],
+      ['Paperwhite 2026 (new)', '7-inch', 'Thickness 6.8 mm; width and height not confirmed in our sources', '204 g', 'Power button moved to the right edge; new covers announced'],
+    ]}
+  />
+  <p>Between 2021 and 2024 the device grew about 3 mm wider and 1.5 mm taller while getting 0.3 mm thinner. That sounds trivial until you try to snap a hard shell on, where a millimeter is the difference between a tight fit and a case that will not close. That is why even the manufacturer's own 2024 cover is described as fitting the 2024 release only.</p>
+  <p>Before you order, find your model. The listing title should say something like "Kindle Paperwhite 12th generation, 2024 release" or "7-inch." If it says "fits all Kindle Paperwhite," treat it as a warning, not a feature. Check your device's information screen and your Amazon account's device list for the generation; Amazon's help pages explain how to identify any model.</p>
+  <p>One practical note: several 2024 Paperwhite case listings also name the Kindle Colorsoft Signature Edition, since the two share a body. If you own a Colorsoft, a case listed for it works the same as above; just verify the listing names your exact model.</p>
+
+  <CaseTypes />
+
+  <h2 id="types">Case styles compared</h2>
+  <Table
+    caption="General comparison of case styles. Individual products vary."
+    head={['Style', 'Screen protection', 'Bulk', 'Auto sleep/wake', 'Best for', 'Watch out for']}
+    rows={[
+      ['Magnetic folio / book cover', 'Covers the screen when closed', 'Medium', 'Usually yes', 'Most readers, everyday carry', 'Weight; cover flap can be annoying to hold open'],
+      ['Slim shell (back and edges)', 'None on the screen', 'Low', 'No', 'People who want grip and edge protection without a flap', 'Screen is exposed in a bag'],
+      ['Sleeve / pouch', 'Whole device inside', 'Separate from device', 'No', 'Kindle that lives in a tote or backpack', 'Not something you read in'],
+      ['Stand or hand-strap case', 'Often a folio design', 'Medium to high', 'Often yes', 'One-handed reading, tables, long sessions', 'Heavier; strap fit varies'],
+      ['Clear TPU / PC shell', 'None on the screen', 'Low', 'No', 'Showing off the device color', 'Can yellow or flex; adds little protection'],
+      ['Kids / rugged', 'Often includes a screen cover', 'High', 'Varies', 'Children and rough use', 'Bulk; verify Amazon Kids versions come with their own covers'],
+    ]}
+  />
+
+  <h2 id="materials">Materials</h2>
+  <h3>Fabric</h3>
+  <p>Fabric covers, such as the knit options Amazon announced for 2026, tend to be light, soft and friendly to humid hands. Amazon's fabric cover for the 2024 Paperwhite is described as made from recycled polyester and "water-safe." The tradeoff is that fabric may offer less rigid protection against a corner impact than a hardback.</p>
+  <h3>Synthetic ("PU") leather</h3>
+  <p>The most common material in third-party cases. It looks good, wipes clean, and is cheap to make. Quality varies a lot, from nicely finished to flaky and smelly. Listings usually combine PU leather with a microfiber lining to protect the screen, and a hard plastic shell inside.</p>
+  <h3>Plant-based and premium leather</h3>
+  <p>Amazon sells plant-based leather and, for 2026, pebbled premium leather covers. These sit at the top of the price range, with 2026 Amazon covers starting at $39.99. If you want a cover that looks better as it ages, this is where to look, but weigh the added cost against the Kindle's own price.</p>
+  <h3>Hard plastic and TPU</h3>
+  <p>Shells use polycarbonate or flexible TPU. They add grip and edge protection with little weight. Clear versions show off the Kindle's color, which matters more in 2026, since Amazon is making a point of color wrapping around the body.</p>
+
+  <h2 id="features">Features that matter</h2>
+  <ul>
+    <li><strong>Auto wake/sleep.</strong> A magnet in the cover signals the Kindle to wake when opened and sleep when closed. Amazon describes its covers as doing exactly that. It is a genuinely useful convenience, and any decent folio should have it.</li>
+    <li><strong>Cutouts.</strong> Power button and USB-C port should be clear. On the 2026 models the power button is on the right edge near the top, so a case that places it at the bottom is the wrong one.</li>
+    <li><strong>Charging with the case on.</strong> Look for a precise USB-C cutout. If you plan to use a dock or wireless charger, check compatibility explicitly, since the 2024 Signature Edition used Qi and the 2026 one uses pogo pins.</li>
+    <li><strong>Fold-back design.</strong> A cover that folds fully back lets you read one-handed without a flap in the way. Some cases add a hand strap, which helps in bed and on a train.</li>
+    <li><strong>Weight.</strong> A new Paperwhite weighs about 204 to 214 g depending on the model; a cover adds to that. Some Amazon reviewers say an official cover makes the device feel noticeably heavier. If weight matters, choose slim.</li>
+    <li><strong>Stand.</strong> Useful for tables and flights, but adds bulk.</li>
+    <li><strong>Card slots.</strong> A few listings add them. Handy if you want a one-piece carry, but they thicken the case.</li>
+  </ul>
+
+  <h2 id="water">Water, sand and the Paperwhite's waterproofing</h2>
+  <p>The 2024 Paperwhite is rated IPX8, tested by Amazon at 2 meters of fresh water for 60 minutes, so a case is not needed for splashes. If you read by the pool, a case can still make sense for grip and for keeping sunscreen off the device, but think about drying. A case that traps water against the screen and ports will make cleanup slower, and leatherette can stain. Amazon markets its fabric cover as water-safe for exactly this reason. Rinse and dry any cover after contact with chlorine or salt water, and note that IPX8 is a fresh-water rating.</p>
+
+  <h2 id="official">Amazon covers vs third-party cases</h2>
+  <p>Amazon's own covers have an advantage that is easy to overlook: they are designed to the final specification and sold with a named model in the title. For 2026, Amazon lists covers from $39.99 in knit fabric, plant-based leather and pebbled leather that wrap fully around the device, slim magnetic-attach covers for aluminum models, and a Page-Turn Cover ($79.99) with physical buttons for the Paperwhite Signature Edition and Colorsoft Signature Edition.</p>
+  <p>Third-party cases dominate Amazon's results for the 2024 Paperwhite. Examples we saw in a search for "case covers for kindle paperwhite 2024" were Fintie, Moko, TNP and CoBak. We name them only so you know what the listings look like; we are not recommending or ranking them, and we have not tested them. Typical selling points are PU leather, magnetic closure, auto wake/sleep, a hardback shell, stands, hand straps and card slots, usually at a lower price than Amazon's covers.</p>
+  <p>Our rule of thumb: for a new device, wait for the manufacturer's cover or a third-party listing that names the exact model. For a device that has been on sale for a year or more, third-party cases are mature and varied. Read the reviews that mention fit and button cutouts, and sort by recent.</p>
+  <p><a class="btn alt" href={amazonSearch('kindle paperwhite case 2024 7 inch')} rel={LINK_REL} target="_blank">Search Amazon: 2024 Paperwhite cases</a></p>
+
+  <h2 id="new-2026">Buying for the new 2026 Paperwhite</h2>
+  <p>The 2026 Paperwhite ships October 28, 2026. Here is how we would handle cases:</p>
+  <ul>
+    <li><strong>Do not buy a 2024 case "just in case."</strong> The body is a different thickness (6.8 mm vs 7.8 mm), the power button has moved, and Amazon's own cover for the old model is explicitly for the 2024 release only.</li>
+    <li><strong>Look for the model name in the title.</strong> For the first few weeks, listings from sellers who have not seen the final device can be guesswork. Prioritize those with reviews from buyers who have received the device.</li>
+    <li><strong>Consider Amazon's covers first.</strong> They start at $39.99 and are announced for the full lineup, with slim magnetic-attach versions for the aluminum Signature Edition.</li>
+    <li><strong>Signature Edition owners:</strong> there are pogo pins on the back for the $79.99 Page-Turn Cover and the $59.99 charging dock. A third-party case that blocks them will block those accessories.</li>
+    <li><strong>Want page-turn buttons without a special case?</strong> The Kindle Click is a $34.99 Bluetooth remote that Amazon says works with all new Kindles and any Kindle from 2024 or later.</li>
+  </ul>
+  <p>For the device itself, see <a href="/kindle-paperwhite/#vs-2024">2026 vs 2024 compared</a>.</p>
+
+  <h2 id="by-use">Best style by situation</h2>
+  <Table
+    caption="Our reasoning, not test results."
+    head={['If you…', 'Choose', 'Why']}
+    rows={[
+      ['Carry your Kindle in a bag every day', 'Magnetic folio with a fold-back cover', 'Protects the screen and auto-sleeps, so the battery lasts'],
+      ['Hate bulk or read one-handed in bed', 'Slim shell or a strap case', 'Less weight on your wrist; strap stops drops onto your face'],
+      ['Mostly read at home on the couch', 'Nothing, or a shell for grip', 'The device is already thin and waterproof'],
+      ['Travel and read on trays or tables', 'Folio with a stand', 'Holds the device at an angle'],
+      ['Buy for a child', 'A rugged case, or the Kids version that includes one', 'Amazon says the Kids versions include artist-designed covers'],
+      ['Buy a gift for a model you cannot hold', 'A gift receipt and the model named on the listing', 'Fit mistakes are the main reason cases get returned'],
+    ]}
+  />
+
+  <h2 id="red-flags">Listing red flags</h2>
+  <ul>
+    <li><strong>No model year or generation in the title.</strong> If the listing only says "fits Kindle Paperwhite," keep scrolling.</li>
+    <li><strong>"Fits 6-inch, 6.8-inch and 7-inch."</strong> No single hard case fits that range well.</li>
+    <li><strong>Reviews mention the wrong size.</strong> Sort by most recent and search for "fit" and "too tight."</li>
+    <li><strong>Stock photos of the wrong device.</strong> Does the image show a power button in the right place for your model?</li>
+    <li><strong>Prices far under similar listings.</strong> Possible, but check the material and the reviews.</li>
+    <li><strong>Claims of "official" or "Amazon certified."</strong> Be wary of wording that implies endorsement. A third-party case is a third-party case. We use no such language on this site either.</li>
+  </ul>
+
+  <h2 id="method">How we researched this</h2>
+  <p>This guide is based on Amazon's announcement and product pages, retailer listings for Amazon's own covers, a search of third-party listings on Amazon.com, and launch coverage from WIRED and The Verge. We do not claim hands-on testing of any case. Where we describe tradeoffs, they are general and meant to help you ask better questions of a listing, not to rank products. See our <a href="/about/">editorial policy</a>, or tell us about a mistake via the <a href="/contact/">contact page</a>.</p>
+  <ul class="sources">
+    <li>Amazon, "The new Amazon Kindle lineup" (aboutamazon.com), Oct 1, 2026: covers, Page-Turn Cover, dock, Kindle Click.</li>
+    <li>Amazon.com listing for Kindle Paperwhite 16 GB (2024), checked {FACTS_AS_OF}: dimensions, weight, IPX8.</li>
+    <li>Retailer listings for Amazon's 2024 Paperwhite fabric cover (Best Buy Canada, JB Hi-Fi): fit notes.</li>
+    <li>WIRED and The Verge, Oct 1, 2026: new body details and accessory compatibility.</li>
+    <li>PCWorld, 2021 Paperwhite review: 2021 dimensions and weight.</li>
+  </ul>
+
+  <Faq items={faq} />
+
+  <div class="box">
+    <h2>Next step</h2>
+    <p>Still choosing the device? <a class="btn" href="/kindle-paperwhite/">Kindle Paperwhite: which one to buy</a></p>
+  </div>
+</Base>
