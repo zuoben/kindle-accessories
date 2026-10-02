@@ -40,7 +40,6 @@ Current URL: https://kindle-accessories.w1214237256.workers.dev
 Amazon links are built by `src/data/links.ts` (`amazonSearch`, `amazonDp`). They are plain Amazon.com links.
 When you have a real Amazon Associates ID, set `AMAZON_TAG` in `src/data/site.mjs`; all links get `?tag=` and `rel="sponsored"`,
 and `/affiliate-disclosure/` switches to the "active" wording automatically. Do not invent a tag. Disclosure text is already on each page.
-A few links are hardcoded in page templates through those helpers only; no tag appears anywhere today.
 
 ## Contact
 No email is published (none was provided). `/contact/` points to GitHub Issues on this repo. Replace with a real mailbox when available.
