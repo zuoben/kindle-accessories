@@ -1,0 +1,195 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import Table from '../components/Table.astro';
+import Disclosure from '../components/Disclosure.astro';
+import StandTypes from '../components/StandTypes.astro';
+import { breadcrumbs, faqPage, article } from '../data/schema';
+import { amazonSearch, LINK_REL } from '../data/links';
+import { FACTS_AS_OF_OCT5, PUBLISHED_OCT5 } from '../data/site.mjs';
+
+const path = '/kindle-stand/';
+const title = 'Kindle Stand Guide: Desk, Bed and Charging Stands Compared';
+const description = 'Choose a Kindle stand: desk, gooseneck, pillow and charging dock types compared, with angle, stability, weight and case compatibility checks.';
+
+const faq = [
+  { q: 'Do I need a stand, or is a folio cover with a stand mode enough?', a: `A folio that folds into a stand is enough for a tray table or a short read, and it costs nothing extra if you already own one. A dedicated stand gives more control over angle and height, keeps the Kindle off your lap and can stay put while you swap covers. If you mostly read at a desk or in bed, a separate stand is usually steadier. See the <a href="/kindle-cover/#features">cover features section</a> for what a built-in stand involves.` },
+  { q: 'Will a Kindle stand work with my case on?', a: `Check two things: the opening or clamp width, and the thickness the stand allows. Amazon's wireless charging dock, for example, says it works with a case up to 4 mm thick, and the user reviews on that listing are mixed about charging with a case on. Clamp-style holders list a device-size range, which is not the same as a thickness limit, so read the listing for it. A slim shell or no case is the safest pairing; a thick folio often has to be folded back or removed.` },
+  { q: 'Do I need a stand that is specific to a Kindle?', a: `No. Most Kindle stands are general tablet or phone holders. What you need is a stand that handles the device's size and weight: about 140 to 219 g for the Kindles with 6- to 7-inch screens (158 g for the 2022 and 2024 basic Kindle, 211 g for the 2024 Paperwhite, 219 g for the Colorsoft Signature Edition, and WIRED reports 204 g for the 2026 Paperwhite), and about 400 to 433 g for the Scribe. Charging docks are the exception: Amazon's are made for specific Signature Edition models only.` },
+  { q: 'Which charging dock works with which Kindle?', a: `Amazon's wireless charging dock is listed for the Kindle Paperwhite Signature Editions (2022 and 2024) and the Kindle Colorsoft Signature Edition (2024) only. Amazon's October 1, 2026 announcement lists a $59.99 charging dock for the 2026 Paperwhite Signature Edition and Colorsoft Signature Edition, with pogo pin charging. We did not find a statement on whether either dock works with the other generation, or with standard Paperwhites or the basic Kindle, so check the listing for your exact model.` },
+  { q: 'Is a gooseneck holder good for reading in bed?', a: `It can be, if you have a headboard, bed frame or table edge to clamp to. The appeal is that the arm holds the Kindle in front of you without your hands. The trade-off is that a long flexible arm can sway when you tap, and a clamp needs a sturdy place to grip. Pairing a hands-free holder with a Bluetooth remote such as Amazon's $34.99 Kindle Click (which Amazon says works with all new Kindles and any Kindle from 2024 or later) means you do not have to touch the screen at all.` },
+  { q: 'What angle should a Kindle stand hold?', a: `There is no single right angle, and we have no test data. Reading is usually most comfortable when the screen is facing you rather than looking down at it, so a stand with a tilt range and some height adjustment gives you room to find a spot. One tablet-stand listing we checked states a tilt range of 10 to 45 degrees; another type, the pillow stand, usually holds a set angle that changes with how your lap is positioned. Choose adjustability if you read in more than one position.` },
+  { q: 'Is a heavy base really important?', a: `For a tall desk stand, yes, reasonably so: a light base on a bed or an armchair tray can tip when you tap the screen. One adjustable tablet stand we looked at lists a 500 g weighted base and says its hinge bears up to 3.3 lb, yet reviewers on that listing are split on how steady it is, so the number alone is not a guarantee. A Kindle is lighter than a tablet, which helps, but the stand's footprint and friction still matter. Check recent reviews that mention stability.` },
+  { q: 'Can I use a Kindle stand for the Scribe?', a: `Only if it is rated for the Scribe's size and weight. The Scribe is 10.2 or 11 inches and weighs 400 to 433 g, and many "Kindle" holders are sized for 6- to 8-inch devices. The pen also clings to the side of the device by a magnet, so a clamp or a tight cradle can bump or hide it. For writing, you may want to lay the Scribe flat or on a low-angle stand rather than upright. Our <a href="/kindle-scribe-case/">Scribe case guide</a> covers the pen and magnets.` },
+];
+const ld = [
+  article({ headline: title, description, path, published: PUBLISHED_OCT5 }),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle case', path: '/kindle-case/' }, { name: 'Kindle stand', path }]),
+  faqPage(faq),
+];
+---
+<Base title={title} description={description} path={path} jsonld={ld} ogType="article">
+  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-case/">Kindle cases</a> › Kindle stand</p>
+  <h1>Kindle Stand Guide: How to Choose a Desk, Bed or Charging Stand</h1>
+  <p class="meta">Facts checked {FACTS_AS_OF_OCT5}. Independent guide based on Amazon's announcements and listings plus press coverage. We have not hands-on tested any stand and do not rank products.</p>
+  <Disclosure />
+
+  <p class="lede">A Kindle is light enough to hold in one hand, so a stand is not about carrying the weight. It is about not having to hold anything: reading on a desk while you eat, in bed without your arms going numb, on a tray table, or a Kindle that stays upright and charged on a nightstand. This guide sorts the kinds of stand, explains what makes one steady and what does not, and answers the question most shoppers miss: whether the stand works with your case and your model.</p>
+
+  <div class="box">
+    <h2>The short answer</h2>
+    <ul>
+      <li><strong>Reading at a desk or table:</strong> a weighted stand with adjustable tilt (and ideally height) is the usual choice.</li>
+      <li><strong>Reading in bed hands-free:</strong> a clamp-on gooseneck if you have a sturdy headboard or frame, or a lap pillow with a holder if you do not. Consider a Bluetooth page-turn remote.</li>
+      <li><strong>Keeping a Signature Edition upright and charged:</strong> a charging dock, but only one listed for your exact model. Amazon's docks are model-specific.</li>
+      <li><strong>Propping it occasionally:</strong> a folio cover with a stand mode may be all you need; see the <a href="/kindle-cover/">cover types guide</a>.</li>
+      <li><strong>Before you buy:</strong> check weight rating, how the stand holds the device (clamp, lip or ledge), whether your case fits, and for a Scribe, whether it is rated for a larger device.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="On this page">
+    <strong>On this page</strong>
+    <ol>
+      <li><a href="#types">Stand types compared</a></li>
+      <li><a href="#desk">Desk and table stands</a></li>
+      <li><a href="#bed">Bed, couch and lap stands</a></li>
+      <li><a href="#dock">Charging docks</a></li>
+      <li><a href="#folio">Built-in cover stands</a></li>
+      <li><a href="#criteria">What to check before you buy</a></li>
+      <li><a href="#case-fit">Stands and cases: compatibility</a></li>
+      <li><a href="#weight">Device weight and stand ratings</a></li>
+      <li><a href="#hands-free">Going fully hands-free</a></li>
+      <li><a href="#red-flags">Listing red flags</a></li>
+      <li><a href="#method">How we researched this</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <StandTypes />
+
+  <h2 id="types">Stand types compared</h2>
+  <Table
+    caption="General comparison of stand types. Individual products vary; this is our reasoning, not test results."
+    head={['Type', 'Best for', 'Adjustable?', 'Stability', 'Watch out for']}
+    rows={[
+      ['Weighted desk stand (arm or tower)', 'Desks, tables, kitchens', 'Usually tilt, often height', 'Good if the base is heavy and wide', 'Light bases tip on soft surfaces; check the weight rating'],
+      ['Foldable or portable stand', 'Travel and tray tables', 'A few fixed angles', 'Fair on flat surfaces', 'Small footprint; can slide on slippery tables'],
+      ['Clamp and gooseneck holder', 'Beds with a headboard, desks with an edge', 'Very, within the arm\'s reach', 'Depends on the clamp point and arm stiffness', 'Arm can sway when you tap; needs a place to clamp'],
+      ['Lap or bed pillow with a holder', 'Couch, bed, floor', 'Mostly fixed', 'Moves with you', 'Bulky; angle varies with how you sit'],
+      ['Floor stand', 'Bedside reading from a chair or lying down', 'Tilt and height', 'Good if weighted', 'Takes floor space; big for a small device'],
+      ['Charging dock', 'Nightstand, desk, always-charged use', 'Fixed angle', 'Stable because it is made for the device', 'Only for models the maker names'],
+      ['Folio cover stand mode', 'Occasional propping', 'One or two angles', 'Fair on flat surfaces', 'Only works with that cover on'],
+    ]}
+  />
+
+  <h2 id="desk">Desk and table stands</h2>
+  <p>This is the largest category on Amazon, and most of it is not made for Kindles at all: general tablet and phone stands that list a range of screen sizes and happen to hold a Kindle. That is fine, because a Kindle is a light, small device. What matters is the stand, not the label.</p>
+  <p>As an example of what the specifications look like, a Baseus adjustable tablet stand listing that we looked at (it showed as unavailable when we checked, so this is not a recommendation) states compatibility with screens from 5.5 to 21.5 inches, height adjustment from 10.62 to 13.77 inches, a tilt range of 10 to 45 degrees, aluminum alloy construction, a 500 g weighted base and a hinge rated for up to 3.30 lb. Customers on that listing are split: some call it sturdy, others say it is not. That mix is typical, and a reason to read recent reviews that mention stability and use the specifications as a checklist rather than a verdict.</p>
+  <p>If you only want a simple support that keeps a Kindle at a fixed reading angle, a small foldable stand does the job at a lower price and takes little space. It is also easier to pack, which matters if you read on the go.</p>
+  <p><a class="btn alt" href={amazonSearch('kindle stand for desk adjustable')} rel={LINK_REL} target="_blank">Search Amazon: Kindle desk stands</a></p>
+
+  <h2 id="bed">Bed, couch and lap stands</h2>
+  <p>Reading in bed is where most people want a stand, and also where most stands struggle, because a mattress is not a table. There are three common answers.</p>
+  <ul>
+    <li><strong>Clamp-on gooseneck holders.</strong> A flexible arm clamps to a headboard, bed frame or table edge and holds the Kindle in front of you. A listing we saw states compatibility with devices of 4.7 to 8.6 inches, which covers a Kindle or Paperwhite but not a Scribe. The practical limits are the clamp point (it must be sturdy and the right thickness) and the arm itself: a longer flexible arm sways more when you tap the screen.</li>
+    <li><strong>Lap or bed pillows with a holder.</strong> A weighted pillow with a built-in cradle for the device. One lifestyle review we read describes a pillow-with-snack-compartment design that sits on the lap; it is promotional in tone and anecdotal, so treat it as a description of the category and not evidence that any product works. Pillow stands move with you, which is the appeal, but their angle depends on how you sit.</li>
+    <li><strong>Floor stands.</strong> A tall stand with a heavy base that lets you read lying down. Stable, but big, and mostly built for larger tablets.</li>
+  </ul>
+  <p>For all three, think about how you turn pages. If you cannot reach the screen without moving, a stand that holds the Kindle out of reach is frustrating. The usual fix is a remote, covered under <a href="#hands-free">hands-free reading</a>.</p>
+
+  <h2 id="dock">Charging docks</h2>
+  <p>A charging dock is a stand with a purpose, and it is the only type that does not work with every Kindle. Amazon's Wireless Charging Dock for the Paperwhite Signature Editions (2022 and 2024 releases) and the Colorsoft Signature Edition (2024) lists these details on Amazon.com:</p>
+  <ul>
+    <li>Portrait orientation: the Kindle sits upright on the dock's ledge.</li>
+    <li>Charges with a case up to 4 mm thick.</li>
+    <li>Up to 7.5 W; Amazon says 100% in as little as 2.5 hours.</li>
+    <li>An LED that blinks when the Kindle is not properly aligned and stays steady when charging or full.</li>
+    <li>Compatible only with the Signature Edition models named in the title. It is not for the standard Paperwhite or the basic Kindle.</li>
+    <li>$44.99 on the listing when we checked on October 5, 2026.</li>
+  </ul>
+  <p>Customer experience on that listing is mixed: many reviewers like it, but a sizeable group reports it failing to charge or flashing without charging, and some mention a case that was too thick. That is not a test, only a reminder that wireless charging depends on alignment and on what is between the coils.</p>
+  <p>For the 2026 generation, Amazon's announcement lists a $59.99 Charging Dock for the Paperwhite Signature Edition and Colorsoft Signature Edition that keeps them upright and charged. The Signature Editions use pogo pins on the rear for dock charging and for Amazon's $79.99 Page-Turn Cover, so a case that covers the pins can block both. The sources we found do not say whether the 2026 dock works with the 2024 Signature Edition or vice versa, so do not assume either. Our <a href="/kindle-paperwhite-case/#signature">Paperwhite case guide</a> explains the Signature Edition and charging in more detail.</p>
+
+  <h2 id="folio">Built-in cover stands</h2>
+  <p>Many folio covers fold back into a stand at one or two angles. Amazon's 2025 Scribe folio listing, for example, mentions low and high stand angles. The advantage is that it costs nothing extra and travels with the Kindle. The limits are that it only works with that cover on, you do not choose the angle precisely, and on a Scribe, a stand fold can put magnets close to the writing area, which some reviewers report as interfering with the pen (anecdotal). Our <a href="/kindle-cover/">cover types guide</a> covers folio constructions, and the <a href="/kindle-case/">Kindle case buying guide</a> includes a stand-style row in its comparison of case styles.</p>
+
+  <h2 id="criteria">What to check before you buy</h2>
+  <Table
+    caption="A checklist for reading listings. These are things to ask, not product recommendations."
+    head={['Check', 'Why it matters', 'What to look for']}
+    rows={[
+      ['Weight rating and base', 'Stability when you tap or turn pages', 'A stated capacity above your device weight, and a heavy or wide base; recent reviews mentioning wobble'],
+      ['Hold type', 'Whether the stand grips, cradles or rests the device', 'A lip that is deep enough to hold your Kindle without covering text; padding that will not scratch'],
+      ['Angle range', 'Comfort in different positions', 'Adjustable tilt; if you read in more than one position, adjustable height too'],
+      ['Screen-size range', 'Whether your Kindle or Scribe fits', 'A range that includes your device; check the Scribe separately'],
+      ['Case allowance', 'Whether it works with your cover on', 'A stated thickness limit or a wide opening; see below'],
+      ['Portability', 'Travel and tray-table use', 'Folding design, weight, and a stand that does not need a clamp'],
+      ['Surface grip', 'Whether it slides on a table or bedspread', 'Silicone pads or a rubberized base'],
+      ['Charging cutout', 'Whether you can plug in while it stands', 'An open port side, or a dock built for the model'],
+    ]}
+  />
+
+  <h2 id="case-fit">Stands and cases: compatibility</h2>
+  <p>Stands and cases interact more than most people expect. A stand that clamps on the sides must open wide enough for your cover, and a stand with a lip must not cover the page numbers or the power button. Think through these combinations before you buy:</p>
+  <Table
+    caption="General reasoning, not test results."
+    head={['If your Kindle is in…', 'Likely stand fit', 'Check']}
+    rows={[
+      ['No case', 'Works with most stands', 'Lip and padding that will not scratch the back or edges'],
+      ['A slim back shell', 'Works with most stands', 'Lip depth, in case it covers the screen edge'],
+      ['A folio cover', 'Fine if the cover is folded back or if the stand has a wide opening', 'Cover thickness against the stand\'s allowance; a flap that gets in the way'],
+      ['A magnetic-attach folio', 'Stand needs to hold the folio and the device together', 'Whether magnets let go under the stand\'s grip'],
+      ['A charging dock', 'Dock limits are model-specific', 'Case thickness (4 mm for Amazon\'s 2022/2024 dock) and pogo-pin coverage on the 2026 Signature Editions'],
+      ['A Scribe with the pen attached', 'Needs a stand sized for 400 g and larger', 'Whether a clamp or cradle presses on the pen or hides it'],
+    ]}
+  />
+  <p>If your preferred case does not work with your preferred stand, the simplest solution is usually to give up the stand's grip and use one that cradles the device from below. Case styles themselves are compared in the <a href="/kindle-case/#types">case styles table</a>, and model-specific fit is in the <a href="/kindle-paperwhite-case/">Paperwhite</a> and <a href="/kindle-scribe-case/">Scribe</a> case guides.</p>
+
+  <h2 id="weight">Device weight and stand ratings</h2>
+  <Table
+    caption="Weights from Amazon listings and press coverage (the 2026 models from WIRED and Engadget). Capacity needs also depend on the stand's leverage and base."
+    head={['Model', 'Screen', 'Weight', 'Stand note']}
+    rows={[
+      ['Kindle 2026 (basic)', '6-inch', '140 g (aluminum version about 20 g heavier per Engadget)', 'Light; almost any stand holds it'],
+      ['Kindle 2022 / 2024 (basic)', '6-inch', '158 g', 'Light'],
+      ['Paperwhite 2026', '7-inch', '204 g', 'Light; Signature Edition has pogo pins for Amazon\'s dock'],
+      ['Paperwhite 2024', '7-inch', '211 g (214 g Signature)', 'Wireless dock for the Signature Edition only'],
+      ['Colorsoft Signature Edition (2024)', '7-inch', '219 g', 'Wireless dock listed for it'],
+      ['Scribe 2025 / Colorsoft', '11-inch', '400 g', 'Check capacity and screen-size range; pen on the side'],
+      ['Scribe 2022 / 2024', '10.2-inch', '433 g', 'Same'],
+    ]}
+  />
+  <p>Weights are well within the ratings that tablet stands usually quote, so the weight of the Kindle itself rarely decides the choice. The Scribe is the exception. What matters more is the lever arm: the same 211 g held at the end of a long flexible arm is harder to keep still than on a short, heavy stand.</p>
+
+  <h2 id="hands-free">Going fully hands-free</h2>
+  <p>A stand holds the Kindle; it does not turn the page. Amazon's 2026 announcement says exactly that about its own setup: "we've watched Kindle fans engineer their own reading setups for years—propping devices on pillows, rigging phone stands as makeshift docks, and hunting for the easiest possible page turn." Its answer is the Kindle Click, a $34.99 Bluetooth remote that Amazon describes as ideal for reading under the covers, on a treadmill or on a tray table, and compatible with all new Kindle devices and any Kindle from 2024 or later. For the Signature Editions, there is also the $79.99 Page-Turn Cover with physical buttons. We have not tested either.</p>
+  <p>If your Kindle is older than 2024, we did not find Amazon support for the Click, so a stand that lets you reach the screen is the safer plan.</p>
+
+  <h2 id="red-flags">Listing red flags</h2>
+  <ul>
+    <li><strong>"Compatible with all Kindles" and a charging function</strong> in the same listing. Chargers are model-specific.</li>
+    <li><strong>No weight rating</strong> on a tall or arm-style stand.</li>
+    <li><strong>Reviews that say it tips, droops or slides</strong> on beds or soft surfaces. Sort by recent and search "tips," "wobble," "droops," "slides."</li>
+    <li><strong>A clamp range that does not match your headboard</strong> or frame. Measure it.</li>
+    <li><strong>A device-size range that stops short of the Scribe</strong> if you own one.</li>
+    <li><strong>Claims of Amazon approval</strong> on a third-party stand. We do not use that language here either.</li>
+    <li><strong>Unusually low prices on a charging dock</strong> that claims to match Amazon's. Check the title for your exact model.</li>
+  </ul>
+
+  <h2 id="method">How we researched this</h2>
+  <p>This guide uses Amazon.com listings for the wireless charging dock and for an adjustable tablet stand (as an example of specifications), a gooseneck holder listing, Amazon's October 1, 2026 lineup announcement, WIRED and Engadget on the 2026 weights, and a consumer review of a pillow stand. Product names appear only as examples of what listings say; we are not recommending any stand, and we have not tested any. Prices are snapshots from {FACTS_AS_OF_OCT5} and change often. To report a mistake, use our <a href="/contact/">contact page</a>; see also our <a href="/about/">editorial policy</a>.</p>
+  <ul class="sources">
+    <li>Amazon.com, "Made for Amazon, Wireless Charging Dock for Kindle Paperwhite Signature Editions (2022 &amp; 2024 releases) and Kindle Colorsoft Signature Edition": compatibility, 4 mm case limit, 7.5 W, 2.5 hours, LED, price, customer review summary.</li>
+    <li>Amazon, "The new Amazon Kindle lineup" (aboutamazon.com), Oct 1, 2026: Charging Dock, Page-Turn Cover, Kindle Click, Signature Edition changes.</li>
+    <li>Amazon.com listing for the Baseus adjustable tablet stand (unavailable when checked) and a gooseneck holder listing: example specifications.</li>
+    <li>SheKnows, Nov 2024, review of a pillow stand: category description only.</li>
+    <li>WIRED and Engadget, Oct 1, 2026: 2026 Kindle and Paperwhite weights.</li>
+  </ul>
+
+  <Faq items={faq} />
+
+  <div class="box">
+    <h2>Next step</h2>
+    <p>Pick the protection first, then the prop. <a class="btn" href="/kindle-cover/">Cover types compared</a> <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a> <a class="btn alt" href="/kindle-paperwhite-case/">Paperwhite case guide</a> <a class="btn alt" href="/kindle-sleeve/">Kindle sleeve guide</a></p>
+  </div>
+</Base>

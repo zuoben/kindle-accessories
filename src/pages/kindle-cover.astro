@@ -1,0 +1,199 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import Table from '../components/Table.astro';
+import Disclosure from '../components/Disclosure.astro';
+import CoverLayers from '../components/CoverLayers.astro';
+import { breadcrumbs, faqPage, article } from '../data/schema';
+import { amazonSearch, LINK_REL } from '../data/links';
+import { FACTS_AS_OF_OCT5, PUBLISHED_OCT5 } from '../data/site.mjs';
+
+const path = '/kindle-cover/';
+const title = 'Kindle Covers Explained: Cover vs Case and Which Type to Buy';
+const description = 'Kindle cover vs case explained: folio, back cover, fabric, leather and auto wake/sleep compared, so you pick the type first and the model fit second.';
+
+const faq = [
+  { q: 'Is a Kindle cover the same thing as a Kindle case?', a: `Not formally. There is no industry standard, and sellers use both words for the same products. Amazon calls its own folios "Kindle Covers," while most third-party listings say "case." On this site, "cover" means a folio-style product with a front flap that closes over the screen, and "case" is the wider family that also includes back shells, bumpers and sleeves. If you are choosing by model year, start with the <a href="/kindle-case/">Kindle case buying guide</a>; if you are choosing between a flap and no flap, this page is the right one.` },
+  { q: 'Do I need a cover if my Kindle is waterproof?', a: `Water rating and scratch protection are different things. Amazon's 2018, 2021 and 2024 Paperwhite models are rated IPX8 (the 2024 one by Amazon at 2 meters of fresh water for 60 minutes), and Amazon describes the 2026 Paperwhite as waterproof, though we could not find a published rating for it. A cover does not add to that. What a front flap adds is protection for the screen against keys, pens and corners in a bag. If your Kindle lives at home, you may want nothing, or just a back shell for grip.` },
+  { q: 'What is auto wake/sleep, and does every cover have it?', a: `Auto wake/sleep means the Kindle wakes when you open the cover and goes to sleep when you close it. Amazon describes its own covers as doing this, and most folio-style third-party listings advertise it too. Back shells and sleeves generally do not have it, because they have no flap to trigger it. It is a convenience, not a necessity: the Kindle sleeps by itself after a timeout. Check that "auto wake/sleep" appears in the listing for your exact model, and do not assume a cover made for another model year has the magnet in the right place.` },
+  { q: 'Is a full-wrap folio better than a back cover?', a: `It depends on the risk you are trying to avoid. A folio protects the screen when closed and keeps dust and pocket debris off it. A back cover (a shell) leaves the screen open, so it adds grip and edge protection without a flap in your way, but it does nothing for a screen in a bag. Neither is better in general. If your Kindle travels in a bag with other things, a folio makes more sense; if it mostly sits on a nightstand and you want something to hold on to, a shell might.` },
+  { q: 'Will a Kindle cover fit across different model years?', a: `Usually not. The 2021, 2024 and 2026 Paperwhites differ in thickness and, on the 2026 model, in where the power button sits; Amazon lists its 2024 fabric cover as fitting the 2024 release only; and the 2025 Scribe is a different body from the 2022 and 2024 Scribes. Match the model year named in the listing. We have separate guides for the <a href="/kindle-paperwhite-case/">Paperwhite</a> and the <a href="/kindle-scribe-case/">Scribe</a>.` },
+  { q: 'Can I charge my Kindle on a dock or wirelessly with a cover on?', a: `Sometimes, and the limit is in the dock's specification. Amazon's wireless charging dock for the 2022 and 2024 Signature Editions and the Colorsoft Signature Edition says it charges with a case up to 4 mm thick, in portrait mode, and its reviews show mixed experiences when a case is on. The 2026 Signature Editions use pogo pins on the back for Amazon's $59.99 dock and $79.99 Page-Turn Cover, so a cover that blocks those pins also blocks those accessories. See our <a href="/kindle-stand/">Kindle stand guide</a> for more on docks.` },
+  { q: 'Is plant-based leather the same as leather?', a: `No. Amazon describes its plant-based leather folio for the Scribe as made from more than 70% renewable bio-materials, with the remainder polyurethane, so it is a synthetic-leaning material. Amazon separately sells "premium leather" or pebbled leather covers described as leather (its Scribe Executive Folio is described as full-grain pebbled leather). Third-party "PU leather" is a polyurethane coating. Reviewers on some listings say premium-priced covers feel like PU, so the label alone is a poor guide. Read the material line, and the recent reviews that mention it.` },
+  { q: 'Will a cover make my Kindle much heavier?', a: `It adds weight, and how much varies by product, which is why we avoid giving a number. Amazon's weights for the bare devices are a useful baseline: about 158 g for the 2022 and 2024 Kindle, 211 g for the 2024 Paperwhite, 219 g for the Colorsoft Signature Edition, and WIRED reports 204 g for the 2026 Paperwhite. Some Amazon reviewers say an official cover makes a Paperwhite feel noticeably heavier. If weight matters, look for the cover's own weight in the listing, or choose a back cover or a slim magnetic-attach folio.` },
+];
+const ld = [
+  article({ headline: title, description, path, published: PUBLISHED_OCT5 }),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle case', path: '/kindle-case/' }, { name: 'Kindle cover', path }]),
+  faqPage(faq),
+];
+---
+<Base title={title} description={description} path={path} jsonld={ld} ogType="article">
+  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-case/">Kindle cases</a> › Kindle cover</p>
+  <h1>Kindle Covers: Cover vs Case, and How to Choose a Cover Type</h1>
+  <p class="meta">Facts checked {FACTS_AS_OF_OCT5}. Independent guide based on Amazon's announcements and listings plus press coverage. We have not hands-on tested any cover mentioned.</p>
+  <Disclosure />
+
+  <p class="lede">People search for a "Kindle cover" and a "Kindle case" as if they were two products, and sometimes they are. This page is about the first question, which is what kind of cover you want: a folio with a flap or a back shell, fabric or leather, with or without auto wake, wrapped fully around the device or magnetically attached to it. It deliberately does not walk through which cover fits which model year, because that is a different question with its own guides, linked below.</p>
+
+  <div class="box">
+    <h2>Which page do you need?</h2>
+    <ul>
+      <li><strong>"I know my Kindle model and need a case that fits it":</strong> use the model guides. <a href="/kindle-paperwhite-case/">Kindle Paperwhite cases</a> (2026, 2024, 2021 and older) and <a href="/kindle-scribe-case/">Kindle Scribe cases</a> (2022, 2024, 2025) go model year by model year. The general <a href="/kindle-case/">Kindle case buying guide</a> covers fit, materials and red flags for every Kindle.</li>
+      <li><strong>"I do not know whether I want a flap, a shell or a sleeve":</strong> read on. This page compares cover types and tells you what to look for in each.</li>
+      <li><strong>"I just want to carry my Kindle in a bag":</strong> a <a href="/kindle-sleeve/">Kindle sleeve</a> may be all you need.</li>
+      <li><strong>"I want to prop my Kindle up":</strong> see the <a href="/kindle-stand/">Kindle stand guide</a>; a folio that folds into a stand is covered here under features.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="On this page">
+    <strong>On this page</strong>
+    <ol>
+      <li><a href="#cover-vs-case">Cover vs case: what the words mean</a></li>
+      <li><a href="#layers">A four-step way to choose</a></li>
+      <li><a href="#wrap-vs-back">Step 1: Full-wrap folio vs back cover</a></li>
+      <li><a href="#materials">Step 2: Fabric, synthetic, plant-based or leather</a></li>
+      <li><a href="#features">Step 3: Auto wake/sleep and other features</a></li>
+      <li><a href="#magnetic">Magnetic-attach vs snap-in</a></li>
+      <li><a href="#amazon">Amazon's own covers</a></li>
+      <li><a href="#by-reader">Cover type by how you read</a></li>
+      <li><a href="#model">Step 4: Match the model</a></li>
+      <li><a href="#red-flags">Cover-specific red flags</a></li>
+      <li><a href="#method">How we researched this</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="cover-vs-case">Cover vs case: what the words mean</h2>
+  <p>There is no official line between the two words, so it helps to be clear about how this site uses them. Amazon's own accessory announcement for the 2026 lineup uses "Kindle Covers" for what are, in effect, folios: knit fabric, plant-based leather and pebbled premium leather versions that "wrap fully around the device." Retailers and third-party sellers mostly say "case" for the same kind of product, plus shells, bumpers and sleeves. We cannot see what any individual shopper means when typing either word, so we treat them as overlapping and split by construction instead.</p>
+  <Table
+    caption="How this site uses the words. Product names vary by seller."
+    head={['Type', 'What it is', 'Screen covered?', 'Auto wake/sleep', 'Where we cover it']}
+    rows={[
+      ['Cover (folio)', 'Front flap, back and spine; the Kindle sits inside or attaches magnetically', 'Yes, when closed', 'Usually yes', 'This page'],
+      ['Case (hard or soft shell)', 'Back and edges only, sometimes with a stand or strap', 'No', 'No', 'Short summary below; styles in the <a href="/kindle-case/#types">case styles table</a>'],
+      ['Sleeve or pouch', 'Separate bag the Kindle slides into', 'Yes, inside the sleeve', 'No', '<a href="/kindle-sleeve/">Kindle sleeve guide</a>'],
+      ['Stand or holder', 'Something that props the Kindle up; not a protective product', 'Not applicable', 'No', '<a href="/kindle-stand/">Kindle stand guide</a>'],
+    ]}
+  />
+  <p>Because the words overlap, the pages you land on from a search for either term will repeat some basics. We keep the model-year fit tables on the case pages and the construction comparison here, so the two do not say the same thing twice.</p>
+
+  <CoverLayers />
+
+  <h2 id="layers">A four-step way to choose</h2>
+  <p>Instead of starting from a list of products, narrow in layers, from the choice that matters most to the one that matters least:</p>
+  <ol>
+    <li><strong>Coverage:</strong> flap over the screen or not. This decides how the Kindle behaves in a bag.</li>
+    <li><strong>Material:</strong> fabric, synthetic leather, plant-based leather or premium leather. This decides feel, weight and how it ages.</li>
+    <li><strong>Features:</strong> auto wake/sleep, a stand mode, a strap, a pen holder (Scribe), and charging or accessory compatibility.</li>
+    <li><strong>Model fit:</strong> the exact model year in the listing title. This is the step most likely to cause a return, and it lives on the model guides.</li>
+  </ol>
+
+  <h2 id="wrap-vs-back">Step 1: Full-wrap folio vs back cover</h2>
+  <p>The biggest decision is whether anything closes over the screen. A folio protects it; a back cover protects everything else and gets out of the way.</p>
+  <Table
+    caption="General comparison of constructions. Individual products vary and these are our reasoning, not test results."
+    head={['', 'Full-wrap folio', 'Slim magnetic-attach folio', 'Back cover / shell']}
+    rows={[
+      ['Screen in a bag', 'Protected when closed', 'Protected when closed', 'Exposed'],
+      ['Reading one-handed', 'Flap folds back; can be bulky in one hand', 'Slim, but the flap still folds back', 'Nothing to fold; best for one-handed reading'],
+      ['How it holds the Kindle', 'Device sits in a frame or on a plate', 'Magnets hold the device to the cover', 'Device snaps in or is wrapped'],
+      ['Drop protection', 'Depends on the shell behind the Kindle', 'Depends on the magnets and the thin cover; reviewers on one Amazon Scribe listing are split on grip', 'Edges and back covered, screen not'],
+      ['Auto wake/sleep', 'Usually', 'Usually', 'No'],
+      ['Best for', 'Everyday bag carry', 'People who want thin and light', 'Grip and scratches at home'],
+    ]}
+  />
+  <p>One note on drops: no cover can promise protection, and we have no drop tests. The practical difference is that a snap-in or wrap-around design holds the Kindle through its own frame, while a magnetic-attach design relies on magnets alone. Amazon's own wording on its Scribe folio listing is that the device "magnetically attaches to a slim folio, rather than snapping into a plastic back like a traditional Kindle cover." That is a deliberate trade for thinness, and it is why some reviewers on that listing say the grip is not secure enough.</p>
+
+  <h2 id="materials">Step 2: Fabric, synthetic, plant-based or leather</h2>
+  <p>The second layer is how it feels in the hand. These are general trade-offs, not rankings.</p>
+  <Table
+    caption="General comparison. Material labels vary by seller; check the listing."
+    head={['Material', 'What to expect', 'Watch out for']}
+    rows={[
+      ['Fabric (knit, nylon, recycled polyester)', 'Light and soft. Amazon\'s 2024 Paperwhite fabric cover is described as recycled polyester and "water-safe," and the 2026 lineup has a knit fabric option.', 'Less rigid; corner protection depends on the frame inside.'],
+      ['Synthetic ("PU") leather', 'The most common third-party material. Wipes clean, looks like leather, usually the lowest price.', 'Quality varies widely, from well-finished to flaky or smelly in some reviews. Check recent reviews.'],
+      ['Plant-based leather', 'Amazon\'s Scribe folio is described as more than 70% renewable bio-materials with polyurethane for the rest. Amazon also sells plant-based covers for the 2026 lineup.', 'Not the same as real leather; "plant-based" says little about durability.'],
+      ['Premium (pebbled) leather', 'Amazon\'s top-priced covers, and for the Scribe the Executive Folio ($139.99 on the listing we checked), described as full-grain pebbled leather.', 'Highest price; some reviewers on those listings say it feels like PU, so the label alone is a poor guide.'],
+    ]}
+  />
+  <p>If you are on the fence, ask what you will actually notice. A cover that is a few grams lighter matters every day if you hold a Kindle in one hand in bed, whereas the difference between synthetic and plant-based leather matters mostly in how it looks after a year. We cannot tell you which one lasts longer, because we have not tested any.</p>
+
+  <h2 id="features">Step 3: Auto wake/sleep and other features</h2>
+  <ul>
+    <li><strong>Auto wake/sleep.</strong> A magnet in the flap tells the Kindle to wake when opened and sleep when closed; Amazon describes its covers as doing exactly that. It is a convenience: the Kindle also sleeps on its own after a timeout. It only works when the magnet lines up with the device, which is another reason to match the model year exactly.</li>
+    <li><strong>Stand mode.</strong> Many folios fold back to prop the Kindle at one or two angles. Amazon's 2025 Scribe folio listing, for example, mentions low and high stand angles. A cover stand is convenient for a tray table; for a desk or bed, a dedicated <a href="/kindle-stand/">stand</a> may be steadier.</li>
+    <li><strong>Hand strap.</strong> Helps in bed and on a train. It adds a little bulk.</li>
+    <li><strong>Pen holder (Scribe only).</strong> The Scribe's pen clings to the side by a magnet and has no slot, so folios add a loop, clasp or flap. Details are in the <a href="/kindle-scribe-case/#pen">Scribe case guide</a>.</li>
+    <li><strong>Charging and accessories.</strong> The 2022 and 2024 Signature Edition wireless dock charges with a case up to 4 mm thick; the 2026 Signature Editions use pogo pins at the back for a dock and for Amazon's Page-Turn Cover. A cover that blocks them blocks those accessories.</li>
+    <li><strong>Page-turn buttons.</strong> Amazon's $79.99 Page-Turn Cover adds physical buttons for the 2026 Paperwhite Signature Edition and Colorsoft Signature Edition. The $34.99 Kindle Click is a separate Bluetooth remote that Amazon says works with all new Kindles and any Kindle from 2024 or later, so it needs no special cover.</li>
+  </ul>
+
+  <h2 id="magnetic">Magnetic-attach vs snap-in</h2>
+  <p>This is the cover-specific question that most buyers do not realize they are answering. In the 2026 lineup Amazon sells two constructions. For the plastic models, its covers "wrap fully around the device," per Amazon's announcement. For the aluminum models, it sells "slim magnetic-attach covers." The Verge notes the aluminum 6-inch Kindle can magnetically attach to a folio case priced at $49.99.</p>
+  <p>The practical effect is on how the Kindle comes out of the cover. A snap-in or wrap design takes some effort to remove; a magnetic-attach design lifts off. That is convenient for taking the Kindle out and potentially a risk if the magnets are weak or the Kindle is dropped. For the Scribe, a magnetic folio also puts a second magnet near the pen's writing area, and reviewers on one 2025 folio listing report pen interference when the cover is folded back (anecdotal, not tested). If you write on your Kindle, read the <a href="/kindle-scribe-case/#magnets">Scribe magnets section</a>.</p>
+
+  <h2 id="amazon">Amazon's own covers</h2>
+  <p>As of {FACTS_AS_OF_OCT5}, here is what we could verify from Amazon and press coverage:</p>
+  <ul>
+    <li><strong>2026 lineup:</strong> Amazon's announcement (Oct 1, 2026) lists Kindle Covers starting at $39.99 in knit fabric, plant-based leather and pebbled premium leather, color-matched across the lineup, plus slim magnetic-attach covers for aluminum devices, a $79.99 Page-Turn Cover and a $59.99 charging dock for the Signature Editions.</li>
+    <li><strong>2024 Paperwhite:</strong> retailers list Amazon's fabric cover as fitting the 2024 release only.</li>
+    <li><strong>Scribe:</strong> the plant-based folio for the 2022 and 2024 Scribe listed at $79.99 and the 2025 version at $89.99; the Executive Folio at $139.99 (Amazon.com listings checked October 2, 2026; see the <a href="/kindle-scribe-case/">Scribe guide</a> for caveats).</li>
+  </ul>
+  <p>Third-party covers are cheaper and far more varied. Because the words overlap, the same listings appear whether you search "Kindle cover" or "Kindle case." We name no third-party winners; see our <a href="/kindle-case/#official">Amazon vs third-party section</a> for how we think about it. The 2026 Paperwhite ships October 28, 2026, so listings for it are still early.</p>
+  <p><a class="btn alt" href={amazonSearch('kindle cover')} rel={LINK_REL} target="_blank">Search Amazon: Kindle covers</a></p>
+
+  <h2 id="by-reader">Cover type by how you read</h2>
+  <Table
+    caption="Our reasoning, not test results."
+    head={['If you…', 'Start with', 'Why']}
+    rows={[
+      ['Toss your Kindle in a bag daily', 'Folio with auto wake/sleep', 'The flap protects the screen and the Kindle sleeps when you shut it.'],
+      ['Read one-handed in bed', 'Back cover or slim folio, maybe a strap', 'Less to fold back; less weight on the wrist.'],
+      ['Mostly read at home', 'Possibly nothing, or a back cover for grip', 'The Kindle is thin and the Paperwhite is waterproof.'],
+      ['Read near water', 'Fabric cover that dries quickly, or none', 'Amazon describes its 2024 fabric cover as water-safe; a wet leatherette cover can take longer to dry.'],
+      ['Write on a Scribe', 'A folio with a pen loop, clasp or flap', 'See the <a href="/kindle-scribe-case/">Scribe case guide</a>.'],
+      ['Care most about thinness', 'Slim magnetic-attach folio', 'Trade-off: the device relies on magnets for grip.'],
+    ]}
+  />
+
+  <h2 id="model">Step 4: Match the model</h2>
+  <p>Once you know the type, the last step is the one that decides whether it works. Here is where to go:</p>
+  <Table
+    caption="Where to check fit for each Kindle family."
+    head={['Your Kindle', 'Go to']}
+    rows={[
+      ['Paperwhite (2026, 2024, 2021, 2018 and older) and Colorsoft Signature Edition', '<a href="/kindle-paperwhite-case/">Kindle Paperwhite case guide</a>'],
+      ['Scribe and Scribe Colorsoft (2022, 2024, 2025)', '<a href="/kindle-scribe-case/">Kindle Scribe case guide</a>'],
+      ['Basic Kindle, Oasis, or not sure', '<a href="/kindle-case/#fit">Fit section of the Kindle case buying guide</a>'],
+      ['Choosing the device itself', '<a href="/kindle-paperwhite/">Kindle Paperwhite: which one to buy</a>'],
+    ]}
+  />
+
+  <h2 id="red-flags">Cover-specific red flags</h2>
+  <ul>
+    <li><strong>"Fits all Kindle Paperwhite."</strong> The generations differ in size and, on the 2026 model, button position. See the case guides.</li>
+    <li><strong>A listing that spans a 2024 and a 2026 device</strong> without reviews from 2026 owners, since the 2026 Paperwhite was still a pre-order when we checked.</li>
+    <li><strong>No mention of auto wake/sleep</strong> on a folio you expect it from.</li>
+    <li><strong>Pogo-pin area covered</strong> on a Signature Edition when you plan to use Amazon's dock or Page-Turn Cover.</li>
+    <li><strong>Reviews saying the Kindle falls out</strong> of a magnetic-attach folio. Sort by recent and search "falls," "loose," "magnet."</li>
+    <li><strong>"Official" or "Amazon certified" wording</strong> on a non-Amazon product. We do not use that language on this site either.</li>
+  </ul>
+
+  <h2 id="method">How we researched this</h2>
+  <p>This guide uses Amazon's October 1, 2026 lineup announcement, Amazon.com listings, retailer listings for Amazon's 2024 fabric cover, and coverage from The Verge, WIRED and Engadget. We have not tested any cover and do not rank third-party products. Price figures are snapshots from {FACTS_AS_OF_OCT5}. Where terms overlap or sources conflict, we say so. To report a mistake, use our <a href="/contact/">contact page</a>; our approach is described in the <a href="/about/">editorial policy</a>.</p>
+  <ul class="sources">
+    <li>Amazon, "The new Amazon Kindle lineup" (aboutamazon.com), Oct 1, 2026: covers, prices, Page-Turn Cover, dock, Kindle Click.</li>
+    <li>The Verge and WIRED, Oct 1, 2026: aluminum Kindle folio price, power button move, device weights.</li>
+    <li>Amazon.com listings for the plant-based and Executive Scribe folios and the Wireless Charging Dock (4 mm case limit), checked in October 2026.</li>
+    <li>Retailer listings of Amazon's 2024 Paperwhite fabric cover (Best Buy Canada, JB Hi-Fi): fit and material notes.</li>
+    <li>Amazon device specifications for the 2022/2024 Kindle, 2024 Paperwhite and Colorsoft Signature Edition: weights.</li>
+  </ul>
+
+  <Faq items={faq} />
+
+  <div class="box">
+    <h2>Next step</h2>
+    <p>Know your model? <a class="btn" href="/kindle-paperwhite-case/">Paperwhite case guide</a> <a class="btn alt" href="/kindle-scribe-case/">Scribe case guide</a> <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a> Only need a bag solution? <a class="btn alt" href="/kindle-sleeve/">Kindle sleeve guide</a></p>
+  </div>
+</Base>

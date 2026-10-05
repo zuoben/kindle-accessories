@@ -19,6 +19,12 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 nav.main{display:flex;gap:18px;flex-wrap:wrap;font:600 .92rem var(--sans)}
 nav.main a{color:var(--ink-2);text-decoration:none}
 nav.main a:hover,nav.main a[aria-current="page"]{color:var(--accent);text-decoration:underline}
+nav.main details.more{position:relative}
+nav.main details.more summary{cursor:pointer;color:var(--ink-2);list-style:none}
+nav.main details.more summary::-webkit-details-marker{display:none}
+nav.main details.more summary::after{content:" \25BE"}
+nav.main details.more summary:hover,nav.main details.more summary[aria-current="true"]{color:var(--accent)}
+nav.main details.more .menu{position:absolute;z-index:10;top:100%;left:0;min-width:210px;margin-top:6px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:8px 12px;display:flex;flex-direction:column;gap:8px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
 main{padding:28px 0 60px}
 h1{font-size:2.3rem;line-height:1.18;margin:.2em 0 .4em;letter-spacing:-.01em}
 h2{font-size:1.65rem;line-height:1.25;margin:2em 0 .5em;padding-top:.3em;border-top:1px solid var(--line)}

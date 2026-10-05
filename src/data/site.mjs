@@ -10,3 +10,6 @@ export const CONTACT_URL = 'https://github.com/zuoben/kindle-accessories/issues/
 export const AMAZON_TAG = '';
 export const PUBLISHED = '2026-10-02';
 export const FACTS_AS_OF = 'October 2, 2026';
+// Facts for pages added Oct 5, 2026 (cover, sleeve, stand guides) were checked on this date.
+export const FACTS_AS_OF_OCT5 = 'October 5, 2026';
+export const PUBLISHED_OCT5 = '2026-10-05';

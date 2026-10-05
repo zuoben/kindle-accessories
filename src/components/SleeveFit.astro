@@ -1,0 +1,39 @@
+---
+// Scaled (1 px = 1 mm) outlines: published device outer sizes vs. interior sizes stated in three Amazon sleeve listings.
+const sleeves = [
+  { label: 'kwmobile "6-inch" pouch', sub: 'listed inside: 170 × 120 mm', w: 120, h: 170 },
+  { label: 'MoKo nylon "6-7 inch"', sub: 'listed inside: 190 × 140 mm', w: 140, h: 190 },
+  { label: 'MoKo "6-7 inch" padded', sub: 'listed inside: 200 × 150 mm', w: 150, h: 200 },
+];
+const devs = [
+  { label: 'Paperwhite 2024', w: 127.6, h: 176.7, stroke: '#9a3b1f', dash: '' },
+  { label: 'Kindle 2022/2024', w: 108.6, h: 157.8, stroke: '#2f5d57', dash: '5 3' },
+];
+const cx = [125, 380, 635];
+---
+<figure class="fig">
+  <svg viewBox="0 0 760 290" role="img" aria-labelledby="sl-t sl-d" width="760" height="290">
+    <title id="sl-t">Kindle outer sizes against three sleeve interiors, to scale</title>
+    <desc id="sl-d">Three dashed-grey rectangles show the interior size stated in a 6-inch neoprene pouch, a nylon 6-7 inch sleeve and a padded 6-7 inch sleeve. Solid outlines show the 2024 Paperwhite and the 2022 or 2024 basic Kindle at the same scale. The Paperwhite is larger than the 6-inch pouch interior and fits inside the other two.</desc>
+    <g font-family="sans-serif" font-size="13" fill="#1d1b18" text-anchor="middle">
+      {sleeves.map((s, i) => {
+        const x = cx[i] - s.w / 2, y = 14;
+        return (
+          <g>
+            <rect x={x} y={y} width={s.w} height={s.h} rx="4" fill="#f3efe4" stroke="#6b665c" stroke-width="2" stroke-dasharray="6 4" />
+            {devs.map((d) => (
+              <rect x={cx[i] - d.w / 2} y={y + (s.h - d.h) / 2} width={d.w} height={d.h} rx="6" fill="none" stroke={d.stroke} stroke-width="2" stroke-dasharray={d.dash || undefined} />
+            ))}
+            <text x={cx[i]} y={y + s.h + 22} font-weight="700">{s.label}</text>
+            <text x={cx[i]} y={y + s.h + 40} font-size="11.5" fill="#4a453d">{s.sub}</text>
+          </g>
+        );
+      })}
+    </g>
+    <g font-family="sans-serif" font-size="12" fill="#1d1b18">
+      <line x1="20" y1="278" x2="50" y2="278" stroke="#9a3b1f" stroke-width="2" /><text x="56" y="282">Paperwhite 2024 (127.6 × 176.7 mm)</text>
+      <line x1="300" y1="278" x2="330" y2="278" stroke="#2f5d57" stroke-width="2" stroke-dasharray="5 3" /><text x="336" y="282">Kindle 2022/2024 (108.6 × 157.8 mm)</text>
+    </g>
+  </svg>
+  <figcaption>Our own drawing at 1 px = 1 mm. Device sizes are Amazon's published outer dimensions; sleeve sizes are the "internal" figures the sellers state, which one listing says were measured by hand. Padding, lining and zipper edges reduce the usable space in real life, so this shows the best case, not a fit guarantee.</figcaption>
+</figure>

@@ -21,6 +21,12 @@ const nav = [
   { href: '/faq/', label: 'FAQ' },
   { href: '/about/', label: 'About' },
 ];
+const more = [
+  { href: '/kindle-cover/', label: 'Kindle covers explained' },
+  { href: '/kindle-sleeve/', label: 'Kindle sleeves' },
+  { href: '/kindle-stand/', label: 'Kindle stands' },
+];
+const moreActive = more.some((m) => m.href === path);
 ---
 <!doctype html>
 <html lang="en-US">
@@ -55,7 +61,14 @@ const nav = [
           <span>{SITE_NAME} <small>{SITE_TAGLINE}</small></span>
         </a>
         <nav class="main" aria-label="Main">
-          {nav.map((n) => <a href={n.href} aria-current={path === n.href ? 'page' : undefined}>{n.label}</a>)}
+          {nav.slice(0, 4).map((n) => <a href={n.href} aria-current={path === n.href ? 'page' : undefined}>{n.label}</a>)}
+          <details class="more">
+            <summary aria-current={moreActive ? 'true' : undefined}>More guides</summary>
+            <div class="menu">
+              {more.map((m) => <a href={m.href} aria-current={path === m.href ? 'page' : undefined}>{m.label}</a>)}
+            </div>
+          </details>
+          {nav.slice(4).map((n) => <a href={n.href} aria-current={path === n.href ? 'page' : undefined}>{n.label}</a>)}
         </nav>
       </div>
     </header>
@@ -70,6 +83,9 @@ const nav = [
               <li><a href="/kindle-paperwhite-case/">Kindle Paperwhite case guide</a></li>
               <li><a href="/kindle-scribe-case/">Kindle Scribe case guide</a></li>
               <li><a href="/kindle-case/">Kindle case buying guide</a></li>
+              <li><a href="/kindle-cover/">Kindle covers explained</a></li>
+              <li><a href="/kindle-sleeve/">Kindle sleeve guide</a></li>
+              <li><a href="/kindle-stand/">Kindle stand guide</a></li>
               <li><a href="/faq/">FAQ</a></li>
             </ul>
           </div>
