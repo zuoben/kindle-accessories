@@ -1,0 +1,178 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import Table from '../components/Table.astro';
+import Disclosure from '../components/Disclosure.astro';
+import PageTurnTypes from '../components/PageTurnTypes.astro';
+import { breadcrumbs, faqPage, article } from '../data/schema';
+import { amazonSearch, amazonDp, LINK_REL } from '../data/links';
+import { FACTS_AS_OF_OCT5, PUBLISHED_OCT5 } from '../data/site.mjs';
+
+const path = '/kindle-page-turner/';
+const title = 'Kindle Page Turner Guide: Remotes, Clip-Ons and What Works';
+const description = 'Does your Kindle support a Bluetooth page turner? Model-by-model answers, Amazon\'s Kindle Click and Page-Turn Cover, clip-on tappers, double tap and Kindle app options.';
+
+const faq = [
+  { q: `Do Kindles support Bluetooth page turners?`, a: `Until the Kindle Click, not officially. Amazon's help page for pairing Bluetooth devices with a Kindle e-reader is about audio devices, and it says "pairing a Bluetooth phone, keyboard, or mouse isn't supported at this time." On October 1, 2026 Amazon announced the Kindle Click, a Bluetooth page-turn remote that it says works with "all Kindle devices (2024 Release and Onward)." So the honest answer is: Amazon's own remote on a 2024-or-newer Kindle, yes; anything else, not documented by Amazon.` },
+  { q: `Which Kindles work with the Kindle Click?`, a: `Amazon's listing says it is "compatible with all Kindle devices (2024 Release and Onward)" and carries a notice that it "is not compatible with any Kindle device launched before 2024, including Amazon Kindle (2022 release) and Amazon Kindle Paperwhite (11th Generation)." The announcement words it as all new Kindle devices plus any Kindle model from 2024 or later. The listing we saw did not list every compatible model by name, so if your Kindle is from 2024 (for example a 2024 Paperwhite, the 2024 Colorsoft or a 2024 Scribe), check the listing's compatibility notes before ordering. It was a pre-order shipping October 28, 2026 when we checked.` },
+  { q: `Will a cheap Bluetooth remote work with my Kindle?`, a: `On a pre-2024 Kindle, Amazon says keyboards and mice are not supported, and many generic Bluetooth remotes present themselves as one of those, so we would not expect it to pair for page turning. On a 2024-or-newer Kindle, Amazon only documents its own Kindle Click, and we found no reliable source either way on third-party remotes. Until owners report results, treat any "works with Kindle" claim on a generic Bluetooth remote as unverified, and buy only where returns are easy.` },
+  { q: `How do clip-on Kindle page turners work?`, a: `They do not talk to the Kindle at all. A small receiver clips onto the edge of the screen, and a handheld or ring-style remote sends it a radio signal; the receiver then presses a soft pad against the glass so the touch screen registers a tap, as How-To Geek and manufacturers' manuals describe. Some kits have one receiver and turn forward only; others use two receivers, one for each direction. Because they simulate a finger, they can work on many touch-screen Kindles regardless of Bluetooth support, but they cover part of the screen edge.` },
+  { q: `Can I turn pages backward with a remote?`, a: `With Amazon's Kindle Click, yes: Amazon says it turns pages forward and back and lets you choose which button does which in Kindle settings. Clip-on tappers turn back only if the kit includes a second receiver for the left side. The built-in Double Tap feature on Signature Editions only advances the page, according to Amazon's user guides.` },
+  { q: `Does the Page-Turn Cover work with a 2024 Paperwhite?`, a: `Not according to Amazon. Its October 1, 2026 announcement lists the $79.99 Page-Turn Cover for the Paperwhite Signature Edition and Colorsoft Signature Edition and says it uses pogo pin connectivity; press coverage specifies the 2026 Signature Editions, which are the models Amazon describes with pogo pins. For a 2024 Paperwhite, Amazon's Kindle Click is the official option.` },
+  { q: `Can I use a page turner with the Kindle app instead?`, a: `Partly. On a Fire tablet, Amazon documents a "Turn Pages with Volume Controls" setting in the Kindle app (volume up for next page, volume down for previous), which needs continuous scrolling turned off. How-To Geek reports that the Kindle app on Android tablets and iPads works with Bluetooth remotes, but Amazon does not document that and we have not tested it, so check the remote maker's compatibility list for your device and app.` },
+  { q: `Is there a Kindle with physical page-turn buttons?`, a: `Not in the current lineup as a built-in feature. The Kindle Oasis had them, and when WIRED asked about bringing it back, Amazon's design chief said most people wanted slabs. Amazon's answer for 2026 is accessories: the Page-Turn Cover, which adds buttons to the 2026 Signature Editions, and the Kindle Click remote. Amazon told WIRED about 5 percent of Kindle users are the "vocal minority" who still want buttons.` },
+];
+const ld = [
+  article({ headline: title, description, path, published: PUBLISHED_OCT5 }),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle stand', path: '/kindle-stand/' }, { name: 'Kindle page turner', path }]),
+  faqPage(faq),
+];
+---
+<Base title={title} description={description} path={path} jsonld={ld} ogType="article">
+  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-stand/">Hands-free reading</a> › Kindle page turner</p>
+  <h1>Kindle Page Turners: What Works With Your Kindle</h1>
+  <p class="meta">Facts checked {FACTS_AS_OF_OCT5}. Independent guide based on Amazon's help pages, user guides, listings and announcements plus press coverage. We have not tested any page turner mentioned.</p>
+  <Disclosure />
+
+  <p class="lede">Turning a page without touching the screen sounds like it should be easy, and on a tablet it is. On a Kindle it has been surprisingly hard: for years Amazon did not support Bluetooth page-turn remotes at all, which is why the market filled with clip-on gadgets that tap the screen for you. That changed on October 1, 2026, when Amazon announced its own remote and a cover with buttons, but only for some Kindles. This guide sorts out which approach works with which model, and where the answer is still unknown.</p>
+
+  <div class="box">
+    <h2 id="short">Short answer</h2>
+    <ul>
+      <li><strong>Kindle from 2024 or later:</strong> Amazon's <strong>Kindle Click</strong> Bluetooth remote ($34.99, pre-order, ships October 28, 2026). Amazon says it works with "all Kindle devices (2024 Release and Onward)."</li>
+      <li><strong>Kindle from before 2024</strong> (including the 2022 Kindle and the 2021 Paperwhite): Amazon says the Click is not compatible and that Bluetooth keyboards and mice cannot be paired. A <strong>clip-on tapper</strong> that physically taps the screen is the workaround.</li>
+      <li><strong>2026 Paperwhite or Colorsoft Signature Edition:</strong> the <strong>Page-Turn Cover</strong> ($79.99) adds physical buttons through pogo pins, and <strong>Double Tap</strong> lets you tap the side or back twice to go forward.</li>
+      <li><strong>Reading in the Kindle app:</strong> on a Fire tablet, Amazon documents volume-button page turns.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="On this page">
+    <strong>On this page</strong>
+    <ol>
+      <li><a href="#support">What each Kindle supports</a></li>
+      <li><a href="#bluetooth">Why Bluetooth remotes did not work</a></li>
+      <li><a href="#click">Amazon's Kindle Click</a></li>
+      <li><a href="#cover">The Page-Turn Cover</a></li>
+      <li><a href="#double-tap">Double Tap on Signature Editions</a></li>
+      <li><a href="#types">Third-party page turner types</a></li>
+      <li><a href="#apps">Kindle app on phones and tablets</a></li>
+      <li><a href="#choose">Which option fits how you read</a></li>
+      <li><a href="#cautions">Things to check before you buy</a></li>
+      <li><a href="#method">How we researched this</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <PageTurnTypes />
+
+  <h2 id="support">What each Kindle supports</h2>
+  <p>The table groups Kindles by release year, because that is how Amazon words the compatibility of its new remote. "Not documented" means we found no Amazon statement either way; it does not mean it fails.</p>
+  <Table
+    caption="Page-turn options by Kindle generation, as documented by Amazon as of October 2026."
+    head={['Kindle', 'Kindle Click (Amazon remote)', 'Other Bluetooth remotes', 'Built-in or official alternatives']}
+    rows={[
+      [`Released before 2024 (for example the 2022 Kindle, 2021 Paperwhite, 2022 Scribe)`, `No. Amazon's listing names the 2022 Kindle and the 11th-gen Paperwhite as not compatible`, `Not supported: Amazon says keyboards and mice cannot be paired; Bluetooth is for audio`, `Tap or swipe; clip-on tappers. The 2021 Paperwhite Signature Edition has no Double Tap in its guide`],
+      [`Kindle Oasis (any)`, `No (released before 2024)`, `Not supported`, `Physical page-turn buttons on the device`],
+      [`Released in 2024 or 2025 (2024 Paperwhite, 2024 Kindle, 2024 Colorsoft Signature, 2024 Scribe, 2025 Colorsoft 16 GB, 2025 Scribe and Scribe Colorsoft)`, `Yes, by Amazon's "2024 release and onward" wording; the listing does not name each model`, `Not documented`, `Double Tap on the 2024 Paperwhite Signature Edition and 2024 Colorsoft Signature Edition, per their user guides`],
+      [`2026 Kindle, Paperwhite and Colorsoft`, `Yes ("all new Kindle devices")`, `Not documented`, `Signature Editions: Double Tap and the Page-Turn Cover`],
+    ]}
+  />
+  <p>Amazon's wording is about release year, so the quickest way to check yours is the device list in your Amazon account (Manage Your Content and Devices), which shows each Kindle's name and generation, or the Device Info screen in the Kindle's settings, which the user guides say displays the device's name and generation. If you are still choosing a device, our <a href="/kindle-paperwhite/">Paperwhite buying guide</a> compares the 2026, 2024 and 2021 models.</p>
+
+  <h2 id="bluetooth">Why Bluetooth remotes did not work</h2>
+  <p>Kindles from 2016 onward have Bluetooth, but Amazon uses it for listening: Audible audiobooks and the VoiceView screen reader. Amazon's help page, "Pair a Bluetooth Audio Device with Your Kindle E-Reader," walks through pairing headphones and speakers and then says plainly: "Only devices released during or after 2016 support Bluetooth connectivity. Pairing a Bluetooth phone, keyboard, or mouse isn't supported at this time." Many Bluetooth page turners sold for tablets act like a small keyboard, which is why they could not be used on a Kindle.</p>
+  <p>That is the whole reason the clip-on market exists. As How-To Geek put it in November 2025, before Amazon's announcement, Kindles had "no native way" to accept a turn-the-page signal from a peripheral, so accessory makers built gadgets that simulate a finger instead. We also saw one Amazon forum answer from 2020 listing a "Human Interface Device" profile among those a Paperwhite supports, which conflicts with Amazon's help page; we follow the help page, because it is Amazon's current documentation.</p>
+  <p>The Kindle Click changes the picture for 2024-and-newer Kindles, but Amazon describes it as "built by the Kindle team for Kindle" and does not say that Kindles now accept any Bluetooth remote. Whether third-party remotes work on 2024-and-newer Kindles is something we could not verify, and we will not guess.</p>
+
+  <h2 id="click">Amazon's Kindle Click</h2>
+  <p>Amazon's listing and launch coverage describe the Kindle Click as follows. We have not handled one, and at our check it had no customer reviews because it had not shipped.</p>
+  <ul>
+    <li><strong>Price and timing:</strong> $34.99, pre-order, released October 28, 2026.</li>
+    <li><strong>Compatibility:</strong> "all Kindle devices (2024 Release and Onward)"; not compatible with any Kindle launched before 2024, including the 2022 Kindle and the 11th-generation Paperwhite.</li>
+    <li><strong>Buttons:</strong> two large forward and back buttons, and you choose which is which in Kindle settings. Side buttons adjust brightness; pressing both puts the Kindle to sleep.</li>
+    <li><strong>Battery:</strong> rechargeable over USB-C, lasting "weeks" per Amazon; the USB-C cable and adapter are sold separately. Our <a href="/kindle-charger/">Kindle charger guide</a> covers cables and adapters.</li>
+    <li><strong>In the box:</strong> a woven wrist lanyard.</li>
+    <li><strong>Use cases Amazon names:</strong> reading under the covers, on a treadmill, or on a tray table during a flight.</li>
+  </ul>
+  <p>The Click is most useful when the Kindle is somewhere your hand is not: on a <a href="/kindle-stand/">stand or gooseneck holder</a>, propped on a tray, or on a treadmill shelf. If you mainly hold your Kindle, Double Tap or a cover with buttons may suit you better.</p>
+  <p><a class="btn alt" href={amazonDp('B0GZ5D64F8')} rel={LINK_REL} target="_blank">See the Kindle Click on Amazon</a></p>
+
+  <h2 id="cover">The Page-Turn Cover</h2>
+  <p>Amazon's announcement describes the $79.99 Page-Turn Cover as "a magnetic cover with physical page-turn buttons that preserves the slim form factor, using pogo pin connectivity," available for the Paperwhite Signature Edition and Colorsoft Signature Edition. The Verge compares it to the Kindle Oasis, and Notebookcheck reports that it attaches magnetically and needs no pairing or charging. Press coverage ties it to the 2026 Signature Editions, which have pogo pins on the back for this cover and for Amazon's $59.99 dock.</p>
+  <p>Two practical consequences follow. First, it is a cover and a page turner in one, so it replaces your case rather than adding to it; our <a href="/kindle-cover/">Kindle covers guide</a> explains the cover side of that choice. Second, any other case you use must leave the pogo pins uncovered if you also want the dock. Our <a href="/kindle-paperwhite-case/#signature">Paperwhite case guide</a> and <a href="/kindle-colorsoft-case/">Colorsoft case guide</a> cover that in detail.</p>
+
+  <h2 id="double-tap">Double Tap on Signature Editions</h2>
+  <p>The least-known page-turn option is already on some Kindles. Amazon's user guides for the 2024 Paperwhite (12th generation) and the 2024 Colorsoft describe it for their Signature Editions: "using accelerometer-based tap detection," turned on in All Settings, then Device Options. With it on, "tapping twice in quick succession anywhere on the side or back of the device (outside of the screen area), will advance the page." It also moves to the next section on the Home and Library screens and works in the browser, but not in the Store or in Goodreads.</p>
+  <p>Three limits matter. It only goes forward. It is on Signature Editions only, per the guides and WIRED's coverage of the 2026 models. And Amazon adds that the feature "has been tested with the official Amazon Kindle Colorsoft case, but may not work with all third party cases." If you rely on Double Tap, keep that in mind when choosing a case.</p>
+
+  <h2 id="types">Third-party page turner types</h2>
+  <p>Search Amazon for "Kindle page turner" and most results are clip-on tappers, plus Bluetooth remotes sold for phones and tablets. Here is how the types differ. This is a description of how they work, not a test.</p>
+  <Table
+    caption="General comparison of page turner types. Individual products vary."
+    head={['Type', 'How it works', 'Needs Kindle Bluetooth support?', 'Watch out for']}
+    rows={[
+      [`Clip-on tapper with handheld remote`, `A receiver clipped to the screen edge presses a soft pad on the glass when the remote sends a radio signal`, `No`, `Covers part of the screen edge; some kits are forward-only; one more battery to charge`],
+      [`Clip-on tapper with ring remote`, `Same receiver, triggered by a ring worn on a finger`, `No`, `Same as above; the ring is the remote, not a Bluetooth device the Kindle sees`],
+      [`Two-receiver kits`, `One receiver on each side for forward and back`, `No`, `Twice the clutter on the screen edge`],
+      [`Bluetooth remote sold for tablets`, `Pairs as a keyboard-like device and sends key presses`, `Yes`, `Amazon says pre-2024 Kindles cannot pair keyboards; not documented for newer Kindles`],
+      [`Bluetooth foot pedal`, `Same as a Bluetooth remote, operated by foot; popular with musicians on tablets`, `Yes`, `We found no Amazon documentation for Kindle e-readers`],
+      [`Amazon Kindle Click`, `Bluetooth remote made by Amazon for Kindle`, `Supported on 2024-and-newer Kindles`, `Not for pre-2024 Kindles`],
+    ]}
+  />
+  <p>How-To Geek describes the clip-on approach well: since the Kindle cannot accept a remote signal, these devices simulate your touch on the screen, with some only able to advance and others using two clicker modules so you can go back. Because they work by touch, they are not tied to a particular Kindle's Bluetooth, which is why they suit older models. The cost is a gadget hanging off the screen edge. Before buying, think about where the receiver will sit on your Kindle: it should press on a part of the screen that turns the page, and it should not cover text you need. If you use a folio case, check that the clip can grip over the case's frame.</p>
+  <p>There is one more route we mention only for completeness. How-To Geek notes that remote page turning can be made to work on a jailbroken Kindle, and there are community projects for it. Amazon does not support that, and we do not cover or recommend jailbreaking just for page turning.</p>
+  <p><a class="btn alt" href={amazonSearch('kindle page turner remote')} rel={LINK_REL} target="_blank">Search Amazon: Kindle page turners</a></p>
+
+  <h2 id="apps">Kindle app on phones and tablets</h2>
+  <p>If you read Kindle books in the Kindle app rather than on a Kindle, the rules are different, because the app runs on a tablet or phone that does support Bluetooth input.</p>
+  <ul>
+    <li><strong>Fire tablets:</strong> Amazon documents a "Turn Pages with Volume Controls" setting in the Kindle app: open a book, tap the top, choose Aa, then More, and switch it on. Volume up goes forward and volume down goes back, and continuous scrolling must be off.</li>
+    <li><strong>Android and iPad:</strong> How-To Geek reports that the Kindle app on Android tablets and iPads works with Bluetooth remotes. Amazon does not document this and we have not tested it, so check the remote maker's list for your device.</li>
+    <li><strong>iPhone and Android phones:</strong> we did not find an Amazon page describing remote or volume-button page turning in the phone apps, so we cannot confirm it.</li>
+  </ul>
+  <p>For readers who find tapping a screen awkward or tiring, a tablet with the Kindle app and a remote may be the more flexible setup, at the cost of an LCD or OLED screen instead of e-ink.</p>
+
+  <h2 id="choose">Which option fits how you read</h2>
+  <Table
+    caption="Our reasoning, not test results."
+    head={['If you…', 'Start with', 'Why']}
+    rows={[
+      [`Have a 2024-or-newer Kindle and read hands-free on a stand`, `Kindle Click`, `Amazon-supported, forward and back, no clip on the screen`],
+      [`Have a 2021 Paperwhite, 2022 Kindle or older`, `Clip-on tapper, or simply a stand you can reach`, `Amazon says the Click and Bluetooth keyboards are not supported on these`],
+      [`Own a 2026 Signature Edition and miss buttons`, `Page-Turn Cover`, `Physical buttons, no pairing, per Amazon and Notebookcheck`],
+      [`Own a 2024 or 2026 Signature Edition and read one-handed`, `Double Tap`, `Already built in; forward only; may not work with every third-party case`],
+      [`Read in the Kindle app on a Fire tablet`, `Volume buttons`, `Documented by Amazon, no accessory needed`],
+      [`Want to turn pages from under a blanket or on a treadmill`, `Kindle Click (2024+) or a clip-on (older)`, `The Kindle stays put and the remote is in your hand`],
+    ]}
+  />
+  <p>One free option is easy to forget: Amazon's EasyReach tap zones. The user guides say tapping almost anywhere in the display area goes to the next page and tapping the left side goes back, and the zones are large enough for either hand. If your issue is reach rather than distance, a smaller tap may be all you need.</p>
+
+  <h2 id="cautions">Things to check before you buy</h2>
+  <ul>
+    <li><strong>Your Kindle's release year,</strong> before anything else. It decides whether the Click is an option.</li>
+    <li><strong>"Compatible with Kindle Paperwhite" on a Bluetooth remote.</strong> Ask which Paperwhite; for 2021 and older, Amazon says keyboards cannot be paired.</li>
+    <li><strong>Forward and back.</strong> Many clip-on kits and Double Tap only advance.</li>
+    <li><strong>Where the clip sits</strong> and whether it covers text or fits over your case.</li>
+    <li><strong>Charging.</strong> The Click charges over USB-C with no cable in the box; many clip-ons have their own batteries too.</li>
+    <li><strong>Return window.</strong> With so little verified compatibility information for third-party remotes, an easy return matters.</li>
+    <li><strong>"Official" or "Amazon certified" wording</strong> on a non-Amazon product. We cannot verify it, and we do not use it on this site.</li>
+  </ul>
+
+  <h2 id="method">How we researched this</h2>
+  <p>This guide uses Amazon's help pages on pairing Bluetooth devices with a Kindle and on Kindle app settings for Fire tablets; Amazon's user guides for the 2024 Paperwhite and 2024 Colorsoft (Double Tap, EasyReach); the Amazon.com listing for the Kindle Click; Amazon's October 1, 2026 lineup announcement; and coverage from The Verge, WIRED, Notebookcheck, TechCrunch and How-To Geek. We have not tested any page turner, remote or cover. Prices are snapshots from {FACTS_AS_OF_OCT5}. Where a claim is reported but not documented by Amazon, we say so. To report a mistake, use our <a href="/contact/">contact page</a>; our approach is described in the <a href="/about/">editorial policy</a>.</p>
+  <ul class="sources">
+    <li>Amazon Customer Service, "Pair a Bluetooth Audio Device with Your Kindle E-Reader": audio-only pairing, keyboards and mice not supported.</li>
+    <li>Amazon Customer Service, "Other Reading Accessibility Settings on Fire Tablet": Turn Pages with Volume Controls.</li>
+    <li>Amazon.com listing, "Amazon Kindle Click": compatibility notice, buttons, USB-C charging, lanyard, release date.</li>
+    <li>Amazon, "The new Amazon Kindle lineup" (aboutamazon.com), Oct 1, 2026: Kindle Click, Page-Turn Cover, Charging Dock.</li>
+    <li>Amazon Kindle Paperwhite (12th generation) and Kindle Colorsoft user guides: Double Tap, EasyReach.</li>
+    <li>The Verge, WIRED, Notebookcheck and TechCrunch, Oct 1, 2026; How-To Geek, "The weird world of Kindle page-turner remotes," Nov 29, 2025.</li>
+  </ul>
+
+  <Faq items={faq} />
+
+  <div class="box">
+    <h2>Next step</h2>
+    <p>Setting up hands-free reading? <a class="btn" href="/kindle-stand/">Kindle stand guide</a> Want buttons in a cover? <a class="btn alt" href="/kindle-cover/">Kindle covers explained</a> Charging the remote and the Kindle? <a class="btn alt" href="/kindle-charger/">Kindle charger guide</a> Choosing the device? <a class="btn alt" href="/kindle-paperwhite/">Paperwhite buying guide</a></p>
+  </div>
+</Base>

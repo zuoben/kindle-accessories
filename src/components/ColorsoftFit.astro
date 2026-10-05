@@ -1,0 +1,31 @@
+---
+// Silhouettes from published outer dimensions (1 px = 1 mm). Bezels and buttons are schematic.
+const devices = [
+  { label: 'Colorsoft Signature (2024)', sub: '7-inch · 127.6 × 176.7 × 7.8 mm', w: 127.6, h: 176.7, fill: '#7a6f62', dashed: false },
+  { label: '2026 Colorsoft', sub: '7-inch · 6.8 mm · width and height unconfirmed', w: 127.6, h: 176.7, fill: 'none', dashed: true },
+  { label: 'Scribe Colorsoft (2025)', sub: '11-inch · 189 × 245 × 5.4 mm', w: 189, h: 245, fill: '#9c9078', dashed: false },
+];
+const xs = [40, 270, 500];
+---
+<figure class="fig">
+  <svg viewBox="0 0 760 330" role="img" aria-labelledby="cf-t cf-d" width="760" height="330">
+    <title id="cf-t">Colorsoft body sizes drawn to scale</title>
+    <desc id="cf-d">Three outlines. The 2024 Colorsoft Signature Edition is 127.6 by 176.7 millimeters. A dashed outline shows the 2026 Colorsoft, whose width and height we could not confirm, drawn at the 2024 size only as a placeholder. The 2025 Scribe Colorsoft is 189 by 245 millimeters.</desc>
+    <g font-family="sans-serif" font-size="13" fill="#1d1b18" text-anchor="middle">
+      {devices.map((d, i) => {
+        const W = d.w, H = d.h;
+        const x = xs[i] + (200 - W) / 2, y = 18;
+        return (
+          <g>
+            <rect x={x} y={y} width={W} height={H} rx="9" fill={d.fill} stroke="#1d1b18" stroke-width="2" stroke-dasharray={d.dashed ? '7 5' : undefined} />
+            {!d.dashed && <rect x={x + 11} y={y + 11} width={W - 22} height={H - 22} rx="3" fill="#faf6ee" stroke="#1d1b18" />}
+            {d.dashed && <text x={x + W / 2} y={y + H / 2} fill="#4a453d" font-size="12">placeholder</text>}
+            <text x={x + W / 2} y={y + H + 30} font-weight="700">{d.label}</text>
+            <text x={x + W / 2} y={y + H + 48} font-size="11.5" fill="#4a453d">{d.sub}</text>
+          </g>
+        );
+      })}
+    </g>
+  </svg>
+  <figcaption>Our own drawing. Outer sizes are to scale from Amazon's listings for the 2024 Colorsoft Signature Edition (127.6 × 176.7 × 7.8 mm, the same figures Amazon gives for the 2024 Paperwhite) and the 2025 Scribe Colorsoft (189 × 245 × 5.4 mm). WIRED gives 6.8 mm and 204 g for the 2026 Colorsoft, but we found no published width and height, so its dashed outline is only a placeholder at the 2024 size. Bezels and buttons are schematic.</figcaption>
+</figure>

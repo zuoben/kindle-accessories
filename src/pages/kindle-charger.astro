@@ -1,0 +1,211 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import Table from '../components/Table.astro';
+import Disclosure from '../components/Disclosure.astro';
+import ChargePorts from '../components/ChargePorts.astro';
+import { breadcrumbs, faqPage, article } from '../data/schema';
+import { amazonSearch, LINK_REL } from '../data/links';
+import { FACTS_AS_OF_OCT5, PUBLISHED_OCT5 } from '../data/site.mjs';
+
+const path = '/kindle-charger/';
+const title = 'Kindle Charger Guide: Which Cable and Adapter Fits Your Kindle';
+const description = 'Which Kindle charger do you need? USB-C vs micro-USB by model year, what Amazon says about 5W, 9W and 20W adapters, wireless docks, and fixes for a Kindle that will not charge.';
+
+const faq = [
+  { q: `What charger does my Kindle use?`, a: `It depends on the model year. In Amazon's own user guides, the 2021 Paperwhite, 2022 Kindle, 2024 Paperwhite, 2024 Colorsoft Signature Edition and the Scribe all use a USB-C port, while the 2018 Paperwhite, 2019 Kindle, Oasis and Voyage use micro-USB. For the 2026 lineup, press coverage says the Signature Editions have a USB-C port; we did not find an explicit port statement for the other 2026 models. See the <a href="#ports">port table</a>, and check the port on your own device if you are unsure: micro-USB is tapered, USB-C is a rounded oval that goes in either way up.` },
+  { q: `Does a Kindle come with a charger?`, a: `Usually it comes with a cable but not a wall adapter. Amazon's 2024 Paperwhite listing says the box holds the Kindle, a USB-C charging cable and a quick start guide, and its user guides say the Amazon 5W or 9W charger is "sold separately." Amazon's Scribe listings also list a USB-C cable but no adapter. Any USB wall adapter or computer port that meets safety standards can be used, with different charge times, as explained in <a href="#adapters">the adapter section</a>.` },
+  { q: `Can I use my phone charger on a Kindle?`, a: `Amazon's user guides say third-party adapters work: they give "less than three hours" for the USB-C Paperwhite, Scribe and Colorsoft, and "less than four hours" for the 2022 Kindle and the micro-USB models, against "less than two hours" with Amazon's own adapter in the older guides, "but may take longer depending on the capability of the hardware." Amazon also tells owners to use a charger or USB port that complies with safety standards such as IEC 62368. We have not tested any phone charger with a Kindle. Use a reputable, certified adapter and a cable that matches the port.` },
+  { q: `Is a higher-wattage charger faster or safer for a Kindle?`, a: `Amazon's own figures stop at modest wattages. Its guides name 5W adapters for most models, 9W for the Colorsoft Signature Edition, and its 2025 Scribe listings name a 20W adapter. For the Scribe Colorsoft, Amazon's compliance page says the charger should deliver between 2.5 and 15 W "to achieve the maximum charging speed," which suggests that more power than that is not expected to speed things up. We found no Amazon statement on USB Power Delivery for Kindles, so we cannot say a bigger adapter charges faster. A fast phone or laptop brick is not something Amazon documents, so choose a reputable one and expect Kindle-level speeds.` },
+  { q: `Can I charge a Kindle from my computer?`, a: `Yes, Amazon's guides say you can use the supplied cable to charge from a computer, but it is slower. Amazon's listing for the 2024 Scribe says a full charge takes about 7 hours from a computer against about 2.5 hours with a 9W USB-C adapter. Two cautions from Amazon's guides: a low-powered USB port, such as those on some keyboards and older computers, "will not receive enough power to charge," and a Kindle in USB drive mode cannot be used for reading until you eject it from your computer, after which it keeps charging.` },
+  { q: `Why is my Kindle not charging?`, a: `Start with Amazon's own checks: push the cable fully into the Kindle and the adapter or computer, try a different USB port or wall outlet, and look for the lightning bolt in the battery icon and the indicator light turning amber while charging and green when full. If it is connected to a computer, eject it so it leaves USB drive mode. If the Kindle seems frozen, Amazon's guides say to hold the power button until the power dialog appears (the 2024 Paperwhite guide says about 9 seconds) and tap Restart, and if no dialog appears to hold it for 30 seconds or until the LED stops blinking (15 seconds in the Scribe guide). See <a href="#troubleshooting">the troubleshooting section</a> for the full list.` },
+  { q: `What charger does the 2026 Kindle, Paperwhite or Colorsoft use?`, a: `Amazon's October 1, 2026 announcement says the Signature Edition Paperwhite and Colorsoft add "pogo pin dock charging," and The Verge says those editions also have a USB-C port and, unlike the 2024 Signature Edition, do not support Qi wireless charging. We did not find Amazon's adapter wattage or charge times for the 2026 models; as of ${FACTS_AS_OF_OCT5} the Paperwhite and Colorsoft were pre-order, shipping October 28, 2026. Re-check the listing for your model when it ships.` },
+  { q: `Can I charge a waterproof Kindle if it just got wet?`, a: `Not until it is dry. Amazon's safety information says not to charge the device near water or in extremely humid conditions, and that if it gets wet you should carefully unplug all cables without getting your hands wet and let it dry completely before plugging the cables in again, without using a heat source such as a hair dryer or microwave. A waterproof rating describes immersion, not a damp charging port.` },
+  { q: `Does any Qi wireless charger work with a Kindle?`, a: `Only the Signature Editions that support it, and not every Qi pad fits. Amazon's user guides say the 2021 and 2024 Paperwhite Signature Editions and the 2024 Colorsoft Signature Edition support wireless charging with a Qi-certified charger, and the Colorsoft guide lists ten Qi-certified chargers that are not compatible because of "mechanical incompatibility." Amazon's safety page also says to keep metallic or magnetic objects, including metallic cases, off a wireless charger. The standard models do not support it, and neither does the 2026 Signature Edition. See <a href="/kindle-stand/#dock">our dock section</a>.` },
+];
+const ld = [
+  article({ headline: title, description, path, published: PUBLISHED_OCT5 }),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle case', path: '/kindle-case/' }, { name: 'Kindle charger', path }]),
+  faqPage(faq),
+];
+---
+<Base title={title} description={description} path={path} jsonld={ld} ogType="article">
+  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-case/">Kindle accessories</a> › Kindle charger</p>
+  <h1>Kindle Charger: Which Cable and Adapter Your Kindle Needs</h1>
+  <p class="meta">Facts checked {FACTS_AS_OF_OCT5}. Independent guide based on Amazon's user guides, listings and announcements plus press coverage. We have not tested any charger or cable mentioned.</p>
+  <Disclosure />
+
+  <p class="lede">A Kindle is one of the few gadgets where the wall adapter is not in the box, and where two different ports are still in use depending on the year you bought it. This guide sorts out the port on each Kindle, what Amazon actually says about adapters and charging time, how wireless and dock charging differ, and what to try when a Kindle will not charge. It sticks to what Amazon documents, and it says so when a detail is not published.</p>
+
+  <div class="box">
+    <h2 id="short">Short answer</h2>
+    <ul>
+      <li><strong>Port:</strong> USB-C on the 2021 Paperwhite and everything newer that we checked (2022 Kindle, 2024 Paperwhite, 2024 Colorsoft, Scribe). Micro-USB on the 2018 Paperwhite, 2019 Kindle, Oasis and Voyage.</li>
+      <li><strong>Adapter:</strong> sold separately. Amazon's guides name its 5W adapter for most models, a 9W one for the Colorsoft, and its 2025 Scribe listings name a 20W USB-C adapter. Third-party adapters work, usually more slowly, if they meet safety standards.</li>
+      <li><strong>Wireless:</strong> only the 2021 and 2024 Signature Editions (and the 2024 Colorsoft Signature Edition) support Qi. The 2026 Signature Editions use a pogo-pin dock instead. See the <a href="/kindle-stand/#dock">dock section of our stand guide</a>.</li>
+      <li><strong>Case on:</strong> check the port cutout, and for wireless charging the case thickness. Our <a href="/kindle-case/">case buying guide</a> covers that.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="On this page">
+    <strong>On this page</strong>
+    <ol>
+      <li><a href="#ports">Charging port by Kindle model</a></li>
+      <li><a href="#cables">Choosing the right cable</a></li>
+      <li><a href="#adapters">Adapters: what Amazon says about 5W, 9W and 20W</a></li>
+      <li><a href="#speed">Charging speed and time</a></li>
+      <li><a href="#third-party">Third-party chargers and cables</a></li>
+      <li><a href="#wireless">Wireless and dock charging</a></li>
+      <li><a href="#case">Charging with a case on</a></li>
+      <li><a href="#troubleshooting">When a Kindle will not charge</a></li>
+      <li><a href="#safety">Safe charging habits from Amazon's guides</a></li>
+      <li><a href="#red-flags">Charger red flags</a></li>
+      <li><a href="#method">How we researched this</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <ChargePorts />
+
+  <h2 id="ports">Charging port by Kindle model</h2>
+  <p>The first question is the port, because it decides the cable. Amazon's user guides use the labels "USB-C/power port" and "Micro-USB/power port," so the table below follows those guides where we could find them. Where we relied on something else, the last column says so.</p>
+  <Table
+    caption="Charging connection by model. Port and adapter statements are from Amazon's user guides and listings unless noted."
+    head={['Model', 'Port', 'Adapter and charge time Amazon states', 'Wireless / dock', 'Source']}
+    rows={[
+      [`Kindle (11th gen, 2022)`, `USB-C`, `Amazon 5W charger sold separately; "less than two hours" with it, "less than four hours" with third-party adapters or USB`, `No`, `Amazon user guide`],
+      [`Paperwhite (11th gen, 2021)`, `USB-C`, `Amazon 5W charger; "less than two hours" with it, "less than three hours" third-party or computer`, `Signature Edition: Qi wireless`, `Amazon user guide`],
+      [`Paperwhite (12th gen, 2024)`, `USB-C`, `User guide: Amazon 5W charger, under two hours; Amazon.com listing: under 2.5 hours with a 9W adapter`, `Signature Edition: Qi wireless`, `Amazon user guide and listing`],
+      [`Colorsoft Signature Edition (2024)`, `USB-C`, `User guide: Amazon 9W charger, under two hours; listing: under 2.5 hours with a 9W adapter`, `Qi wireless; some Qi chargers listed as incompatible`, `Amazon user guide and listing`],
+      [`Kindle Scribe (10.2-inch, 2022 and 2024)`, `USB-C`, `Scribe user guide: Amazon 5W charger, under two hours; Amazon.com listing for the 2024 model: about 2.5 hours with a 9W USB-C adapter, about 7 hours from a computer`, `No`, `Amazon Scribe user guide (does not name a model year) and 2024 listing`],
+      [`Scribe Colorsoft (2025)`, `USB-C`, `Listing: under 3 hours with a 20W USB-C adapter; compliance page: charger should supply 2.5 to 15 W for maximum speed`, `No`, `Amazon listing and compliance page`],
+      [`2026 Paperwhite and Colorsoft (pre-order)`, `Signature Editions: USB-C per The Verge; others not confirmed`, `Not published in the sources we found`, `Signature: pogo-pin dock; no Qi`, `Amazon announcement, The Verge`],
+      [`Kindle Oasis (10th gen, 2019)`, `Micro-USB`, `Amazon 5W charger; under two hours with it, under three hours third-party or computer`, `No`, `Amazon user guide`],
+      [`Paperwhite (10th gen, 2018)`, `Micro-USB`, `A compatible AC adapter or a USB charger that meets the USB-IF Battery Charging spec`, `No`, `Amazon user manual (archived copy)`],
+      [`Kindle (10th gen, 2019)`, `Micro-USB`, `"Less than four hours" with a Kindle AC adapter`, `No`, `Amazon user guide`],
+      [`Kindle Voyage`, `Micro-USB`, `Compatible AC adapter, sold separately; under four hours`, `No`, `Amazon user guide`],
+    ]}
+  />
+  <p>Two things stand out. First, the cutover is the 2021 Paperwhite: on the models we checked, USB-C starts there and micro-USB ends with the 2019 Kindle, the 2019 Oasis and the 2018 Paperwhite. Second, Amazon's statements on the same model sometimes differ in wording: for the 2024 Paperwhite the user guide mentions a 5W adapter and "less than two hours," while the Amazon.com listing says "less than 2.5 hours with a 9W USB power adapter." We report both rather than pick one. If you own a Kindle older than those in the table, such as a Kindle Touch or an early Paperwhite, we did not check its guide, so look at the port itself.</p>
+  <p>One 2026 detail to keep in mind: the 2026 devices were still pre-order at our check, shipping October 28, 2026, and Amazon's pages did not yet list adapter wattage or charge times. WIRED also reports that the new 2026 batteries are user-replaceable to comply with EU rules, but that is no guide to what charger you should buy.</p>
+
+  <h2 id="cables">Choosing the right cable</h2>
+  <p>Match the cable to the port: a micro-USB cable will not fit a USB-C Kindle and the reverse. The micro-USB connector is tapered and goes in one way up; USB-C is rounded and goes in either way. The most common mistake we can identify from the listings is buying a "Kindle charger" bundle without checking which port it is for, because older listings for micro-USB Kindles are still on sale next to the newer USB-C ones.</p>
+  <ul>
+    <li><strong>For micro-USB Kindles</strong> (2019 Kindle, 2018 Paperwhite, Oasis, Voyage): a micro-USB cable plus a USB wall adapter. Amazon's 5W adapter listing says it needs a micro-USB cable, which is not included with it.</li>
+    <li><strong>For USB-C Kindles</strong> (2021 Paperwhite and newer): a USB-C cable. The box includes one; spares are cheap and plentiful.</li>
+    <li><strong>Data versus charge-only:</strong> Amazon's guides say you can use the supplied cable to transfer files to the Kindle from a computer. As a general USB point (not an Amazon statement), some very cheap cables carry power only and cannot transfer files, so if you plan to sideload books, keep the cable that came in the box.</li>
+    <li><strong>Length and fit:</strong> a case with a narrow port cutout can stop a thick cable plug from seating fully. Amazon's guide says to make sure the cable is fully inserted if the charge light does not come on, so test it with your case on.</li>
+  </ul>
+
+  <h2 id="adapters">Adapters: what Amazon says about 5W, 9W and 20W</h2>
+  <p>Amazon sells its own adapters, and its documents refer to three:</p>
+  <Table
+    caption="Amazon-branded adapters named in Amazon's documents. Prices are Amazon.com snapshots from October 2026."
+    head={['Adapter', 'Where Amazon names it', 'Notes']}
+    rows={[
+      [`Amazon 5W (5V/1A)`, `User guides for the 2021 and 2024 Paperwhite, 2022 Kindle, Oasis and Scribe`, `Amazon.com listing says it is compatible with most micro-USB devices and needs a micro-USB cable (not included); listed at $19.99 when we checked`],
+      [`Amazon 9W`, `Colorsoft Signature Edition user guide; Amazon.com listings for the 2024 Paperwhite, Colorsoft and Scribe charge times`, `Listed at $19.99 on the Scribe listing's accessories carousel; Amazon's compliance page for the Scribe Colorsoft shows a 9W Amazon adapter model in its energy table`],
+      [`Amazon 20W USB-C`, `Amazon.com listing for the Scribe Colorsoft; the adapter listing says it charges 2025-and-later Scribes in about two hours`, `Listed at $19.99, cable sold separately, dated September 30, 2025`],
+    ]}
+  />
+  <p>The takeaway is that Amazon's documented adapter sizes are modest, and that one adapter is not the only option. Amazon's guides do not say a 5W adapter is required, only that it is the figure behind its published charge times. Beyond that, the compliance page for the Scribe Colorsoft is the most specific: it says the power delivered by the charger "must be between min [2.5] Watts required by the radio equipment, and max [15] Watts in order to achieve the maximum charging speed." In plain terms, Amazon's own figure puts the useful ceiling at 15 W for that device, and a minimum of 2.5 W is needed just to run the radios.</p>
+  <p>Amazon does not say, in anything we found, whether Kindles negotiate USB Power Delivery. Forum users report that high-wattage adapters work fine because the Kindle simply draws what it needs, but that is user experience, not Amazon documentation, and we have not tested it. The safe reading is the one Amazon gives: a compliant adapter from a reputable maker will charge your Kindle, and the wattage on the label is not a reason to expect a dramatic speed-up.</p>
+
+  <h2 id="speed">Charging speed and time</h2>
+  <p>Charge times in Amazon's documents are rough "less than" figures, not measurements. A few patterns hold across the guides and listings we read:</p>
+  <ul>
+    <li><strong>The adapter beats the computer.</strong> Amazon says third-party adapters or a computer's USB port take "less than three hours" on the USB-C Paperwhite and Scribe and "less than four hours" on the 2022 Kindle, "but may take longer depending on the capability of the hardware." For the 2024 Scribe, the listing puts the computer figure at about 7 hours against about 2.5 hours with a 9W adapter.</li>
+    <li><strong>Quoted times are not comparable across devices.</strong> The 2025 Scribe Colorsoft listing says "less than 3 hours" with a 20W adapter, the 2024 Scribe listing says about 2.5 hours with a 9W adapter, and the Paperwhite listing says under 2.5 hours with 9W. Each assumes a different adapter, so do not read them as a ranking of the devices.</li>
+    <li><strong>Charge less often than you think.</strong> Amazon rates the 2024 Paperwhite at up to 12 weeks and the 2024 Colorsoft at up to 8 weeks, both "based on a half hour of reading per day with wireless off and the light setting at 13." Amazon says battery life varies with use and that Audible streaming over Bluetooth reduces it, and the user guides add that a weak wireless signal increases power use.</li>
+    <li><strong>A sleeping Kindle is cheap.</strong> The 2024 Paperwhite guide says the static lockscreen "uses no battery power," so the quickest way to stretch a charge is to let the Kindle sleep rather than keep the screen awake.</li>
+  </ul>
+  <p>Accessories that charge too: Amazon's new Kindle Click remote is rechargeable over USB-C, with the cable and adapter sold separately. If you buy one, a USB-C cable and a spare port on the adapter will cover both. See our <a href="/kindle-page-turner/">Kindle page turner guide</a>.</p>
+
+  <h2 id="third-party">Third-party chargers and cables</h2>
+  <p>Amazon's safety documents are not hostile to third-party gear. They say the device uses "the USB cable provided and a USB charger or USB port that is compliant with safety standards, such as IEC 62368," and the user guides give charge times for third-party adapters. The safety text for Japanese customers goes further and warns that a power source that does not match, or a third-party accessory, "may result in malfunction, fire, overheating and other problems." In practice that means:</p>
+  <ul>
+    <li><strong>Choose by certification, not by price or wattage.</strong> Look for a recognized safety mark and a brand that publishes specifications. We do not name third-party winners, because we have not tested any.</li>
+    <li><strong>Avoid unlabeled adapters</strong> and listings that make claims they do not explain, such as "ultra-fast Kindle charging" without a wattage or a standard.</li>
+    <li><strong>Keep the original cable</strong> for transfers, and buy a spare of the same connector type for the bedside.</li>
+    <li><strong>Do not rely on a low-power port.</strong> The Oasis and Kindle guides say a low-powered USB port, such as those on some keyboards and older computers, will not charge the Kindle.</li>
+  </ul>
+  <p><a class="btn alt" href={amazonSearch('amazon 20w usb-c charger kindle')} rel={LINK_REL} target="_blank">Search Amazon: Kindle chargers</a> <a class="btn alt" href={amazonSearch('usb-c cable kindle paperwhite')} rel={LINK_REL} target="_blank">Search Amazon: USB-C cables for Kindle</a></p>
+
+  <h2 id="wireless">Wireless and dock charging</h2>
+  <p>Wireless charging is not a feature of every Kindle, and it changed in 2026. Here is the position as the sources describe it:</p>
+  <Table
+    caption="Wireless and dock charging by model. Amazon's docks are model-specific."
+    head={['Model', 'Wireless / dock charging', 'What to check']}
+    rows={[
+      [`Paperwhite Signature Edition (2021)`, `Qi wireless, per Amazon's user guide ("any compatible Qi-certified wireless charger")`, `The pad should be Qi-certified and large enough to align; the guide says the charge light turns on when properly aligned`],
+      [`Paperwhite Signature Edition (2024)`, `Qi wireless, per the 12th-gen user guide; Amazon sells a dock for the 2022 and 2024 Signature Editions`, `Amazon's dock states a 4 mm case limit; see the <a href="/kindle-stand/#dock">dock section</a>`],
+      [`Colorsoft Signature Edition (2024)`, `Qi wireless; listed for Amazon's wireless charging dock`, `The user guide lists ten Qi-certified chargers as not compatible because of "mechanical incompatibility"; check any pad against that list`],
+      [`Colorsoft 16 GB (2025) and standard Paperwhites`, `No wireless charging; Amazon's 2025 announcement says the Signature Edition adds wireless charging`, `USB-C only`],
+      [`2026 Paperwhite and Colorsoft Signature Editions`, `Pogo-pin dock ($59.99); no Qi wireless charging, per The Verge`, `Dock compatibility with the 2024 Signature Edition is not stated in our sources`],
+      [`2026 standard Paperwhite and Colorsoft`, `No dock named in Amazon's announcement`, `USB-C charging`],
+    ]}
+  />
+  <p>Amazon's safety page adds a caution that applies to every wireless charger: "ensure there are no metallic or magnetic foreign objects on the charger (such as coins, jewelry, metallic cases, keys, bank cards or other items) when charging." That is a good reason to take off a case with a metal plate or a strong magnet in the back before testing wireless charging. We cover the dock hardware, its 7.5 W rating and customer experience in the <a href="/kindle-stand/#dock">stand guide</a>.</p>
+
+  <h2 id="case">Charging with a case on</h2>
+  <p>Cases and chargers interact in two places: the port and the coil.</p>
+  <ul>
+    <li><strong>Port cutout:</strong> every folio or shell should leave the USB-C or micro-USB port accessible. Amazon's plant-based leather case for the Paperwhite and Colorsoft says "it can remain on your Kindle for charging." For other cases, check the listing photos and recent reviews for "charging."</li>
+    <li><strong>Wireless coil:</strong> thick cases can stop a Signature Edition from charging on a pad. Amazon's own dock states a 4 mm case limit. The practical test is to try the Kindle in the case on the pad, as Amazon's alignment light tells you whether it caught.</li>
+    <li><strong>Pogo pins (2026 Signature Editions):</strong> the contacts on the rear are used by both the dock and Amazon's Page-Turn Cover, so a case that covers them blocks both. See the <a href="/kindle-paperwhite-case/#signature">Paperwhite case guide</a>.</li>
+    <li><strong>Scribe:</strong> the USB-C port is at the bottom on the 2025 models, per reviews we cite in the <a href="/kindle-scribe-case/">Scribe case guide</a>, so check the cutout against your model year.</li>
+  </ul>
+  <p>For model-specific fit, the <a href="/kindle-case/">Kindle case buying guide</a> and the <a href="/kindle-colorsoft-case/">Colorsoft case guide</a> cover the charging details for their models.</p>
+
+  <h2 id="troubleshooting">When a Kindle will not charge</h2>
+  <p>The sequence below follows Amazon's user guides and safety pages. It is not a repair guide, and nothing here replaces contacting Amazon.</p>
+  <ol>
+    <li><strong>Look at the indicator.</strong> Amazon's guides say a lightning bolt appears on the battery icon at the top of the Home screen while charging, and the indicator light turns amber while charging and green when full.</li>
+    <li><strong>Seat the cable.</strong> The guides say to make sure the USB cable is fully inserted into the Kindle and into the adapter or computer port.</li>
+    <li><strong>Change the source.</strong> Try another USB port or another wall outlet. Avoid low-powered ports, which Amazon says will not charge the Kindle.</li>
+    <li><strong>Leave USB drive mode.</strong> If it is plugged into a computer, eject it from the computer's desktop (or tap Disconnect on the Scribe). It keeps charging, and you can read again.</li>
+    <li><strong>Remove the case</strong> and see if the plug seats, especially with a narrow cutout.</li>
+    <li><strong>Restart.</strong> For a frozen Kindle, Amazon's guides say to hold the power button until the power dialog appears (about 9 seconds in the 2024 Paperwhite guide) and tap Restart, or hold it for 30 seconds until the LED stops blinking if no dialog appears (15 seconds in the Scribe guide).</li>
+    <li><strong>Dry it.</strong> If the Kindle or its port is wet, unplug everything and let it dry completely, per Amazon's safety text.</li>
+    <li><strong>Contact Amazon.</strong> Amazon's safety text says that if the Kindle or its battery was dropped and may be damaged, you should not attempt repair and should contact customer service.</li>
+  </ol>
+  <p>If it fails only on one adapter or cable, the fault is probably that accessory. We cannot say whether a particular fault is common, and we cannot diagnose a device for you.</p>
+
+  <h2 id="safety">Safe charging habits from Amazon's guides</h2>
+  <ul>
+    <li>Charge in a well-ventilated area, away from heat sources, as Amazon's safety text advises for the device and its adapter.</li>
+    <li>Do not charge near water or in extremely humid conditions, even on a waterproof model.</li>
+    <li>Keep to the temperature range Amazon lists. The Scribe Colorsoft's compliance page gives an operating range of 0 to 35 °C (32 to 95 °F); check the page for your model.</li>
+    <li>Use a charger or USB port that complies with safety standards, and the cable Amazon supplied or a good match.</li>
+    <li>On wireless chargers, keep metal objects off the pad.</li>
+    <li>Do not try to open the Kindle or replace its battery yourself. Amazon's safety page says the lithium-ion battery should be replaced only by a qualified service provider.</li>
+  </ul>
+
+  <h2 id="red-flags">Charger red flags</h2>
+  <ul>
+    <li><strong>"Fits all Kindles"</strong> with no connector named. There are two ports in use.</li>
+    <li><strong>A micro-USB cable listed for a 2021-or-newer Kindle,</strong> or the reverse.</li>
+    <li><strong>Wattage claims with no standard or certification</strong> behind them.</li>
+    <li><strong>"Official," "Amazon certified" or "Made for Kindle"</strong> on a non-Amazon product. We do not use that language on this site either, and we cannot verify any such claim.</li>
+    <li><strong>A wireless pad sold for "all Kindles"</strong> when only some Signature Editions support Qi and some pads are known to be incompatible.</li>
+    <li><strong>A dock listed for a 2024 Signature Edition and a 2026 one together</strong> without a statement that both work. Amazon's sources do not say whether the 2026 dock works with the 2024 model.</li>
+  </ul>
+
+  <h2 id="method">How we researched this</h2>
+  <p>We read Amazon's user guides for the 2022 Kindle, the 2019 Kindle, the 2021 and 2024 Paperwhite, the 2024 Colorsoft, the Scribe, the Oasis and the Voyage; Amazon's safety and compliance pages for the Kindle (11th generation) and the Scribe Colorsoft; Amazon.com listings for the 2024 Paperwhite, the 2024 Colorsoft Signature Edition, the 2024 Scribe, the 2025 Scribe Colorsoft, the Amazon 20W adapter and the Kindle Click; Amazon's October 1, 2026 lineup announcement; and The Verge and WIRED on the 2026 models. We have not tested any adapter, cable or dock. Prices are snapshots from {FACTS_AS_OF_OCT5}. To report a mistake, use our <a href="/contact/">contact page</a>; our approach is described in the <a href="/about/">editorial policy</a>.</p>
+  <ul class="sources">
+    <li>Amazon Kindle user guides (11th generation, Paperwhite 11th and 12th generation, Colorsoft, Scribe, Oasis 10th generation, Kindle 10th generation, Voyage): port, adapter and charge time statements, Qi wireless, incompatible Qi chargers, restart steps.</li>
+    <li>Amazon, Safety and Compliance Information for Kindle (11th Generation) and Kindle Scribe Colorsoft: safety standards, charger power range, operating temperature, wet-device guidance.</li>
+    <li>Amazon.com listings: Paperwhite 2024 (charge time, box contents), Colorsoft Signature Edition 2024, Scribe 2024 (charge times), Scribe Colorsoft 2025, Amazon 20W USB-C adapter, Amazon 5W adapter, Amazon plant-based leather case.</li>
+    <li>Amazon, "The new Amazon Kindle lineup" (aboutamazon.com), Oct 1, 2026, and "Amazon expands Kindle Colorsoft family" (2025): pogo-pin dock, 2026 accessories, Colorsoft 16 GB.</li>
+    <li>The Verge and WIRED, Oct 1, 2026: USB-C on the 2026 Signature Editions, no Qi, replaceable batteries.</li>
+  </ul>
+
+  <Faq items={faq} />
+
+  <div class="box">
+    <h2>Next step</h2>
+    <p>Charging a Signature Edition upright? <a class="btn" href="/kindle-stand/#dock">Dock and stand guide</a> Choosing a case with a port cutout? <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a> <a class="btn alt" href="/kindle-colorsoft-case/">Colorsoft case guide</a> Want to turn pages without touching the screen? <a class="btn alt" href="/kindle-page-turner/">Kindle page turner guide</a></p>
+  </div>
+</Base>
