@@ -24,12 +24,12 @@ const faq = [
 ];
 const ld = [
   article({ headline: title, description, path, published: PUBLISHED_OCT5 }),
-  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle case', path: '/kindle-case/' }, { name: 'Kindle cover', path }]),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle accessories', path: '/kindle-accessories/' }, { name: 'Kindle cover', path }]),
   faqPage(faq),
 ];
 ---
 <Base title={title} description={description} path={path} jsonld={ld} ogType="article">
-  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-case/">Kindle cases</a> › Kindle cover</p>
+  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-accessories/">Kindle accessories</a> › Kindle cover</p>
   <h1>Kindle Covers: Cover vs Case, and How to Choose a Cover Type</h1>
   <p class="meta">Facts checked {FACTS_AS_OF_OCT5}. Independent guide based on Amazon's announcements and listings plus press coverage. We have not hands-on tested any cover mentioned.</p>
   <Disclosure />
@@ -195,6 +195,6 @@ const ld = [
 
   <div class="box">
     <h2>Next step</h2>
-    <p>Know your model? <a class="btn" href="/kindle-paperwhite-case/">Paperwhite case guide</a> <a class="btn alt" href="/kindle-scribe-case/">Scribe case guide</a> <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a> Only need a bag solution? <a class="btn alt" href="/kindle-sleeve/">Kindle sleeve guide</a></p>
+    <p>Know your model? <a class="btn" href="/kindle-paperwhite-case/">Paperwhite case guide</a> <a class="btn alt" href="/kindle-scribe-case/">Scribe case guide</a> <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a> Only need a bag solution? <a class="btn alt" href="/kindle-sleeve/">Kindle sleeve guide</a> Everything else: <a class="btn alt" href="/kindle-accessories/">All Kindle accessories</a></p>
   </div>
 </Base>

@@ -24,12 +24,12 @@ const faq = [
 ];
 const ld = [
   article({ headline: title, description, path, published: PUBLISHED_OCT5 }),
-  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle case', path: '/kindle-case/' }, { name: 'Kindle sleeve', path }]),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle accessories', path: '/kindle-accessories/' }, { name: 'Kindle sleeve', path }]),
   faqPage(faq),
 ];
 ---
 <Base title={title} description={description} path={path} jsonld={ld} ogType="article">
-  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-case/">Kindle cases</a> › Kindle sleeve</p>
+  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-accessories/">Kindle accessories</a> › Kindle sleeve</p>
   <h1>Kindle Sleeve Guide: How to Choose the Right Size and Material</h1>
   <p class="meta">Facts checked {FACTS_AS_OF_OCT5}. Independent guide based on Amazon's specifications and listings. We have not hands-on tested any sleeve or measured any Kindle.</p>
   <Disclosure />
@@ -177,6 +177,6 @@ const ld = [
 
   <div class="box">
     <h2>Next step</h2>
-    <p>Want protection on the device while you read? <a class="btn" href="/kindle-case/">Kindle case buying guide</a> <a class="btn alt" href="/kindle-cover/">Cover types compared</a> <a class="btn alt" href="/kindle-paperwhite-case/">Paperwhite case guide</a> <a class="btn alt" href="/kindle-scribe-case/">Scribe case guide</a></p>
+    <p>Want protection on the device while you read? <a class="btn" href="/kindle-case/">Kindle case buying guide</a> <a class="btn alt" href="/kindle-cover/">Cover types compared</a> <a class="btn alt" href="/kindle-paperwhite-case/">Paperwhite case guide</a> <a class="btn alt" href="/kindle-scribe-case/">Scribe case guide</a> Everything else: <a class="btn alt" href="/kindle-accessories/">All Kindle accessories</a></p>
   </div>
 </Base>

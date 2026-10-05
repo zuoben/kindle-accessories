@@ -25,12 +25,12 @@ const faq = [
 ];
 const ld = [
   article({ headline: title, description, path }),
-  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle Paperwhite', path: '/kindle-paperwhite/' }, { name: 'Kindle Paperwhite case', path }]),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle accessories', path: '/kindle-accessories/' }, { name: 'Kindle cases', path: '/kindle-case/' }, { name: 'Kindle Paperwhite case', path }]),
   faqPage(faq),
 ];
 ---
 <Base title={title} description={description} path={path} jsonld={ld} ogType="article">
-  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-paperwhite/">Kindle Paperwhite</a> › Kindle Paperwhite case</p>
+  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-accessories/">Kindle accessories</a> › <a href="/kindle-case/">Kindle cases</a> › Kindle Paperwhite case</p>
   <h1>Kindle Paperwhite Case: Pick the Right One for Your Model Year</h1>
   <p class="meta">Facts checked {FACTS_AS_OF}. Independent guide based on Amazon's announcements and listings and launch coverage; we have not hands-on tested the cases mentioned, and we have not handled the 2026 Paperwhite.</p>
   <Disclosure />
@@ -180,6 +180,6 @@ const ld = [
 
   <div class="box">
     <h2>Next step</h2>
-    <p>Not sure which Paperwhite to own? <a class="btn" href="/kindle-paperwhite/">Kindle Paperwhite: which one to buy</a> Want style and material details first? <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a> Writing on your Kindle? <a class="btn alt" href="/kindle-scribe-case/">Kindle Scribe case guide</a> Cover vs case? <a class="btn alt" href="/kindle-cover/">Kindle covers explained</a> Bag or stand? <a class="btn alt" href="/kindle-sleeve/">Sleeves</a> <a class="btn alt" href="/kindle-stand/">Stands</a></p>
+    <p>Not sure which Paperwhite to own? <a class="btn" href="/kindle-paperwhite/">Kindle Paperwhite: which one to buy</a> Want style and material details first? <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a> Writing on your Kindle? <a class="btn alt" href="/kindle-scribe-case/">Kindle Scribe case guide</a> Cover vs case? <a class="btn alt" href="/kindle-cover/">Kindle covers explained</a> Bag or stand? <a class="btn alt" href="/kindle-sleeve/">Sleeves</a> <a class="btn alt" href="/kindle-stand/">Stands</a> Everything else: <a class="btn alt" href="/kindle-accessories/">All Kindle accessories</a></p>
   </div>
 </Base>

@@ -25,12 +25,12 @@ const faq = [
 ];
 const ld = [
   article({ headline: title, description, path }),
-  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle case', path: '/kindle-case/' }, { name: 'Kindle Scribe case', path }]),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle accessories', path: '/kindle-accessories/' }, { name: 'Kindle cases', path: '/kindle-case/' }, { name: 'Kindle Scribe case', path }]),
   faqPage(faq),
 ];
 ---
 <Base title={title} description={description} path={path} jsonld={ld} ogType="article">
-  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-case/">Kindle cases</a> › Kindle Scribe case</p>
+  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-accessories/">Kindle accessories</a> › <a href="/kindle-case/">Kindle cases</a> › Kindle Scribe case</p>
   <h1>Kindle Scribe Case: How to Choose by Model Year and Pen</h1>
   <p class="meta">Facts checked {FACTS_AS_OF}. Independent guide based on Amazon's announcements and listings, plus press and review coverage. We have not hands-on tested the cases mentioned or handled any Scribe.</p>
   <Disclosure />
@@ -184,6 +184,6 @@ const ld = [
 
   <div class="box">
     <h2>Next step</h2>
-    <p>Not a Scribe owner? <a class="btn" href="/kindle-paperwhite-case/">Kindle Paperwhite case guide</a> <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a> <a class="btn alt" href="/kindle-cover/">Kindle covers explained</a></p>
+    <p>Not a Scribe owner? <a class="btn" href="/kindle-paperwhite-case/">Kindle Paperwhite case guide</a> <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a> <a class="btn alt" href="/kindle-cover/">Kindle covers explained</a> Everything else: <a class="btn alt" href="/kindle-accessories/">All Kindle accessories</a></p>
   </div>
 </Base>

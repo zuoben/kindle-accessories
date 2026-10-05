@@ -14,14 +14,15 @@ const { title, description, path, jsonld = [], noindex = false, ogType = 'websit
 const canonical = new URL(path, SITE_URL).toString();
 const ogImage = new URL('/og-default.png', SITE_URL).toString();
 const nav = [
+  { href: '/kindle-accessories/', label: 'All accessories' },
   { href: '/kindle-paperwhite/', label: 'Kindle Paperwhite' },
   { href: '/kindle-paperwhite-case/', label: 'Paperwhite cases' },
-  { href: '/kindle-scribe-case/', label: 'Scribe cases' },
   { href: '/kindle-case/', label: 'Kindle cases' },
   { href: '/faq/', label: 'FAQ' },
   { href: '/about/', label: 'About' },
 ];
 const more = [
+  { href: '/kindle-scribe-case/', label: 'Kindle Scribe cases' },
   { href: '/kindle-cover/', label: 'Kindle covers explained' },
   { href: '/kindle-sleeve/', label: 'Kindle sleeves' },
   { href: '/kindle-stand/', label: 'Kindle stands' },
@@ -82,6 +83,7 @@ const moreActive = more.some((m) => m.href === path);
           <div>
             <h2>Guides</h2>
             <ul>
+              <li><a href="/kindle-accessories/">All Kindle accessories, by model</a></li>
               <li><a href="/kindle-paperwhite/">Kindle Paperwhite: which one to buy</a></li>
               <li><a href="/kindle-paperwhite-case/">Kindle Paperwhite case guide</a></li>
               <li><a href="/kindle-scribe-case/">Kindle Scribe case guide</a></li>

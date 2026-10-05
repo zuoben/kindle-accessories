@@ -1,0 +1,201 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import Table from '../components/Table.astro';
+import Disclosure from '../components/Disclosure.astro';
+import { breadcrumbs, faqPage, article } from '../data/schema';
+import { SITE_URL, FACTS_AS_OF_OCT5, PUBLISHED_OCT5 } from '../data/site.mjs';
+
+const path = '/kindle-accessories/';
+const title = 'Kindle Accessories: What Your Kindle Needs, by Model and Use';
+const description = 'A practical guide to Kindle accessories: cases, covers, sleeves, stands, chargers and page turners grouped by need, a model-by-model matrix, and what you can skip.';
+
+// Every guide this hub routes to. Used for the ItemList schema and the guide index.
+const guides = [
+  { path: '/kindle-case/', name: 'Kindle case buying guide', note: 'Fit by model year, case styles, materials and listing red flags.' },
+  { path: '/kindle-paperwhite-case/', name: 'Kindle Paperwhite case guide', note: 'Which case fits the 2026, 2024, 2021 and older Paperwhite.' },
+  { path: '/kindle-scribe-case/', name: 'Kindle Scribe case guide', note: 'Fit and pen storage for the 2022, 2024 and 2025 Scribe.' },
+  { path: '/kindle-colorsoft-case/', name: 'Kindle Colorsoft case guide', note: 'The 2024, 2025 and 2026 Colorsoft, Double Tap and docks.' },
+  { path: '/kindle-cover/', name: 'Kindle covers explained', note: 'Folio, back cover and magnetic-attach constructions compared.' },
+  { path: '/kindle-sleeve/', name: 'Kindle sleeve guide', note: 'Interior sizes against device sizes, materials, sleeve vs case.' },
+  { path: '/kindle-stand/', name: 'Kindle stand guide', note: 'Desk, bed, gooseneck and charging stands, plus Amazon docks.' },
+  { path: '/kindle-charger/', name: 'Kindle charger guide', note: 'USB-C or micro-USB by model, adapters, wireless and docks.' },
+  { path: '/kindle-page-turner/', name: 'Kindle page turner guide', note: 'Kindle Click, Page-Turn Cover, clip-on tappers and Double Tap.' },
+  { path: '/kindle-paperwhite/', name: 'Kindle Paperwhite buying guide', note: 'The device itself: 2026 vs 2024 vs 2021, and Signature Edition.' },
+];
+
+const faq = [
+  { q: `What Kindle accessories do I actually need?`, a: `For most people, one: something that protects the screen when the Kindle is in a bag. That can be a folio cover that fits your model year or a padded sleeve. Your Kindle comes with a charging cable, and Amazon's user guides say any safety-compliant USB adapter or computer port will charge it, so a wall adapter you already own usually covers charging. Stands, docks and page turners are about comfort, not need. Start with <a href="#protect">protection</a>, then add others only if a <a href="#needs">specific situation</a> calls for them.` },
+  { q: `Do Kindle accessories work across models?`, a: `Some do and some do not. Cases and covers are tied to the exact body, so they depend on the model and release year, not just the name. Cables depend on the port: USB-C on the 2021 Paperwhite, the 2022 Kindle and newer models we checked, micro-USB on older ones such as the Oasis, the 2019 Kindle and the 2018 Paperwhite. Amazon's Kindle Click remote works only with Kindles released in 2024 or later, and the Page-Turn Cover and the new pogo-pin dock are limited to the 2026 Paperwhite and Colorsoft Signature Editions. Sleeves and stands are the most forgiving, as long as the size suits. See the <a href="#matrix">model matrix</a>.` },
+  { q: `How do I find out which Kindle model I have?`, a: `Amazon's user guides say the Device Info screen in the Kindle's settings shows the device's name and generation, and the device list in your Amazon account (Manage Your Content and Devices) shows the same. Match accessories by release year where the listing gives one, because generation numbers are used inconsistently across listings. Our <a href="/kindle-paperwhite-case/#identify">Paperwhite</a>, <a href="/kindle-scribe-case/#identify">Scribe</a> and <a href="/kindle-colorsoft-case/#identify">Colorsoft</a> guides also describe what each model looks like.` },
+  { q: `Is a case or a sleeve better for a Kindle?`, a: `It depends on where the risk is. A case or folio stays on while you read, so it protects against drops at home and on the move, at the cost of weight and a model-specific fit. A sleeve protects only while the Kindle is inside it, but it adds nothing to the device in your hand and can outlast a device upgrade if the size still works. Some people use both: a thin cover for reading and a sleeve in the bag. The <a href="/kindle-sleeve/#vs-case">sleeve vs case comparison</a> goes into detail.` },
+  { q: `Do I need a special Kindle charger?`, a: `Usually not. Amazon sells its own adapters and quotes its fastest charge times with them, but its user guides also give charge times for third-party adapters and computer ports, and tell owners to use a charger or port that complies with safety standards. The main thing to get right is the cable connector, USB-C or micro-USB. Wireless charging is limited to some Signature Editions. The <a href="/kindle-charger/">charger guide</a> lists the port and Amazon's stated charge times for each model.` },
+  { q: `Can I use a Bluetooth page turner with my Kindle?`, a: `Amazon's own Kindle Click remote is listed as compatible with Kindles released in 2024 or later, and Amazon says it is not compatible with earlier models. For older Kindles, Amazon's help page says pairing a Bluetooth keyboard or mouse is not supported, which is why clip-on tappers that physically tap the screen are sold. Whether third-party Bluetooth remotes work on 2024 and newer Kindles is not something Amazon documents. Details are in the <a href="/kindle-page-turner/#support">page turner guide</a>.` },
+  { q: `Are Amazon's own Kindle accessories better than third-party ones?`, a: `They are the ones Amazon documents. For example, Amazon says the 2024 Colorsoft's Double Tap feature was tested with Amazon's own Colorsoft case and may not work with all third-party cases, and Amazon's docks list exactly which models they fit. Third-party accessories are often cheaper and more varied. We have not tested accessories from either source, so we do not rank them. Wording such as "official" or "Amazon certified" on a non-Amazon product is something we cannot verify.` },
+  { q: `Do accessories for the new 2026 Kindles exist yet?`, a: `Amazon announced its own on October 1, 2026: Kindle Covers from $39.99, slim magnetic-attach covers for the aluminum models, the $79.99 Page-Turn Cover and a $59.99 Charging Dock for the Paperwhite and Colorsoft Signature Editions, and the $34.99 Kindle Click. As of ${FACTS_AS_OF_OCT5} the 2026 Paperwhite and Colorsoft had not shipped (Amazon gives October 28, 2026), so third-party cases for them could not yet be checked against real devices. Older cases will not fit: the 2026 bodies are thinner and the power button has moved.` },
+];
+
+const ld = [
+  article({ headline: title, description, path, published: PUBLISHED_OCT5 }),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle accessories', path }]),
+  faqPage(faq),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Kindle accessory guides',
+    itemListOrder: 'https://schema.org/ItemListUnordered',
+    numberOfItems: guides.length,
+    itemListElement: guides.map((g, i) => ({ '@type': 'ListItem', position: i + 1, name: g.name, url: new URL(g.path, SITE_URL).toString() })),
+  },
+];
+
+const L = (href: string, text: string) => `<a href="${href}">${text}</a>`;
+---
+<Base title={title} description={description} path={path} jsonld={ld} ogType="article">
+  <p class="crumbs"><a href="/">Home</a> › Kindle accessories</p>
+  <h1>Kindle Accessories: What Your Kindle Actually Needs</h1>
+  <p class="meta">Facts checked {FACTS_AS_OF_OCT5}. Independent overview based on Amazon's user guides, listings and announcements plus press coverage, and on our detailed guides linked below. We have not tested the accessories mentioned.</p>
+  <Disclosure />
+
+  <p class="lede">Search for Kindle accessories and you get hundreds of cases, pouches, stands, cables, remotes and gadgets, many of them labeled "for all Kindles." In practice, the right set depends on two things: which Kindle you own, down to its release year, and how you read. This page sorts accessories by the job they do, shows which ones apply to each model, and is honest about the things most readers can skip. Each section links to a detailed guide for the full answer.</p>
+
+  <div class="box">
+    <h2 id="short">Short answer</h2>
+    <ul>
+      <li><strong>Most readers need one thing:</strong> protection for the screen in a bag. A folio cover that names your model and year, or a padded sleeve that is big enough.</li>
+      <li><strong>Charging is probably covered.</strong> A cable comes in the box; check that it matches the port (USB-C or micro-USB) and use any safety-compliant USB adapter.</li>
+      <li><strong>Everything else is situational:</strong> a stand for hands-free reading, a page turner if your Kindle sits out of reach, a dock if you own a Signature Edition that supports one.</li>
+      <li><strong>Before buying anything,</strong> confirm your model and release year. It decides fit and compatibility more than the product name does.</li>
+    </ul>
+  </div>
+
+  <nav class="toc" aria-label="On this page">
+    <strong>On this page</strong>
+    <ol>
+      <li><a href="#first">Step one: know your Kindle</a></li>
+      <li><a href="#needs">Kindle accessories by need</a></li>
+      <li><a href="#matrix">Find accessories for your Kindle model</a></li>
+      <li><a href="#skip">What you may not need to buy</a></li>
+      <li><a href="#order">A sensible buying order</a></li>
+      <li><a href="#guides">All our accessory guides</a></li>
+      <li><a href="#method">How we put this together</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="first">Step one: know your Kindle</h2>
+  <p>Almost every accessory mistake starts with the model name. "Kindle Paperwhite" has covered several different bodies since 2018, "Kindle Colorsoft" now means a 2024 model, a 2025 16 GB version, a redesigned 2026 model and a separate 11-inch Scribe Colorsoft, and the basic Kindle was redesigned again for 2026. Amazon's user guides say the Device Info screen in your Kindle's settings shows its name and generation, and the device list in your Amazon account shows the same. Write down the release year, because accessory listings and Amazon's own compatibility notes increasingly use it ("2024 release and onward") rather than a generation number.</p>
+  <p>If you are still deciding which Kindle to buy, settle that first: accessories bought for one generation rarely carry over. Our <a href="/kindle-paperwhite/">Paperwhite buying guide</a> compares the 2026, 2024 and 2021 models.</p>
+
+  <h2 id="needs">Kindle accessories by need</h2>
+  <p>Group accessories by the problem they solve and the list gets short. Here are the six jobs, what to look for in each, and where to read more.</p>
+
+  <h3 id="protect">Protection: cases and covers</h3>
+  <p>A case or cover is the accessory most owners buy first, and the one where fit matters most, because it has to match the exact body: outer size, button position, port cutout and, on a folio, the magnet that wakes and sleeps the screen. The words "case" and "cover" are used loosely in listings, so think in constructions instead: a folio that closes over the screen, a back shell that leaves the screen open, or, for Amazon's 2026 aluminum models, a slim cover that attaches magnetically.</p>
+  <ul>
+    <li><strong>Check:</strong> your model and release year in the title; the power button and port cutouts; whether the folio wakes and sleeps the Kindle; how much weight it adds.</li>
+    <li><strong>Signature Edition owners:</strong> thick or metal-backed cases can interfere with wireless charging on 2024-era models, and on the 2026 models a case must leave the pogo pins on the back clear if you want the dock or the Page-Turn Cover.</li>
+    <li><strong>Read next:</strong> <a href="/kindle-case/">Kindle case buying guide</a> for fit and styles; model guides for the <a href="/kindle-paperwhite-case/">Paperwhite</a>, <a href="/kindle-scribe-case/">Scribe</a> and <a href="/kindle-colorsoft-case/">Colorsoft</a>; and <a href="/kindle-cover/">Kindle covers explained</a> if you are choosing between a flap and a shell.</li>
+  </ul>
+
+  <h3 id="carry">Carrying: sleeves and pouches</h3>
+  <p>A sleeve is a padded pouch you slide the Kindle into for the bag and take it out of to read. It adds nothing to the device in your hand and is less tied to one model than a case. The catch is sizing: "6-inch" or "7-inch" on a sleeve usually describes the screen it is meant for, not the pouch, and a few millimeters decide whether it fits.</p>
+  <ul>
+    <li><strong>Check:</strong> the stated interior dimensions against your Kindle's outer size (with any case on); padding on all sides; a zip or flap that closes fully; what "water-resistant" actually claims.</li>
+    <li><strong>Read next:</strong> <a href="/kindle-sleeve/">Kindle sleeve guide</a>, including a <a href="/kindle-sleeve/#sizes">size table by model</a>.</li>
+  </ul>
+
+  <h3 id="posture">Reading position: stands and holders</h3>
+  <p>A stand is for reading without holding the Kindle: at a desk while eating, on a treadmill shelf, or in bed. Desk stands, gooseneck holders, pillow stands and Amazon's own docks solve different problems. Many folio covers fold into a basic stand, so check whether the cover you already own does the job before buying a separate one.</p>
+  <ul>
+    <li><strong>Check:</strong> stability with your Kindle's weight and case; angle adjustment; whether the holder grips a Kindle with its case on; for a dock, exactly which models it lists.</li>
+    <li><strong>Read next:</strong> <a href="/kindle-stand/">Kindle stand guide</a> and its <a href="/kindle-stand/#dock">dock section</a>.</li>
+  </ul>
+
+  <h3 id="power">Charging: cables, adapters and docks</h3>
+  <p>The charging question is mostly about the connector. Kindles from the 2021 Paperwhite onward that we checked use USB-C; older models such as the 2018 Paperwhite, 2019 Kindle, Oasis and Voyage use micro-USB. Amazon's user guides quote charge times with its own 5W or 9W adapters and also give times for third-party adapters and computer ports, so a reputable, safety-compliant adapter you already own will work, typically more slowly than the quoted figure.</p>
+  <ul>
+    <li><strong>Check:</strong> USB-C or micro-USB; a recognized safety mark on any adapter; for wireless charging, that your model supports it at all (only some Signature Editions do, and the 2026 Signature Editions use a pogo-pin dock instead of Qi).</li>
+    <li><strong>Read next:</strong> <a href="/kindle-charger/">Kindle charger guide</a>, with a <a href="/kindle-charger/#ports">port table by model</a> and <a href="/kindle-charger/#troubleshooting">charging troubleshooting</a>.</li>
+  </ul>
+
+  <h3 id="turning">Page turning: remotes, buttons and tappers</h3>
+  <p>For years Amazon did not support Bluetooth page-turn remotes on Kindle e-readers, so third-party makers sold clip-on gadgets that physically tap the screen. On October 1, 2026 Amazon announced its own Kindle Click remote and a Page-Turn Cover with physical buttons. Which option applies depends almost entirely on your Kindle's release year.</p>
+  <ul>
+    <li><strong>Check:</strong> release year first (the Click is listed for 2024 and later); whether you need back as well as forward; for clip-ons, where the receiver sits on the screen and whether it grips over your case.</li>
+    <li><strong>Free options first:</strong> Signature Editions from 2024 on have Double Tap in their user guides or Amazon's announcement, and every Kindle has large tap zones for one-handed reading.</li>
+    <li><strong>Read next:</strong> <a href="/kindle-page-turner/">Kindle page turner guide</a>, starting with <a href="/kindle-page-turner/#support">what each Kindle supports</a>.</li>
+  </ul>
+
+  <h3 id="model">By model: start from the device</h3>
+  <p>If you are buying a Kindle and accessories together, choose the device first and then follow its accessory list. Our <a href="/kindle-paperwhite/">Paperwhite guide</a> covers the 2026 Signature Edition's pogo-pin features and what they mean for docks and covers. For the large writing tablets, the <a href="/kindle-scribe-case/">Scribe case guide</a> explains why pen storage changes the choice of case. The matrix below puts it all in one place.</p>
+
+  <h2 id="matrix">Find accessories for your Kindle model</h2>
+  <p>Find your Kindle in the left column, then follow the link for the accessory type you need. Notes summarize compatibility as Amazon and our sources state it; the linked guide has the detail and sources. "Not documented" means we found no statement either way.</p>
+  <Table
+    caption="Kindle model × accessory type. Compatibility as stated by Amazon and press sources as of October 2026."
+    head={['Kindle', 'Case or cover', 'Sleeve', 'Stand or dock', 'Charging', 'Page turning']}
+    rows={[
+      [`Kindle (basic, 2022 / 2024)`, L('/kindle-case/#fit', 'Case guide: fit') + ` (6-inch body)`, L('/kindle-sleeve/#sizes', 'Sleeve sizes'), L('/kindle-stand/#types', 'Any stand'), L('/kindle-charger/#ports', 'USB-C'), L('/kindle-page-turner/#support', 'Click: 2024 model yes, 2022 model no')],
+      [`Kindle (basic, 2026)`, L('/kindle-cover/#magnetic', 'Amazon 2026 covers') + ` (new body)`, L('/kindle-sleeve/#sizes', 'Sleeve sizes') + ` (W×H not confirmed)`, L('/kindle-stand/#types', 'Any stand'), L('/kindle-charger/#ports', 'Port not confirmed in our sources'), L('/kindle-page-turner/#click', 'Kindle Click')],
+      [`Paperwhite 2021 (11th gen)`, L('/kindle-paperwhite-case/#y2021', 'Paperwhite 2021 cases'), L('/kindle-sleeve/#sizes', 'Sleeve sizes'), L('/kindle-stand/#dock', 'Signature: Qi; Amazon\'s dock lists it as the "2022 release"'), L('/kindle-charger/#ports', 'USB-C'), L('/kindle-page-turner/#types', 'Clip-on tappers') + ` (Click not compatible)`],
+      [`Paperwhite 2024 (12th gen)`, L('/kindle-paperwhite-case/#y2024', 'Paperwhite 2024 cases'), L('/kindle-sleeve/#sizes', 'Sleeve sizes'), L('/kindle-stand/#dock', 'Signature: Qi wireless dock'), L('/kindle-charger/#ports', 'USB-C'), L('/kindle-page-turner/#click', 'Kindle Click') + `; Signature: Double Tap`],
+      [`Paperwhite 2026`, L('/kindle-paperwhite-case/#y2026', 'Paperwhite 2026 cases'), L('/kindle-sleeve/#sizes', 'Sleeve sizes') + ` (W×H not confirmed)`, L('/kindle-stand/#dock', 'Signature: pogo-pin dock'), L('/kindle-charger/#wireless', 'Signature: USB-C + pogo pins, no Qi'), L('/kindle-page-turner/#cover', 'Click; Signature: Page-Turn Cover, Double Tap')],
+      [`Colorsoft 2024 Signature / 2025 16 GB`, L('/kindle-colorsoft-case/#y2024', 'Colorsoft 2024/2025 cases'), L('/kindle-sleeve/#sizes', 'Sleeve sizes'), L('/kindle-stand/#dock', 'Signature: Qi wireless dock'), L('/kindle-charger/#ports', 'USB-C'), L('/kindle-page-turner/#double-tap', 'Click; 2024 Signature: Double Tap')],
+      [`Colorsoft 2026`, L('/kindle-colorsoft-case/#y2026', 'Colorsoft 2026 cases'), L('/kindle-sleeve/#sizes', 'Sleeve sizes') + ` (W×H not confirmed)`, L('/kindle-stand/#dock', 'Signature: pogo-pin dock'), L('/kindle-charger/#wireless', 'Signature: USB-C + pogo pins, no Qi'), L('/kindle-page-turner/#cover', 'Click; Signature: Page-Turn Cover, Double Tap')],
+      [`Scribe 2022 / 2024 (10.2-inch)`, L('/kindle-scribe-case/#y2024', 'Scribe 2022/2024 cases'), L('/kindle-sleeve/#sizes', 'Scribe-size sleeves'), L('/kindle-stand/#folio', 'Folio stands'), L('/kindle-charger/#ports', 'USB-C'), L('/kindle-page-turner/#support', 'Click: 2024 model yes, 2022 model no')],
+      [`Scribe / Scribe Colorsoft 2025 (11-inch)`, L('/kindle-scribe-case/#y2025', 'Scribe 2025 cases'), L('/kindle-sleeve/#sizes', 'Scribe-size sleeves'), L('/kindle-stand/#folio', 'Folio stands'), L('/kindle-charger/#ports', 'USB-C; Amazon names a 20W adapter'), L('/kindle-page-turner/#click', 'Kindle Click (2024+ wording)')],
+      [`Older: Oasis, 2019 Kindle, 2018 Paperwhite`, L('/kindle-case/#fit', 'Case guide: fit') + `; ` + L('/kindle-paperwhite-case/#older', 'older Paperwhites'), L('/kindle-sleeve/#sizes', 'Sleeve sizes'), L('/kindle-stand/#types', 'Any stand'), L('/kindle-charger/#cables', 'Micro-USB'), L('/kindle-page-turner/#types', 'Clip-on tappers; Oasis has buttons')],
+    ]}
+  />
+  <p>Two patterns stand out. First, the 2024 release year is a dividing line for page turning, because that is how Amazon words the Kindle Click's compatibility. Second, Signature Editions have the most accessory-specific features, and those features changed in 2026: the 2021 and 2024 Paperwhite Signature Editions and the 2024 Colorsoft Signature Edition support Qi wireless charging, while the 2026 Signature Editions drop Qi in favor of pogo pins, according to The Verge. A dock or case made for one generation is not a safe bet for the other.</p>
+
+  <h2 id="skip">What you may not need to buy</h2>
+  <p>Accessory listings are good at suggesting problems you do not have. These are the purchases we would question first, based on what Amazon documents.</p>
+  <ul>
+    <li><strong>A "Kindle charger" bundle,</strong> if you already have a USB wall adapter and the cable from the box. Amazon's guides give charge times for third-party adapters; what matters is a safety-compliant adapter and the right connector.</li>
+    <li><strong>A wireless charging pad,</strong> unless you own a Signature Edition that supports Qi. Standard models do not, the 2026 Signature Editions do not, and Amazon's user guides list Qi-certified chargers that do not work with the 2024 Signature Editions because of mechanical incompatibility.</li>
+    <li><strong>A generic Bluetooth remote for an older Kindle.</strong> Amazon says Kindle e-readers do not support pairing Bluetooth keyboards or mice, and its Kindle Click is listed as not compatible with Kindles launched before 2024. On those models, a clip-on tapper or a better reading position is the realistic route.</li>
+    <li><strong>A clip-on book light.</strong> Every Paperwhite and Colorsoft has a built-in front light (Amazon and WIRED describe adjustable warm light on the 2026 models), and so do the Oasis and the basic Kindles from 2019 to 2024 we checked. The exceptions are older basic Kindles and the 2025 Kindle Scribe that Amazon sells without a front light; for those, a light can make sense.</li>
+    <li><strong>A screen protector under a folio.</strong> If a cover already closes over the screen, a protector adds little for most readers, and we found no tests of how protectors affect the Colorsoft's color layer. It is more defensible on a bare Kindle or one in a back shell.</li>
+    <li><strong>Both a heavy case and a padded sleeve.</strong> Pick the one that matches where the risk is. A thin cover plus a sleeve can make sense; a rugged case inside a padded pouch is usually redundant.</li>
+    <li><strong>A stylus for a non-Scribe Kindle.</strong> Writing with a pen is a Scribe feature; the other Kindles are designed for touch.</li>
+    <li><strong>Anything marketed as "official" or "Amazon certified"</strong> that is not sold under Amazon's own brand. We cannot verify those claims, and they are not a reason to pay more.</li>
+  </ul>
+
+  <h2 id="order">A sensible buying order</h2>
+  <ol>
+    <li><strong>Identify your Kindle</strong> and its release year from Device Info or your Amazon account.</li>
+    <li><strong>Choose protection</strong> for how you carry it: a model-specific cover or case, or a sleeve sized from the interior dimensions.</li>
+    <li><strong>Check what you already have</strong> for charging: the cable that came in the box and any reputable USB adapter. Buy a spare cable of the right connector only if you need one in another room or bag.</li>
+    <li><strong>Add comfort items</strong> after a few weeks of reading, when you know whether you actually want a stand, a dock or a page turner.</li>
+    <li><strong>Keep the receipts.</strong> With third-party fit and compatibility often unverified, an easy return window is worth more than a small discount.</li>
+  </ol>
+
+  <h2 id="guides">All our accessory guides</h2>
+  <div class="cards">
+    {guides.map((g) => (
+      <article class="card">
+        <h3><a href={g.path}>{g.name}</a></h3>
+        <p>{g.note}</p>
+      </article>
+    ))}
+  </div>
+
+  <h2 id="method">How we put this together</h2>
+  <p>This page summarizes our detailed guides rather than repeating them, and each guide lists its own sources. The compatibility statements here come from Amazon's user guides (port labels, charge times, Qi support and incompatible chargers, Double Tap, Device Info), Amazon's help page on pairing Bluetooth devices with a Kindle, Amazon.com listings for the Kindle Click and Amazon's docks, Amazon's October 1, 2026 lineup announcement, and coverage from The Verge and WIRED. We have not tested any accessory and we do not rank third-party products. Prices are those Amazon announced or listed as of {FACTS_AS_OF_OCT5} and will change. To report a mistake, use our <a href="/contact/">contact page</a>; our approach is described in the <a href="/about/">editorial policy</a>.</p>
+  <ul class="sources">
+    <li>Amazon Kindle user guides (Kindle 11th generation, Paperwhite 11th and 12th generation, Colorsoft, Scribe, Kindle 10th generation, Voyage).</li>
+    <li>Amazon Customer Service, "Pair a Bluetooth Audio Device with Your Kindle E-Reader."</li>
+    <li>Amazon.com listings: Amazon Kindle Click; Made for Amazon Wireless Charging Dock for Paperwhite Signature Editions and Colorsoft Signature Edition.</li>
+    <li>Amazon, "The new Amazon Kindle lineup" (aboutamazon.com), October 1, 2026.</li>
+    <li>The Verge and WIRED, October 1, 2026, on the 2026 Kindle, Paperwhite and Colorsoft.</li>
+  </ul>
+
+  <Faq items={faq} />
+
+  <div class="box">
+    <h2>Next step</h2>
+    <p>Protect it first: <a class="btn" href="/kindle-case/">Kindle case buying guide</a> Know your model? <a class="btn alt" href="/kindle-paperwhite-case/">Paperwhite cases</a> <a class="btn alt" href="/kindle-scribe-case/">Scribe cases</a> <a class="btn alt" href="/kindle-colorsoft-case/">Colorsoft cases</a> Lost the cable? <a class="btn alt" href="/kindle-charger/">Charger guide</a></p>
+  </div>
+</Base>

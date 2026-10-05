@@ -24,12 +24,12 @@ const faq = [
 ];
 const ld = [
   article({ headline: title, description, path, published: PUBLISHED_OCT5 }),
-  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle case', path: '/kindle-case/' }, { name: 'Kindle stand', path }]),
+  breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle accessories', path: '/kindle-accessories/' }, { name: 'Kindle stand', path }]),
   faqPage(faq),
 ];
 ---
 <Base title={title} description={description} path={path} jsonld={ld} ogType="article">
-  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-case/">Kindle cases</a> › Kindle stand</p>
+  <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-accessories/">Kindle accessories</a> › Kindle stand</p>
   <h1>Kindle Stand Guide: How to Choose a Desk, Bed or Charging Stand</h1>
   <p class="meta">Facts checked {FACTS_AS_OF_OCT5}. Independent guide based on Amazon's announcements and listings plus press coverage. We have not hands-on tested any stand and do not rank products.</p>
   <Disclosure />
@@ -190,6 +190,6 @@ const ld = [
 
   <div class="box">
     <h2>Next step</h2>
-    <p>Pick the protection first, then the prop. <a class="btn" href="/kindle-cover/">Cover types compared</a> <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a> <a class="btn alt" href="/kindle-paperwhite-case/">Paperwhite case guide</a> <a class="btn alt" href="/kindle-sleeve/">Kindle sleeve guide</a></p>
+    <p>Pick the protection first, then the prop. <a class="btn" href="/kindle-cover/">Cover types compared</a> <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a> <a class="btn alt" href="/kindle-paperwhite-case/">Paperwhite case guide</a> <a class="btn alt" href="/kindle-sleeve/">Kindle sleeve guide</a> Everything else: <a class="btn alt" href="/kindle-accessories/">All Kindle accessories</a></p>
   </div>
 </Base>
