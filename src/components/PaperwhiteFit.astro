@@ -1,17 +1,17 @@
 ---
-// Scaled silhouettes from published dimensions (1 px = 1 mm * 1.05). 2026 width/height unconfirmed -> dashed.
+// Scaled silhouettes from published dimensions (1 px = 1 mm * 1.05).
 const s = 1.05;
 const devices = [
   { label: '2018 (10th gen)', sub: '6-inch · 116 × 167 mm', w: 116, h: 167, btn: 'bottom', fill: '#b9ad94', dashed: false },
   { label: '2021 (11th gen)', sub: '6.8-inch · 124.6 × ~175 mm', w: 124.6, h: 175, btn: 'bottom', fill: '#9c9078', dashed: false },
   { label: '2024 (12th gen)', sub: '7-inch · 127.6 × 176.7 mm', w: 127.6, h: 176.7, btn: 'bottom', fill: '#7a8f8b', dashed: false },
-  { label: '2026 (new)', sub: '7-inch · W × H not confirmed', w: 127.6, h: 176.7, btn: 'right', fill: 'none', dashed: true },
+  { label: '2026 (new)', sub: '7-inch · 126.8 × 174.7 mm', w: 126.8, h: 174.7, btn: 'right', fill: '#5f7a76', dashed: false },
 ];
 ---
 <figure class="fig">
   <svg viewBox="0 0 760 290" role="img" aria-labelledby="pf-t pf-d" width="760" height="290">
     <title id="pf-t">Kindle Paperwhite body sizes and power button positions by model year</title>
-    <desc id="pf-d">Four to-scale outlines side by side: 2018 6-inch, 2021 6.8-inch and 2024 7-inch with the power button on the bottom edge, and the 2026 model drawn dashed because its width and height are not confirmed, with the power button on the right edge near the top.</desc>
+    <desc id="pf-d">Four to-scale outlines side by side: 2018 6-inch, 2021 6.8-inch and 2024 7-inch with the power button on the bottom edge, and the 2026 model at 126.8 by 174.7 mm with the power button on the right edge near the top.</desc>
     <g font-family="sans-serif" font-size="13" fill="#1d1b18" text-anchor="middle">
       {devices.map((d, i) => {
         const W = d.w * s, H = d.h * s;
@@ -30,5 +30,5 @@ const devices = [
       })}
     </g>
   </svg>
-  <figcaption>Our own to-scale drawing from published figures: Amazon's 2018 and 2024 specs, the 2021 launch specs (sources give 174.2 or 175.2 mm for height), and no confirmed 2026 size, so that outline reuses the 2024 size only as a placeholder. The red mark is the power button: bottom edge on 2018–2024, right edge near the top on 2026.</figcaption>
+  <figcaption>Our own to-scale drawing from published figures: Amazon's 2018 and 2024 specs, the 2021 launch specs (sources give 174.2 or 175.2 mm for height), and 2026 dimensions reported from Amazon product data by Xataka, Case Society Co and Read with Pro (126.8 × 174.7 × 6.8 mm). The red mark is the power button: bottom edge on 2018–2024, right edge near the top on 2026.</figcaption>
 </figure>

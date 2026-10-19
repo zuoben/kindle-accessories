@@ -13,3 +13,5 @@ export const FACTS_AS_OF = 'October 2, 2026';
 // Facts for pages added Oct 5, 2026 (cover, sleeve, stand guides) were checked on this date.
 export const FACTS_AS_OF_OCT5 = 'October 5, 2026';
 export const PUBLISHED_OCT5 = '2026-10-05';
+export const FACTS_AS_OF_OCT19 = 'October 19, 2026';
+export const PUBLISHED_OCT19 = '2026-10-19';
