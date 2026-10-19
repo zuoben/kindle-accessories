@@ -6,50 +6,52 @@ import Disclosure from '../components/Disclosure.astro';
 import SleeveFit from '../components/SleeveFit.astro';
 import { breadcrumbs, faqPage, article } from '../data/schema';
 import { amazonSearch, LINK_REL } from '../data/links';
-import { FACTS_AS_OF_OCT5, PUBLISHED_OCT5 } from '../data/site.mjs';
+import { FACTS_AS_OF_OCT19 } from '../data/site.mjs';
 
 const path = '/kindle-sleeve/';
-const title = 'Kindle Sleeve Guide: Sizes, Materials and Sleeve vs Case';
-const description = 'Choose a Kindle sleeve: sleeve vs case, interior sizes against Paperwhite, basic Kindle, Oasis and Scribe dimensions, materials, and when a sleeve is enough.';
+const title = 'Kindle Sleeve Guide: Sizes, Materials and When a Sleeve Is Enough';
+const description = 'Kindle sleeve buying guide: how interior sizes line up with 2026 and 2024 Paperwhite, basic Kindle, Oasis and Scribe dimensions, sleeve vs folio cover, and when a sleeve is enough.';
 
 const faq = [
-  { q: 'Is a Kindle sleeve enough, or do I need a case?', a: `A sleeve is enough if the Kindle mostly rides in a bag and you read it bare. It guards against scratches from keys and charger cables and softens light knocks, but it does nothing while you are reading. If you want something on the device while you read it (grip, a stand, a cover that wakes it), you want a case. Many people use both: a slim case in the hand and a sleeve in the bag. See the <a href="/kindle-case/">Kindle case buying guide</a> and the <a href="/kindle-cover/">cover types page</a>.` },
-  { q: 'What sleeve size fits a 7-inch Kindle Paperwhite?', a: `Look for an interior at least a little bigger than the device's outer size. The 2024 Paperwhite is 176.7 × 127.6 × 7.8 mm and the 2021 model is 175.2 × 124.6 × 8.1 mm. Two Amazon listings for "6-7 inch" sleeves state interiors of about 200 × 150 mm and 190 × 140 mm, which leave 23 mm and 13 mm of spare length by our arithmetic. A "6-inch" pouch with a 170 × 120 mm interior is shorter than the device. The 2026 Paperwhite's width and height were not published in the sources we checked, so for that model, wait for Amazon's spec sheet.` },
+  { q: 'Is a Kindle sleeve enough, or do I need a case?', a: `A sleeve is enough if the Kindle mostly rides in a bag and you read it bare. It guards against scratches from keys and charger cables and softens light knocks, but it does nothing while you are reading. If you want something on the device while you read it (grip, a stand, a cover that wakes it), you want a case or folio cover. Many people use both: a slim case in the hand and a sleeve in the bag. See the <a href="/kindle-case/">Kindle case buying guide</a> and the <a href="/kindle-cover/">Kindle Paperwhite cover guide</a>.` },
+  { q: 'How do I match a Kindle sleeve to my Paperwhite size?', a: `Compare the device's outer size with the sleeve's stated interior size and leave some margin (about a centimeter of spare length helps). The 2024 Paperwhite is 176.7 × 127.6 × 7.8 mm; the 2026 Paperwhite is 174.7 × 126.8 × 6.8 mm (secondary sources citing Amazon product data — see the size table). Two Amazon listings for "6-7 inch" sleeves state interiors of about 200 × 150 mm and 190 × 140 mm, which leave spare length by our arithmetic. A "6-inch" pouch with a 170 × 120 mm interior is shorter than either Paperwhite.` },
   { q: 'Will a sleeve made for a 6-inch Kindle fit a Paperwhite?', a: `Not necessarily. A 6-inch label describes the screen, not the pouch. One neoprene "6-inch" pouch lists an interior of 6.7 × 4.7 in (170 × 120 mm), and a reviewer on that listing says it is a tight fit even for the 2018 Paperwhite, which is 167 × 116 mm. The 2021, 2024 and 2026 Paperwhites have a 7-inch (6.8-inch on the 2021 model) screen and are larger than that. Choose a sleeve that states 6-7 inch compatibility, or better, one that names your model and lists interior dimensions.` },
-  { q: 'Can I put a Kindle that is already in a case into a sleeve?', a: `Only if the sleeve is large enough for the device and the case together. Add the case's thickness and the folded flap to the device's outer size, then compare with the sleeve's interior width, height and depth. A padded sleeve with an interior depth of about 15 mm (as one nylon listing states) leaves modest room beyond a bare 8 mm Kindle. A thick folio may not fit. If you use both, buy the sleeve for the cased size, or pick one marked for a larger tablet.` },
-  { q: 'Will a sleeve fit the 2026 Kindle and Paperwhite?', a: `We cannot say for sure yet. The 2026 base Kindle and Paperwhite are thinner (6.8 mm per WIRED and Engadget) and lighter (140 g and 204 g) than the models they replace. One UK retailer lists the base Kindle at 152.7 × 107.9 × 6.8 mm, but we could not confirm that against Amazon, and the retailer's weight differs from the press reports. Because the new models are thinner, thickness is unlikely to be the problem; length and width are what to compare with a sleeve's interior once Amazon publishes the final specifications.` },
-  { q: 'Does a sleeve protect against water?', a: `Only as far as the seller says, and the claims differ. One nylon listing calls its exterior water-resistant and its zipper sealed, another describes anti-splash polyester, and a neoprene pouch listing calls its material water-resistant. None of that is a waterproof rating, and none replaces the Kindle's own rating (the 2024 Paperwhite is IPX8 per Amazon; the basic Kindle is not waterproof). Treat a sleeve as protection from drizzle and spills in a bag, not from submersion.` },
+  { q: 'Sleeve vs folio cover: when is each enough?', a: `A folio cover stays on while you read, protects the screen when closed, and usually adds auto wake/sleep; it must match your model year. A sleeve protects only in a bag and then gets out of the way, so it adds nothing in your hand and can often outlast a device upgrade if the interior still fits. If you hate cases and only need bag protection, a sleeve is enough. If you toss the Kindle into a backpack and also want a flap while reading, use both — or pick a folio and skip the sleeve. Details: <a href="#vs-case">sleeve vs case</a> and the <a href="/kindle-cover/">cover types page</a>.` },
+  { q: 'Can I put a Kindle that is already in a case into a sleeve?', a: `Only if the sleeve is large enough for the device and the case together. Add the case's thickness and the folded flap to the device's outer size, then compare with the sleeve's interior width, height and depth. A padded sleeve with an interior depth of about 15 mm (as one nylon listing states) leaves modest room beyond a bare 7–8 mm Kindle. A thick folio may not fit. If you use both, buy the sleeve for the cased size, or pick one marked for a larger tablet.` },
+  { q: 'Will a sleeve fit the 2026 Kindle and Paperwhite?', a: `Thickness is unlikely to be the problem: both 2026 models are 6.8 mm thick (WIRED / Engadget). For the Paperwhite, secondary sources cite Amazon product data at 126.8 × 174.7 × 6.8 mm — slightly smaller in footprint than the 2024 model — so a "6-7 inch" sleeve that already fits a 2024 Paperwhite should have room, but we have not measured any sleeve against a 2026 device. One UK retailer lists the base Kindle at 152.7 × 107.9 × 6.8 mm; we could not confirm that against Amazon US. Leave margin and check the sleeve's stated interior.` },
+  { q: 'Do Scribe and Oasis need different sleeve sizes than a Paperwhite?', a: `Yes. The Oasis (10th gen) is short but wide at 159 × 141 mm, so its width is the number to check against a sleeve interior. The Scribe is a much larger device: 230 × 196 mm for the 2022/2024 models and 245 × 189 mm for the 2025 / Colorsoft Scribe. A "6-7 inch" Paperwhite sleeve will not fit a Scribe. See the <a href="#sizes">size table</a> and the <a href="/kindle-scribe-case/">Scribe case guide</a>.` },
+  { q: 'Does a sleeve protect against water?', a: `Only as far as the seller says, and the claims differ. One nylon listing calls its exterior water-resistant and its zipper sealed, another describes anti-splash polyester, and a neoprene pouch listing calls its material water-resistant. None of that is a waterproof rating, and none replaces the Kindle's own rating (the 2024 and — per Amazon UK — 2026 Paperwhite are IPX8; the basic Kindle is not waterproof). Treat a sleeve as protection from drizzle and spills in a bag, not from submersion.` },
   { q: 'What sleeve works for a Kindle Scribe?', a: `Scribe sleeves are scarcer, and the sizes differ by model year. One MoKo sleeve for the 10.2-inch Scribe (2022 and 2024) states an interior of 9.84 × 8.66 in (about 250 × 220 mm) and has an elastic pen holder. The 2022 and 2024 Scribes are 230 × 196 mm; the 2025 Scribe is 245 × 189 mm. We did not find a sleeve listing for the 2025 model to check, and the sleeve will not keep the pen magnetically attached. See the <a href="/kindle-scribe-case/#styles">Scribe case styles</a> and verify inner dimensions yourself.` },
   { q: 'Does it matter if my Kindle wakes up inside the sleeve?', a: `A little. A sleeve has no magnet to put the Kindle to sleep, so it relies on the Kindle's own screen timeout, and a tight pouch could press the power button or touch the screen. We have no test of this, and the pressure depends on the fit and the model (the 2026 models move the power button to the right edge near the top, per The Verge). If it worries you, put the Kindle to sleep yourself before packing it, and choose a sleeve that is not too snug.` },
 ];
 const ld = [
-  article({ headline: title, description, path, published: PUBLISHED_OCT5 }),
+  article({ headline: title, description, path }),
   breadcrumbs([{ name: 'Home', path: '/' }, { name: 'Kindle accessories', path: '/kindle-accessories/' }, { name: 'Kindle sleeve', path }]),
   faqPage(faq),
 ];
 ---
 <Base title={title} description={description} path={path} jsonld={ld} ogType="article">
   <p class="crumbs"><a href="/">Home</a> › <a href="/kindle-accessories/">Kindle accessories</a> › Kindle sleeve</p>
-  <h1>Kindle Sleeve Guide: How to Choose the Right Size and Material</h1>
-  <p class="meta">Facts checked {FACTS_AS_OF_OCT5}. Independent guide based on Amazon's specifications and listings. We have not hands-on tested any sleeve or measured any Kindle.</p>
+  <h1>Kindle Sleeve: How to Choose the Right Size and Material</h1>
+  <p class="meta">Facts checked {FACTS_AS_OF_OCT19}. Independent guide based on Amazon's specifications and listings. We have not hands-on tested any sleeve or measured any Kindle, including the 2026 Paperwhite.</p>
   <Disclosure />
 
-  <p class="lede">A Kindle sleeve is the simplest protection you can buy: a padded pouch that the Kindle slides into and out of, with nothing attached to the device itself. It is also the accessory most often bought on a size label that turns out to mean little. "Fits 6-inch Kindles" describes the screen, not the pouch, and the difference between a sleeve that fits and one that is a struggle can be a few millimeters. This page compares sleeves with cases, lines up published Kindle dimensions against the interior sizes sellers state, and explains the materials and when a sleeve is the right answer.</p>
+  <p class="lede">A Kindle sleeve is the simplest protection you can buy: a padded pouch that the Kindle slides into and out of, with nothing attached to the device itself. It is also the accessory most often bought on a size label that turns out to mean little. "Fits 6-inch Kindles" describes the screen, not the pouch, and the difference between a sleeve that fits and one that is a struggle can be a few millimeters. This page compares sleeves with cases and folio covers, lines up published Kindle dimensions — including the 2026 Paperwhite — against the interior sizes sellers state, and explains when a sleeve is the right answer.</p>
 
   <div class="box">
     <h2>The short answer</h2>
     <ul>
-      <li><strong>Choose a sleeve</strong> if your Kindle spends its time in a bag and you read it bare, or if you already use a case and want a second layer for travel.</li>
-      <li><strong>Choose a case instead</strong> if you want something on the device while you read: a flap that wakes it, grip, a stand or a strap. See the <a href="/kindle-case/">Kindle case buying guide</a> and the <a href="/kindle-cover/">cover types page</a>.</li>
-      <li><strong>Size by numbers, not by the screen label.</strong> Compare the device's outer size (below) with the sleeve's stated interior size and leave some margin.</li>
-      <li><strong>Own a Scribe?</strong> It is much larger than the other Kindles; most sleeves are not. See the <a href="/kindle-scribe-case/">Scribe case guide</a> as well.</li>
+      <li><strong>Choose a Kindle sleeve</strong> if your Kindle spends its time in a bag and you read it bare, or if you already use a case and want a second layer for travel.</li>
+      <li><strong>Choose a case or folio cover instead</strong> if you want something on the device while you read: a flap that wakes it, grip, a stand or a strap. See the <a href="/kindle-case/">Kindle case buying guide</a>, the <a href="/kindle-cover/">Kindle Paperwhite cover guide</a> and the <a href="/kindle-paperwhite-case/">Paperwhite case fit guide</a>.</li>
+      <li><strong>Size by numbers, not by the screen label.</strong> Compare the device's outer size (below) with the sleeve's stated interior size and leave some margin. The 2026 Paperwhite is 126.8 × 174.7 × 6.8 mm (secondary sources).</li>
+      <li><strong>Own a Scribe or Oasis?</strong> Different footprint from a Paperwhite — see the size table. Scribe owners: also see the <a href="/kindle-scribe-case/">Scribe case guide</a>.</li>
     </ul>
   </div>
 
   <nav class="toc" aria-label="On this page">
     <strong>On this page</strong>
     <ol>
-      <li><a href="#vs-case">Sleeve vs case: the trade-off</a></li>
+      <li><a href="#vs-case">Sleeve vs case and folio cover</a></li>
       <li><a href="#sizes">Sleeve sizes by Kindle model</a></li>
       <li><a href="#interior">Reading the interior size</a></li>
       <li><a href="#materials">Materials</a></li>
@@ -62,11 +64,11 @@ const ld = [
     </ol>
   </nav>
 
-  <h2 id="vs-case">Sleeve vs case: the trade-off</h2>
-  <p>A sleeve and a case solve different problems. A case becomes part of the Kindle: it changes how you hold it, how it sleeps and how it charges. A sleeve is a container: it protects the device when it is not in use and then gets out of the way. That is why a sleeve is not a substitute for a case for most readers, and why it can be the better choice for some.</p>
+  <h2 id="vs-case">Sleeve vs case and folio cover</h2>
+  <p>A sleeve and a case solve different problems. A case or folio cover becomes part of the Kindle: it changes how you hold it, how it sleeps and how it charges. A sleeve is a container: it protects the device when it is not in use and then gets out of the way. That is why a sleeve is not a substitute for a folio for most readers, and why it can be the better choice for some.</p>
   <Table
     caption="General comparison. Individual products vary; this is our reasoning, not test results."
-    head={['', 'Sleeve', 'Case or cover']}
+    head={['', 'Sleeve', 'Case or folio cover']}
     rows={[
       ['When you are reading', 'Takes the Kindle out; no protection while in use', 'On the device the whole time; adds grip, maybe a stand'],
       ['In a bag', 'Protects against scratches and knocks; screen is inside', 'Folios cover the screen; shells do not'],
@@ -77,31 +79,35 @@ const ld = [
       ['Reusability', 'Often carries over when you upgrade, if the size still fits', 'Usually has to be replaced with each new model'],
     ]}
   />
-  <p>That last row is the sleeve's real advantage. Cases are cut to the exact model year; Amazon's own 2024 fabric cover is listed as fitting the 2024 release only. A sleeve with some slack might carry on through an upgrade, as long as you check the numbers. For the case side of this decision, see our <a href="/kindle-paperwhite-case/">Paperwhite case guide</a> and the <a href="/kindle-cover/">cover types comparison</a>.</p>
+  <p>That last row is the sleeve's real advantage. Cases are cut to the exact model year; Amazon's own 2024 fabric cover is listed as fitting the 2024 release only, and its 2026 knit cover names 2026 Paperwhite and Colorsoft only. A sleeve with some slack might carry on through an upgrade, as long as you check the numbers. For the case and cover side of this decision, see our <a href="/kindle-paperwhite-case/">Paperwhite case guide</a> and the <a href="/kindle-cover/">Kindle Paperwhite cover guide</a>.</p>
 
   <h2 id="sizes">Sleeve sizes by Kindle model</h2>
-  <p>These are the published outer dimensions of the models most people own. They are the numbers to compare against a sleeve's interior. All are from Amazon's listings or press coverage, except where marked.</p>
+  <p>These are the published outer dimensions of the models most people own. They are the numbers to compare against a sleeve's interior. All are from Amazon's listings or press coverage, except where marked. Refreshed {FACTS_AS_OF_OCT19}.</p>
   <Table
-    caption="Outer dimensions and weights from Amazon listings, retailer spec tables and press coverage. Sizes are length × width × thickness."
+    caption={`Outer dimensions and weights from Amazon listings, retailer spec tables and press coverage. 2026 Paperwhite footprint from secondary sources citing Amazon product data (Xataka, Case Society Co, Read with Pro) — not pulled from an Amazon US technical card by us. Sizes are length × width × thickness. Checked ${FACTS_AS_OF_OCT19}.`}
     head={['Model', 'Screen', 'Outer size (mm)', 'Weight', 'Sleeve note']}
     rows={[
       ['Kindle 2022 / 2024 (basic)', '6-inch', '157.8 × 108.6 × 8.0', '158 g', 'The 2024 model matches the 2022 size, per Digital Trends. Fits smaller "6-inch" pouches.'],
-      ['Kindle 2026 (basic)', '6-inch', 'Thickness 6.8; width and height not confirmed (one UK retailer lists 152.7 × 107.9)', '140 g (WIRED, Engadget); aluminum version about 20 g heavier (Engadget)', 'Ships smaller than the 2024 model by the reports we found. Confirm the final specs.'],
+      ['Kindle 2026 (basic)', '6-inch', 'Thickness 6.8; width and height not confirmed against Amazon US (one UK retailer lists 152.7 × 107.9)', '140 g (WIRED, Engadget); aluminum version about 20 g heavier (Engadget)', 'Thinner than 2024; confirm final W×H before buying a snug pouch.'],
       ['Paperwhite 2018 (10th gen)', '6-inch', '167 × 116 × 8.18', '182 g', 'One reviewer on a "6-inch" neoprene pouch listing calls it too tight for this model.'],
       ['Paperwhite 2021 (11th gen)', '6.8-inch', '175.2 × 124.6 × 8.1', '205 g', 'Named on several 6-7 inch sleeve listings.'],
       ['Paperwhite 2024 (12th gen)', '7-inch', '176.7 × 127.6 × 7.8', '211 g', 'Colorsoft Signature Edition (2024) has the same size, 219 g.'],
-      ['Paperwhite 2026', '7-inch', 'Thickness 6.8; width and height not confirmed in our sources', '204 g (WIRED)', 'Leave margin; check once Amazon publishes the spec.'],
+      ['Paperwhite 2026', '7-inch', '174.7 × 126.8 × 6.8 (secondary sources)', '204 g (WIRED); Signature ~229 g (secondary)', 'Slightly smaller footprint than 2024; a roomy 6-7 inch sleeve that fits 2024 should have margin — not hands-on verified.'],
       ['Oasis (10th gen, 2019)', '7-inch', '159 × 141 × 3.4-8.4 (grip side thickest)', '188 g', 'Short but wide; check the sleeve\'s interior width.'],
       ['Scribe 2022 / 2024', '10.2-inch', '230 × 196 × 5.7-5.8', '433 g', 'Needs a 10-inch tablet sleeve; one MoKo listing is made for it.'],
       ['Scribe 2025 / Colorsoft', '11-inch', '245 × 189 × 5.4', '400 g', 'No sleeve listing checked for this size.'],
     ]}
   />
   <p>The outliers are the Oasis, which is short but wide (159 × 141 mm), so its width is the number to check, and the Scribe, which is a much larger device. A "6-7 inch" sleeve is not going to fit a Scribe and is not meant to.</p>
+  <div class="box warn">
+    <h3>2026 Paperwhite dimensions — source note</h3>
+    <p>The 126.8 × 174.7 × 6.8 mm figures come from secondary write-ups (Xataka, Case Society Co, Read with Pro) that cite Amazon product data. We have not pulled them from a live Amazon US technical card ourselves, and we have not measured a sleeve against a 2026 device. US buyer reports will not exist until after the October 28, 2026 ship date.</p>
+  </div>
 
   <SleeveFit />
 
   <h2 id="interior">Reading the interior size</h2>
-  <p>A sleeve listing usually gives an external size and an internal size. The external size tells you how much room it takes in your bag; the internal size tells you whether the Kindle fits. The numbers in listings are not always reliable, and at least one seller states that its sizes were measured by hand and "there will be some deviation." Here is what the listings we looked at say, set against the 2024 Paperwhite:</p>
+  <p>A sleeve listing usually gives an external size and an internal size. The external size tells you how much room it takes in your bag; the internal size tells you whether the Kindle fits. The numbers in listings are not always reliable, and at least one seller states that its sizes were measured by hand and "there will be some deviation." Here is what the listings we looked at say, set against the 2024 Paperwhite (still the best-documented reference; the 2026 model is a few millimeters smaller):</p>
   <Table
     caption="Interior sizes as stated by sellers on Amazon.com listings we checked; margins are our own arithmetic against a 176.7 × 127.6 mm device, not tested fit."
     head={['Sleeve (type, as listed)', 'Stated interior', 'Spare length / width vs 2024 Paperwhite', 'Comment']}
@@ -112,7 +118,7 @@ const ld = [
     ]}
   />
   <p>Two rules of thumb follow from the arithmetic, though neither is a tested guarantee. First, you want at least a centimeter of spare length so you can slide the Kindle in and out without a fight, and a few millimeters of spare width. Second, depth matters when you add a case or screen protector; the nylon sleeve's stated depth of 15 mm is plenty for a bare Kindle but modest for a thick folio. And if the Oasis is yours, note that the 141 mm width is just over the nylon sleeve's stated 140 mm interior, so for that model the roomier sleeve is the safer bet (we did not find a listing that gives Oasis-specific interior numbers).</p>
-  <p><a class="btn alt" href={amazonSearch('kindle paperwhite sleeve 7 inch')} rel={LINK_REL} target="_blank">Search Amazon: Kindle sleeves</a></p>
+  <p><a class="btn alt" href={amazonSearch('kindle sleeve')} rel={LINK_REL} target="_blank">Search Amazon: Kindle sleeve</a></p>
 
   <h2 id="materials">Materials</h2>
   <Table
@@ -144,14 +150,14 @@ const ld = [
       ['You carry the Kindle in a backpack or tote with other things', 'Yes', 'Keeps keys and cables from scratching the screen.'],
       ['You hate cases and read bare', 'Yes', 'Protection in transit, nothing on the device in the hand.'],
       ['You commute or fly and want a second layer', 'Yes, with a slim case', 'A sleeve outside the case; check depth.'],
-      ['You read one-handed in bed and want grip', 'Not alone', 'A sleeve does nothing while you read; see the <a href="/kindle-cover/">cover types page</a>.'],
-      ['You want the Kindle to wake when you open a flap', 'No', 'That is a case feature.'],
+      ['You read one-handed in bed and want grip', 'Not alone', 'A sleeve does nothing while you read; see the <a href="/kindle-cover/">cover guide</a>.'],
+      ['You want the Kindle to wake when you open a flap', 'No', 'That is a folio cover feature.'],
       ['You buy for a child', 'Probably not alone', 'Kids models come with a cover; see the <a href="/kindle-case/">case guide</a>.'],
     ]}
   />
 
   <h2 id="sleeve-and-case">Using a sleeve and a case together</h2>
-  <p>It is a common combination, and it works if the numbers add up. Add the case's thickness to the Kindle's (7.8 mm for the 2024 Paperwhite), then compare with the sleeve's interior depth. If the case is a hard back with a flap, the sleeve's depth and its zipper clearance are the limiting factors, not the length. If you do not know the cased dimensions, measure them yourself with a ruler; sellers' sizes are approximate. A sleeve that is too tight on a cased Kindle can strain the cover's flap. If that is a concern, choose a sleeve marked for a larger tablet (8-inch rather than 6-7 inch), and accept that it will leave more slack.</p>
+  <p>It is a common combination, and it works if the numbers add up. Add the case's thickness to the Kindle's (7.8 mm for the 2024 Paperwhite; 6.8 mm for the 2026), then compare with the sleeve's interior depth. If the case is a hard back with a flap, the sleeve's depth and its zipper clearance are the limiting factors, not the length. If you do not know the cased dimensions, measure them yourself with a ruler; sellers' sizes are approximate. A sleeve that is too tight on a cased Kindle can strain the cover's flap. If that is a concern, choose a sleeve marked for a larger tablet (8-inch rather than 6-7 inch), and accept that it will leave more slack. For Paperwhite-year fit on the case itself, see <a href="/kindle-paperwhite-case/">Paperwhite cases</a>; for stand and dock notes, see the <a href="/kindle-stand/">stand guide</a>.</p>
 
   <h2 id="red-flags">Listing red flags</h2>
   <ul>
@@ -164,11 +170,12 @@ const ld = [
   </ul>
 
   <h2 id="method">How we researched this</h2>
-  <p>This guide uses Amazon and retailer listings for the sleeves named (MoKo and kwmobile), Amazon device specifications and spec tables, and press coverage from WIRED, Engadget, The Verge and Digital Trends. Sleeve brands are named only because their listings gave interior dimensions we could use as examples; we are not recommending or ranking them, and we have not tested any. Interior sizes are as stated by sellers and may differ from real life. Margins are our arithmetic. To report a mistake, use our <a href="/contact/">contact page</a>; see also our <a href="/about/">editorial policy</a>.</p>
+  <p>This guide uses Amazon and retailer listings for the sleeves named (MoKo and kwmobile), Amazon device specifications and spec tables, and press coverage from WIRED, Engadget, The Verge and Digital Trends. We refreshed 2026 Paperwhite outer dimensions on {FACTS_AS_OF_OCT19} against secondary reports of Amazon product data. Sleeve brands are named only because their listings gave interior dimensions we could use as examples; we are not recommending or ranking them, and we have not tested any. Interior sizes are as stated by sellers and may differ from real life. Margins are our arithmetic. To report a mistake, use our <a href="/contact/">contact page</a>; see also our <a href="/about/">editorial policy</a>.</p>
   <ul class="sources">
     <li>Amazon.com listings for MoKo 6-7 inch Kindle sleeves (padded and nylon versions) and a kwmobile 6-inch neoprene pouch: stated sizes, compatibility lists, materials; checked October 2026.</li>
     <li>MoKo's Kindle Scribe 10.2-inch sleeve listing (Amazon.ca): interior size, pen holder.</li>
-    <li>Amazon device listings and spec tables: 2022/2024 Kindle (157.8 × 108.6 × 8.0 mm, 158 g), 2024 Paperwhite and Colorsoft Signature Edition, 2018 Paperwhite (167 × 116 × 8.18 mm, 182 g), Oasis 10th generation (159 × 141 × 3.4-8.4 mm, 188 g).</li>
+    <li>Amazon device listings and spec tables: 2022/2024 Kindle, 2024 Paperwhite and Colorsoft Signature Edition, 2018 Paperwhite, Oasis 10th generation.</li>
+    <li>Xataka, Case Society Co, Read with Pro (Oct 2026): 2026 Paperwhite 126.8 × 174.7 × 6.8 mm and Signature ~229 g, citing Amazon product data (secondary; not Amazon US tech card pulled by us).</li>
     <li>WIRED, Engadget and The Verge (Oct 1, 2026): 2026 Kindle and Paperwhite thickness and weight; power button move.</li>
     <li>Digital Trends review of the 2024 Kindle: same size as 2022.</li>
   </ul>
@@ -177,6 +184,6 @@ const ld = [
 
   <div class="box">
     <h2>Next step</h2>
-    <p>Want protection on the device while you read? <a class="btn" href="/kindle-case/">Kindle case buying guide</a> <a class="btn alt" href="/kindle-cover/">Cover types compared</a> <a class="btn alt" href="/kindle-paperwhite-case/">Paperwhite case guide</a> <a class="btn alt" href="/kindle-scribe-case/">Scribe case guide</a> Everything else: <a class="btn alt" href="/kindle-accessories/">All Kindle accessories</a></p>
+    <p>Want protection on the device while you read? <a class="btn" href="/kindle-cover/">Kindle Paperwhite cover guide</a> <a class="btn alt" href="/kindle-case/">Kindle case buying guide</a> <a class="btn alt" href="/kindle-paperwhite-case/">Paperwhite case guide</a> Stand or dock? <a class="btn alt" href="/kindle-stand/">Kindle stand guide</a> Scribe? <a class="btn alt" href="/kindle-scribe-case/">Scribe case guide</a> Everything else: <a class="btn alt" href="/kindle-accessories/">All Kindle accessories</a></p>
   </div>
 </Base>
