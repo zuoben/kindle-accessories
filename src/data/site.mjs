@@ -15,3 +15,5 @@ export const FACTS_AS_OF_OCT5 = 'October 5, 2026';
 export const PUBLISHED_OCT5 = '2026-10-05';
 export const FACTS_AS_OF_OCT19 = 'October 19, 2026';
 export const PUBLISHED_OCT19 = '2026-10-19';
+export const FACTS_AS_OF_OCT20 = 'October 20, 2026';
+export const PUBLISHED_OCT20 = '2026-10-20';
