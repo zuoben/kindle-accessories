@@ -29,7 +29,7 @@ npm run build && npx wrangler deploy
 ```
 
 `CLOUDFLARE_API_TOKEN` must be set (or `wrangler login`). Worker name: `kindle-accessories`.
-Current URL: https://kindle.tradeglo.net (Workers custom domain; workers.dev fallback: https://kindle-accessories.w1214237256.workers.dev)
+Current URL: https://kindle.tradeglo.net
 
 ### Custom domain
 1. Edit `SITE_URL` in `src/data/site.mjs` (canonical, sitemap, robots, JSON-LD, OG all derive from it).
