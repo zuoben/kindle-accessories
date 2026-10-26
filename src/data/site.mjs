@@ -1,6 +1,6 @@
 // Single source of truth for site-wide constants.
 // If you attach a custom domain, change SITE_URL here (and in wrangler.toml), then rebuild.
-export const SITE_URL = 'https://kindle-accessories.w1214237256.workers.dev';
+export const SITE_URL = 'https://kindle.tradeglo.net';
 export const SITE_NAME = 'Dogear';
 export const SITE_TAGLINE = 'Independent Kindle buying guides';
 export const REPO_URL = 'https://github.com/zuoben/kindle-accessories';
