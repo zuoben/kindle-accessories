@@ -7,6 +7,8 @@ import CoverLayers from '../components/CoverLayers.astro';
 import { breadcrumbs, faqPage, article } from '../data/schema';
 import { amazonSearch, LINK_REL } from '../data/links';
 import { FACTS_AS_OF_OCT19 } from '../data/site.mjs';
+import ExampleStyles from '../components/ExampleStyles.astro';
+import { ACCESSORY_EXAMPLES } from '../data/accessory-examples.mjs';
 
 const path = '/kindle-cover/';
 const title = 'Kindle Paperwhite Cover Guide: Fit, Types and 2026 Models';
@@ -73,6 +75,7 @@ const ld = [
       <li><a href="#red-flags">Cover-specific red flags</a></li>
       <li><a href="#method">How we researched this</a></li>
       <li><a href="#faq">FAQ</a></li>
+          <li><a href="#example-styles">Example styles (illustrative)</a></li>
     </ol>
   </nav>
 
@@ -133,6 +136,11 @@ const ld = [
     ]}
   />
   <p>One note on drops: no cover can promise protection, and we have no drop tests. The practical difference is that a snap-in or wrap-around design holds the Kindle through its own frame, while a magnetic-attach design relies on magnets alone. Amazon's own wording on its Scribe folio listing is that the device "magnetically attaches to a slim folio, rather than snapping into a plastic back like a traditional Kindle cover." That is a deliberate trade for thinness, and it is why some reviewers on that listing say the grip is not secure enough.</p>
+
+  <ExampleStyles
+    examples={ACCESSORY_EXAMPLES.cover}
+    intro="Illustrative cover constructions. Use them to recognize folio vs slim profiles; buy only against your Kindle generation and Amazon's own model-year naming."
+  />
 
   <h2 id="materials">Step 2: Fabric, synthetic, plant-based or leather</h2>
   <p>The second layer is how it feels in the hand. These are general trade-offs, not rankings.</p>

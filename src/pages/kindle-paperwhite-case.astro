@@ -7,6 +7,8 @@ import PaperwhiteFit from '../components/PaperwhiteFit.astro';
 import { breadcrumbs, faqPage, article } from '../data/schema';
 import { amazonSearch, LINK_REL } from '../data/links';
 import { FACTS_AS_OF_OCT20 } from '../data/site.mjs';
+import ExampleStyles from '../components/ExampleStyles.astro';
+import { ACCESSORY_EXAMPLES } from '../data/accessory-examples.mjs';
 
 const path = '/kindle-paperwhite-case/';
 const title = 'Kindle Paperwhite Case Guide: 2026 Fit, Signature Covers and Red Flags';
@@ -68,6 +70,7 @@ const ld = [
       <li><a href="#red-flags">Listing red flags</a></li>
       <li><a href="#method">How we researched this</a></li>
       <li><a href="#faq">FAQ</a></li>
+          <li><a href="#example-styles">Example styles (illustrative)</a></li>
     </ol>
   </nav>
 
@@ -142,6 +145,12 @@ const ld = [
   <p>Paperwhites released before 2018 had a raised bezel rather than a flush front, and CNET noted the 2015 model shared its chassis with the 2013 one. They need cases designed for that body, and many listings are old and unreliable. If you have one, look for a case that names your exact generation and matches the ten-year-old shape, or consider whether upgrading makes more sense than a new accessory. In every older case, buy from a seller with a clear return window.</p>
 
   <h2 id="styles">Case styles for the Paperwhite</h2>
+
+  <ExampleStyles
+    examples={ACCESSORY_EXAMPLES.case}
+    intro="Illustrative constructions for Paperwhite-class cases. Photos are cleaned product studio shots used only to show style — not recommendations, not Amazon listings, and not linked to any supplier on this page. Fit still starts with your exact model year."
+  />
+
   <p>Once you know the model year, style is mostly about how you read. Our general <a href="/kindle-case/#types">case styles comparison</a> goes deeper; this version is tuned to the Paperwhite.</p>
   <Table
     caption="General comparison. Individual products vary, and these are our reasoning, not test results."

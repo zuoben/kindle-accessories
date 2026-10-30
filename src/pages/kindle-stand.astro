@@ -7,6 +7,8 @@ import StandTypes from '../components/StandTypes.astro';
 import { breadcrumbs, faqPage, article } from '../data/schema';
 import { amazonSearch, LINK_REL } from '../data/links';
 import { FACTS_AS_OF_OCT5, PUBLISHED_OCT5 } from '../data/site.mjs';
+import ExampleStyles from '../components/ExampleStyles.astro';
+import { ACCESSORY_EXAMPLES } from '../data/accessory-examples.mjs';
 
 const path = '/kindle-stand/';
 const title = 'Kindle Stand Guide: Desk, Bed and Charging Stands Compared';
@@ -62,6 +64,7 @@ const ld = [
       <li><a href="#red-flags">Listing red flags</a></li>
       <li><a href="#method">How we researched this</a></li>
       <li><a href="#faq">FAQ</a></li>
+          <li><a href="#example-styles">Example styles (illustrative)</a></li>
     </ol>
   </nav>
 
@@ -109,6 +112,12 @@ const ld = [
   </ul>
   <p>Customer experience on that listing is mixed: many reviewers like it, but a sizeable group reports it failing to charge or flashing without charging, and some mention a case that was too thick. That is not a test, only a reminder that wireless charging depends on alignment and on what is between the coils.</p>
   <p>For the 2026 generation, Amazon's announcement lists a $59.99 Charging Dock for the Paperwhite Signature Edition and Colorsoft Signature Edition that keeps them upright and charged. The Signature Editions use pogo pins on the rear for dock charging and for Amazon's $79.99 Page-Turn Cover, so a case that covers the pins can block both. The sources we found do not say whether the 2026 dock works with the 2024 Signature Edition or vice versa, so do not assume either. Our <a href="/kindle-paperwhite-case/#signature">Paperwhite case guide</a> explains the Signature Edition and charging in more detail, and our <a href="/kindle-charger/#wireless">Kindle charger guide</a> covers cables, adapters and wireless charging for every model.</p>
+
+  <ExampleStyles
+    examples={ACCESSORY_EXAMPLES.stand}
+    intro="Illustrative cover-integrated and soft-shell styles that often add a hand strap or fold-out stand. Separate desk stands and docks are still covered in the sections below."
+  />
+
 
   <h2 id="folio">Built-in cover stands</h2>
   <p>Many folio covers fold back into a stand at one or two angles. Amazon's 2025 Scribe folio listing, for example, mentions low and high stand angles. The advantage is that it costs nothing extra and travels with the Kindle. The limits are that it only works with that cover on, you do not choose the angle precisely, and on a Scribe, a stand fold can put magnets close to the writing area, which some reviewers report as interfering with the pen (anecdotal). Our <a href="/kindle-cover/">cover types guide</a> covers folio constructions, and the <a href="/kindle-case/">Kindle case buying guide</a> includes a stand-style row in its comparison of case styles.</p>

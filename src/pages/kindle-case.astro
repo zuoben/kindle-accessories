@@ -7,6 +7,8 @@ import CaseTypes from '../components/CaseTypes.astro';
 import { breadcrumbs, faqPage, article } from '../data/schema';
 import { amazonSearch, LINK_REL } from '../data/links';
 import { FACTS_AS_OF } from '../data/site.mjs';
+import ExampleStyles from '../components/ExampleStyles.astro';
+import { ACCESSORY_EXAMPLES } from '../data/accessory-examples.mjs';
 
 const path = '/kindle-case/';
 const title = 'Kindle Case Buying Guide: Fit, Types and What to Skip';
@@ -61,6 +63,7 @@ const ld = [
       <li><a href="#red-flags">Listing red flags</a></li>
       <li><a href="#method">How we researched this</a></li>
       <li><a href="#faq">FAQ</a></li>
+          <li><a href="#example-styles">Example styles (illustrative)</a></li>
     </ol>
   </nav>
 
@@ -80,6 +83,12 @@ const ld = [
   <p>If you own a Paperwhite, our <a href="/kindle-paperwhite-case/">Kindle Paperwhite case guide</a> goes through each model year in detail. One practical note: several 2024 Paperwhite case listings also name the Kindle Colorsoft Signature Edition, since the two share a body. If you own a Colorsoft, a case listed for it works the same as above; just verify the listing names your exact model. Our <a href="/kindle-colorsoft-case/">Kindle Colorsoft case guide</a> sorts the 2024, 2025 and 2026 Colorsoft models and the color-screen questions. The Scribe is a different case: it is much larger and its pen needs a place to live, so see our <a href="/kindle-scribe-case/">Kindle Scribe case guide</a>.</p>
 
   <CaseTypes />
+
+  <ExampleStyles
+    examples={ACCESSORY_EXAMPLES.case}
+    intro="Illustrative case constructions for e-readers. Style photos are not a shortlist — start from model-year fit, then pick a construction."
+  />
+
 
   <h2 id="types">Case styles compared</h2>
   <Table

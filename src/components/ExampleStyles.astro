@@ -1,0 +1,38 @@
+---
+interface Example {
+  id: string;
+  name: string;
+  image: string;
+  alt: string;
+  params: string[];
+}
+interface Props {
+  heading?: string;
+  intro?: string;
+  examples: Example[];
+  anchor?: string;
+}
+const {
+  heading = 'Example styles (illustrative)',
+  intro = 'Photos below show common accessory constructions. They are illustrative only — not a ranked shortlist, not Amazon-endorsed, and not tied to a named seller on this page. Always match the listing to your exact Kindle model year.',
+  examples,
+  anchor = 'example-styles',
+} = Astro.props;
+---
+<section class="example-styles" id={anchor}>
+  <h2>{heading}</h2>
+  <p>{intro}</p>
+  <div class="example-grid">
+    {examples.map((ex) => (
+      <figure class="example-card">
+        <img src={ex.image} alt={ex.alt} width="600" height="600" loading="lazy" decoding="async" />
+        <figcaption>
+          <strong>{ex.name}</strong>
+          <ul>
+            {ex.params.map((p) => <li>{p}</li>)}
+          </ul>
+        </figcaption>
+      </figure>
+    ))}
+  </div>
+</section>

@@ -71,3 +71,12 @@ footer.site a{color:var(--ink-2)}
 .small{font-size:.85rem;color:var(--muted)}
 .sources li{font:.9rem/1.5 var(--sans);margin:.3em 0}
 @media (max-width:640px){body{font-size:17px}h1{font-size:1.8rem}h2{font-size:1.4rem}}
+
+.example-styles{margin:28px 0}
+.example-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin:18px 0 8px}
+.example-card{margin:0;background:var(--card);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.example-card img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;background:#f3efe6}
+.example-card figcaption{padding:12px 14px 16px;font:.9rem/1.45 var(--sans);color:var(--ink-2);text-align:left}
+.example-card figcaption strong{display:block;font:700 1.02rem var(--serif);color:var(--ink);margin-bottom:6px}
+.example-card ul{margin:.4em 0 0;padding-left:1.1em}
+.example-card li{margin:.25em 0}

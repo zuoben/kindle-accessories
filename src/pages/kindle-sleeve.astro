@@ -7,6 +7,8 @@ import SleeveFit from '../components/SleeveFit.astro';
 import { breadcrumbs, faqPage, article } from '../data/schema';
 import { amazonSearch, LINK_REL } from '../data/links';
 import { FACTS_AS_OF_OCT19 } from '../data/site.mjs';
+import ExampleStyles from '../components/ExampleStyles.astro';
+import { ACCESSORY_EXAMPLES } from '../data/accessory-examples.mjs';
 
 const path = '/kindle-sleeve/';
 const title = 'Kindle Sleeve Guide: Sizes, Materials and When a Sleeve Is Enough';
@@ -61,6 +63,7 @@ const ld = [
       <li><a href="#red-flags">Listing red flags</a></li>
       <li><a href="#method">How we researched this</a></li>
       <li><a href="#faq">FAQ</a></li>
+          <li><a href="#example-styles">Example styles (illustrative)</a></li>
     </ol>
   </nav>
 
@@ -119,6 +122,12 @@ const ld = [
   />
   <p>Two rules of thumb follow from the arithmetic, though neither is a tested guarantee. First, you want at least a centimeter of spare length so you can slide the Kindle in and out without a fight, and a few millimeters of spare width. Second, depth matters when you add a case or screen protector; the nylon sleeve's stated depth of 15 mm is plenty for a bare Kindle but modest for a thick folio. And if the Oasis is yours, note that the 141 mm width is just over the nylon sleeve's stated 140 mm interior, so for that model the roomier sleeve is the safer bet (we did not find a listing that gives Oasis-specific interior numbers).</p>
   <p><a class="btn alt" href={amazonSearch('kindle sleeve')} rel={LINK_REL} target="_blank">Search Amazon: Kindle sleeve</a></p>
+
+  <ExampleStyles
+    examples={ACCESSORY_EXAMPLES.sleeve}
+    intro="One cleaned example of a soft flap sleeve. Dimensions on marketplace size charts are seller-stated; compare them to your Kindle’s outer size and leave margin."
+  />
+
 
   <h2 id="materials">Materials</h2>
   <Table
