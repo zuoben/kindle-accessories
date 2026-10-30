@@ -1,0 +1,145 @@
+{
+  "tagline": "Hướng dẫn mua Kindle độc lập",
+  "skipToContent": "Chuyển tới nội dung",
+  "navAria": "Chính",
+  "moreGuides": "Thêm hướng dẫn",
+  "nav": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "Tất cả phụ kiện"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Bao Paperwhite"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Bao Kindle"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    },
+    {
+      "href": "/about/",
+      "label": "Giới thiệu"
+    }
+  ],
+  "more": [
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Bao Kindle Scribe"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Giải thích bìa Kindle"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Túi Kindle"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Giá đỡ Kindle"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Bao Kindle Colorsoft"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Sạc Kindle"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Lật trang Kindle"
+    }
+  ],
+  "footerGuides": "Hướng dẫn",
+  "footerSite": "Trang web",
+  "footerLegal": "Pháp lý",
+  "footerGuideLinks": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "Tất cả phụ kiện Kindle theo model"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite: nên mua máy nào"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Hướng dẫn bao Paperwhite"
+    },
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Hướng dẫn bao Kindle Scribe"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Hướng dẫn mua bao Kindle"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Giải thích bìa Kindle"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Hướng dẫn túi Kindle"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Hướng dẫn giá đỡ Kindle"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Hướng dẫn bao Colorsoft"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Hướng dẫn sạc Kindle"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Hướng dẫn lật trang Kindle"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    }
+  ],
+  "footerSiteLinks": [
+    {
+      "href": "/about/",
+      "label": "Giới thiệu & chính sách biên tập"
+    },
+    {
+      "href": "/contact/",
+      "label": "Liên hệ"
+    },
+    {
+      "href": "/privacy/",
+      "label": "Quyền riêng tư"
+    },
+    {
+      "href": "/affiliate-disclosure/",
+      "label": "Tiết lộ liên kết"
+    },
+    {
+      "href": "/sitemap.xml",
+      "label": "Sơ đồ trang"
+    }
+  ],
+  "legalBlurb": "{site} là ấn phẩm độc lập. Không liên kết, được Amazon chứng nhận hay tài trợ. Kindle, Paperwhite, Colorsoft và Amazon là nhãn hiệu của Amazon.com, Inc. hoặc các công ty liên kết. Tên sản phẩm chỉ dùng để nhận diện sản phẩm được thảo luận.",
+  "copyright": "© 2026 {site}. Nội dung mang tính thông tin chung; luôn xác nhận thông số, giá và tương thích trên trang Amazon trước khi mua.",
+  "language": "Ngôn ngữ",
+  "home": "Trang chủ",
+  "notFoundTitle": "Không tìm thấy trang | Dogear",
+  "notFoundDescription": "Trang đó không tồn tại. Hãy thử hướng dẫn Kindle Paperwhite hoặc bao Kindle.",
+  "notFoundHeading": "Không tìm thấy trang",
+  "notFoundLede": "Trang đó không tồn tại. Thử các mục sau:"
+}

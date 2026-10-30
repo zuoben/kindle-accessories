@@ -1,0 +1,145 @@
+{
+  "tagline": "คู่มือซื้อ Kindle อิสระ",
+  "skipToContent": "ข้ามไปยังเนื้อหา",
+  "navAria": "หลัก",
+  "moreGuides": "คู่มือเพิ่มเติม",
+  "nav": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "อุปกรณ์เสริมทั้งหมด"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "เคส Paperwhite"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "เคส Kindle"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    },
+    {
+      "href": "/about/",
+      "label": "เกี่ยวกับ"
+    }
+  ],
+  "more": [
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "เคส Kindle Scribe"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "อธิบายฝาครอบ Kindle"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "ซอง Kindle"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "แท่นวาง Kindle"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "เคส Kindle Colorsoft"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "ที่ชาร์จ Kindle"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "ตัวพลิกหน้า Kindle"
+    }
+  ],
+  "footerGuides": "คู่มือ",
+  "footerSite": "เว็บไซต์",
+  "footerLegal": "กฎหมาย",
+  "footerGuideLinks": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "อุปกรณ์เสริม Kindle ทั้งหมดตามรุ่น"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite: ควรซื้อรุ่นไหน"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "คู่มือเคส Paperwhite"
+    },
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "คู่มือเคส Kindle Scribe"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "คู่มือเลือกซื้อเคส Kindle"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "อธิบายฝาครอบ Kindle"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "คู่มือซอง Kindle"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "คู่มือแท่นวาง Kindle"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "คู่มือเคส Colorsoft"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "คู่มือที่ชาร์จ Kindle"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "คู่มือตัวพลิกหน้า Kindle"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    }
+  ],
+  "footerSiteLinks": [
+    {
+      "href": "/about/",
+      "label": "เกี่ยวกับและนโยบายบรรณาธิการ"
+    },
+    {
+      "href": "/contact/",
+      "label": "ติดต่อ"
+    },
+    {
+      "href": "/privacy/",
+      "label": "ความเป็นส่วนตัว"
+    },
+    {
+      "href": "/affiliate-disclosure/",
+      "label": "การเปิดเผยพันธมิตร"
+    },
+    {
+      "href": "/sitemap.xml",
+      "label": "แผนผังเว็บไซต์"
+    }
+  ],
+  "legalBlurb": "{site} เป็นสื่อสิ่งพิมพ์อิสระ ไม่เกี่ยวข้อง ไม่ได้รับการรับรอง หรือสนับสนุนโดย Amazon Kindle, Paperwhite, Colorsoft และ Amazon เป็นเครื่องหมายการค้าของ Amazon.com, Inc. หรือบริษัทในเครือ ชื่อผลิตภัณฑ์ใช้เพื่อระบุสินค้าที่กล่าวถึงเท่านั้น",
+  "copyright": "© 2026 {site} เนื้อหาเป็นข้อมูลทั่วไป โปรดยืนยันสเปก ราคา และความเข้ากันได้บนหน้า Amazon ก่อนซื้อเสมอ",
+  "language": "ภาษา",
+  "home": "หน้าแรก",
+  "notFoundTitle": "ไม่พบหน้า | Dogear",
+  "notFoundDescription": "ไม่มีหน้านี้ ลองคู่มือ Kindle Paperwhite หรือเคสของเรา",
+  "notFoundHeading": "ไม่พบหน้า",
+  "notFoundLede": "ไม่มีหน้านี้ ลองสิ่งเหล่านี้แทน:"
+}

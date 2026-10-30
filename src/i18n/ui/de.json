@@ -1,0 +1,145 @@
+{
+  "tagline": "Unabhängige Kindle-Kaufberatungen",
+  "skipToContent": "Zum Inhalt springen",
+  "navAria": "Hauptmenü",
+  "moreGuides": "Weitere Ratgeber",
+  "nav": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "Alle Zubehörteile"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Paperwhite-Hüllen"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Kindle-Hüllen"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    },
+    {
+      "href": "/about/",
+      "label": "Über uns"
+    }
+  ],
+  "more": [
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Kindle Scribe-Hüllen"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Kindle-Hüllen erklärt"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Kindle-Taschen"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Kindle-Ständer"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Kindle Colorsoft-Hüllen"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Kindle-Ladegeräte"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Kindle-Seitenwender"
+    }
+  ],
+  "footerGuides": "Ratgeber",
+  "footerSite": "Website",
+  "footerLegal": "Rechtliches",
+  "footerGuideLinks": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "Alle Kindle-Zubehörteile nach Modell"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite: Welches Modell kaufen"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Kindle Paperwhite-Hüllen-Ratgeber"
+    },
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Kindle Scribe-Hüllen-Ratgeber"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Kindle-Hüllen-Kaufberatung"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Kindle-Hüllen erklärt"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Kindle-Taschen-Ratgeber"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Kindle-Ständer-Ratgeber"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Kindle Colorsoft-Hüllen-Ratgeber"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Kindle-Ladegeräte-Ratgeber"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Kindle-Seitenwender-Ratgeber"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    }
+  ],
+  "footerSiteLinks": [
+    {
+      "href": "/about/",
+      "label": "Über uns & Redaktionsrichtlinien"
+    },
+    {
+      "href": "/contact/",
+      "label": "Kontakt"
+    },
+    {
+      "href": "/privacy/",
+      "label": "Datenschutz"
+    },
+    {
+      "href": "/affiliate-disclosure/",
+      "label": "Affiliate-Offenlegung"
+    },
+    {
+      "href": "/sitemap.xml",
+      "label": "Sitemap"
+    }
+  ],
+  "legalBlurb": "{site} ist eine unabhängige Publikation. Es besteht keine Verbindung zu Amazon, keine Billigung oder Sponsoring durch Amazon. Kindle, Paperwhite, Colorsoft und Amazon sind Marken von Amazon.com, Inc. oder seinen Tochtergesellschaften. Produktnamen dienen ausschließlich der Identifikation der besprochenen Produkte.",
+  "copyright": "© 2026 {site}. Die Inhalte dienen der allgemeinen Information; prüfen Sie vor dem Kauf immer die technischen Daten, Preise und Kompatibilität auf der Amazon-Produktseite.",
+  "language": "Sprache",
+  "home": "Startseite",
+  "notFoundTitle": "Seite nicht gefunden | Dogear",
+  "notFoundDescription": "Diese Seite existiert nicht. Probieren Sie unsere Kindle Paperwhite- oder Kindle-Hüllen-Ratgeber.",
+  "notFoundHeading": "Seite nicht gefunden",
+  "notFoundLede": "Diese Seite existiert nicht. Probieren Sie stattdessen eine dieser Seiten:"
+}

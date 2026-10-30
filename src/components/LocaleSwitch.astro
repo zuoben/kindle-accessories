@@ -1,0 +1,30 @@
+---
+import { LOCALES, LOCALE_META, switchLocalePath, type Locale } from '../i18n/locales';
+import { getUi } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  path: string; // locale-stripped path with trailing slash
+}
+const { locale, path } = Astro.props;
+const ui = getUi(locale);
+---
+<details class="lang-switch">
+  <summary aria-label={ui.language}>{LOCALE_META[locale].name}</summary>
+  <ul>
+    {
+      LOCALES.map((loc) => (
+        <li>
+          <a
+            href={switchLocalePath(path, loc)}
+            hreflang={LOCALE_META[loc].htmlLang}
+            lang={LOCALE_META[loc].htmlLang}
+            aria-current={loc === locale ? 'true' : undefined}
+          >
+            {LOCALE_META[loc].name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</details>

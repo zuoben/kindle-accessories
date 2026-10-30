@@ -1,0 +1,145 @@
+{
+  "tagline": "獨立 Kindle 選購指南",
+  "skipToContent": "跳至內容",
+  "navAria": "主選單",
+  "moreGuides": "更多指南",
+  "nav": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "所有配件"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Paperwhite 保護套"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Kindle 保護套"
+    },
+    {
+      "href": "/faq/",
+      "label": "常見問題"
+    },
+    {
+      "href": "/about/",
+      "label": "關於"
+    }
+  ],
+  "more": [
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Kindle Scribe 保護套"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Kindle 封面說明"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Kindle 收納袋"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Kindle 支架"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Kindle Colorsoft 保護套"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Kindle 充電器"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Kindle 翻頁器"
+    }
+  ],
+  "footerGuides": "指南",
+  "footerSite": "網站",
+  "footerLegal": "法律資訊",
+  "footerGuideLinks": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "依型號瀏覽所有 Kindle 配件"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite：該買哪一台"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Kindle Paperwhite 保護套指南"
+    },
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Kindle Scribe 保護套指南"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Kindle 保護套選購指南"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Kindle 封面說明"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Kindle 收納袋指南"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Kindle 支架指南"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Kindle Colorsoft 保護套指南"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Kindle 充電器指南"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Kindle 翻頁器指南"
+    },
+    {
+      "href": "/faq/",
+      "label": "常見問題"
+    }
+  ],
+  "footerSiteLinks": [
+    {
+      "href": "/about/",
+      "label": "關於與編輯方針"
+    },
+    {
+      "href": "/contact/",
+      "label": "聯絡我們"
+    },
+    {
+      "href": "/privacy/",
+      "label": "隱私權"
+    },
+    {
+      "href": "/affiliate-disclosure/",
+      "label": "聯盟行銷揭露"
+    },
+    {
+      "href": "/sitemap.xml",
+      "label": "網站地圖"
+    }
+  ],
+  "legalBlurb": "{site} 為獨立刊物，與 Amazon 無關、未經其背書或贊助。Kindle、Paperwhite、Colorsoft 與 Amazon 為 Amazon.com, Inc. 或其關係企業之商標。產品名稱僅供識別討論之產品。",
+  "copyright": "© 2026 {site}。內容僅供一般參考；購買前請務必在 Amazon 商品頁確認規格、價格與相容性。",
+  "language": "語言",
+  "home": "首頁",
+  "notFoundTitle": "找不到頁面 | Dogear",
+  "notFoundDescription": "此頁面不存在。請試試我們的 Kindle Paperwhite 或保護套指南。",
+  "notFoundHeading": "找不到頁面",
+  "notFoundLede": "此頁面不存在。請改試試："
+}

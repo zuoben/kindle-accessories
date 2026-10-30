@@ -1,0 +1,145 @@
+{
+  "tagline": "독립 Kindle 구매 가이드",
+  "skipToContent": "본문으로 건너뛰기",
+  "navAria": "메인",
+  "moreGuides": "더 많은 가이드",
+  "nav": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "모든 액세서리"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Paperwhite 케이스"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Kindle 케이스"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    },
+    {
+      "href": "/about/",
+      "label": "소개"
+    }
+  ],
+  "more": [
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Kindle Scribe 케이스"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Kindle 커버 설명"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Kindle 슬리브"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Kindle 스탠드"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Kindle Colorsoft 케이스"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Kindle 충전기"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Kindle 페이지 터너"
+    }
+  ],
+  "footerGuides": "가이드",
+  "footerSite": "사이트",
+  "footerLegal": "법적 고지",
+  "footerGuideLinks": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "모델별 모든 Kindle 액세서리"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite: 어떤 것을 살까"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Kindle Paperwhite 케이스 가이드"
+    },
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Kindle Scribe 케이스 가이드"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Kindle 케이스 구매 가이드"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Kindle 커버 설명"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Kindle 슬리브 가이드"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Kindle 스탠드 가이드"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Kindle Colorsoft 케이스 가이드"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Kindle 충전기 가이드"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Kindle 페이지 터너 가이드"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    }
+  ],
+  "footerSiteLinks": [
+    {
+      "href": "/about/",
+      "label": "소개 및 편집 정책"
+    },
+    {
+      "href": "/contact/",
+      "label": "문의"
+    },
+    {
+      "href": "/privacy/",
+      "label": "개인정보"
+    },
+    {
+      "href": "/affiliate-disclosure/",
+      "label": "제휴 고지"
+    },
+    {
+      "href": "/sitemap.xml",
+      "label": "사이트맵"
+    }
+  ],
+  "legalBlurb": "{site}는 독립 간행물입니다. Amazon과 제휴·보증·후원 관계가 없습니다. Kindle, Paperwhite, Colorsoft, Amazon은 Amazon.com, Inc. 또는 그 계열사의 상표입니다. 제품명은 논의 대상을 식별하기 위해서만 사용합니다.",
+  "copyright": "© 2026 {site}. 일반적인 정보이며, 구매 전 반드시 Amazon 상품 페이지에서 사양·가격·호환성을 확인하세요.",
+  "language": "언어",
+  "home": "홈",
+  "notFoundTitle": "페이지를 찾을 수 없음 | Dogear",
+  "notFoundDescription": "해당 페이지가 없습니다. Kindle Paperwhite 또는 케이스 가이드를 이용해 보세요.",
+  "notFoundHeading": "페이지를 찾을 수 없음",
+  "notFoundLede": "해당 페이지가 없습니다. 대신 다음을 시도해 보세요:"
+}

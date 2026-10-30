@@ -36,7 +36,7 @@ export function faqPage(items: { q: string; a: string }[]) {
   };
 }
 
-export function article(opts: { headline: string; description: string; path: string; modified?: string; published?: string }) {
+export function article(opts: { headline: string; description: string; path: string; modified?: string; published?: string; inLanguage?: string }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -46,7 +46,7 @@ export function article(opts: { headline: string; description: string; path: str
     url: abs(opts.path),
     datePublished: opts.published ?? PUBLISHED,
     dateModified: opts.modified ?? opts.published ?? PUBLISHED,
-    inLanguage: 'en-US',
+    inLanguage: opts.inLanguage ?? 'en-US',
     author: org,
     publisher: org,
     image: abs('/og-default.png'),

@@ -1,0 +1,145 @@
+{
+  "tagline": "Panduan beli Kindle independen",
+  "skipToContent": "Lompat ke konten",
+  "navAria": "Utama",
+  "moreGuides": "Panduan lainnya",
+  "nav": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "Semua aksesori"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Casing Paperwhite"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Casing Kindle"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    },
+    {
+      "href": "/about/",
+      "label": "Tentang"
+    }
+  ],
+  "more": [
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Casing Kindle Scribe"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Penjelasan cover Kindle"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Sleeve Kindle"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Stand Kindle"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Casing Kindle Colorsoft"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Charger Kindle"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Page turner Kindle"
+    }
+  ],
+  "footerGuides": "Panduan",
+  "footerSite": "Situs",
+  "footerLegal": "Legal",
+  "footerGuideLinks": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "Semua aksesori Kindle menurut model"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite: mana yang dibeli"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Panduan casing Paperwhite"
+    },
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Panduan casing Kindle Scribe"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Panduan beli casing Kindle"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Penjelasan cover Kindle"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Panduan sleeve Kindle"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Panduan stand Kindle"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Panduan casing Colorsoft"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Panduan charger Kindle"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Panduan page turner Kindle"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    }
+  ],
+  "footerSiteLinks": [
+    {
+      "href": "/about/",
+      "label": "Tentang & kebijakan editorial"
+    },
+    {
+      "href": "/contact/",
+      "label": "Kontak"
+    },
+    {
+      "href": "/privacy/",
+      "label": "Privasi"
+    },
+    {
+      "href": "/affiliate-disclosure/",
+      "label": "Pengungkapan afiliasi"
+    },
+    {
+      "href": "/sitemap.xml",
+      "label": "Peta situs"
+    }
+  ],
+  "legalBlurb": "{site} adalah publikasi independen. Tidak berafiliasi, didukung, atau disponsori Amazon. Kindle, Paperwhite, Colorsoft, dan Amazon adalah merek dagang Amazon.com, Inc. atau afiliasinya. Nama produk hanya untuk mengidentifikasi produk yang dibahas.",
+  "copyright": "© 2026 {site}. Konten bersifat informasi umum; selalu konfirmasi spek, harga, dan kompatibilitas di listing Amazon sebelum membeli.",
+  "language": "Bahasa",
+  "home": "Beranda",
+  "notFoundTitle": "Halaman tidak ditemukan | Dogear",
+  "notFoundDescription": "Halaman itu tidak ada. Coba panduan Kindle Paperwhite atau casing kami.",
+  "notFoundHeading": "Halaman tidak ditemukan",
+  "notFoundLede": "Halaman itu tidak ada. Coba ini saja:"
+}

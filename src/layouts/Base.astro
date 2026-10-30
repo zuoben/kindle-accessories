@@ -1,39 +1,49 @@
 ---
 import '../styles/global.css';
-import { SITE_URL, SITE_NAME, SITE_TAGLINE } from '../data/site.mjs';
+import { SITE_URL, SITE_NAME } from '../data/site.mjs';
+import {
+  LOCALE_META,
+  localizePath,
+  getHreflangMap,
+  type Locale,
+  DEFAULT_LOCALE,
+} from '../i18n/locales';
+import { getUi } from '../i18n/ui';
+import LocaleSwitch from '../components/LocaleSwitch.astro';
 
 interface Props {
   title: string;
   description: string;
-  path: string; // e.g. "/kindle-case/"
+  path: string; // locale-stripped, e.g. "/kindle-case/"
+  locale?: Locale;
   jsonld?: object[];
   noindex?: boolean;
   ogType?: 'website' | 'article';
 }
-const { title, description, path, jsonld = [], noindex = false, ogType = 'website' } = Astro.props;
-const canonical = new URL(path, SITE_URL).toString();
+const {
+  title,
+  description,
+  path,
+  locale = DEFAULT_LOCALE,
+  jsonld = [],
+  noindex = false,
+  ogType = 'website',
+} = Astro.props;
+
+const meta = LOCALE_META[locale];
+const ui = getUi(locale);
+const localizedPath = localizePath(path, locale);
+const canonical = new URL(localizedPath, SITE_URL).toString();
 const ogImage = new URL('/og-default.png', SITE_URL).toString();
-const nav = [
-  { href: '/kindle-accessories/', label: 'All accessories' },
-  { href: '/kindle-paperwhite/', label: 'Kindle Paperwhite' },
-  { href: '/kindle-paperwhite-case/', label: 'Paperwhite cases' },
-  { href: '/kindle-case/', label: 'Kindle cases' },
-  { href: '/faq/', label: 'FAQ' },
-  { href: '/about/', label: 'About' },
-];
-const more = [
-  { href: '/kindle-scribe-case/', label: 'Kindle Scribe cases' },
-  { href: '/kindle-cover/', label: 'Kindle covers explained' },
-  { href: '/kindle-sleeve/', label: 'Kindle sleeves' },
-  { href: '/kindle-stand/', label: 'Kindle stands' },
-  { href: '/kindle-colorsoft-case/', label: 'Kindle Colorsoft cases' },
-  { href: '/kindle-charger/', label: 'Kindle chargers' },
-  { href: '/kindle-page-turner/', label: 'Kindle page turners' },
-];
+const hreflang = getHreflangMap(path);
+const nav = ui.nav;
+const more = ui.more;
 const moreActive = more.some((m) => m.href === path);
+const legalBlurb = ui.legalBlurb.replaceAll('{site}', SITE_NAME);
+const copyright = ui.copyright.replaceAll('{site}', SITE_NAME);
 ---
 <!doctype html>
-<html lang="en-US">
+<html lang={meta.htmlLang} dir={meta.dir}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -49,7 +59,18 @@ const moreActive = more.some((m) => m.href === path);
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={meta.ogLocale} />
+    {
+      hreflang &&
+        Object.entries(hreflang).map(([loc, href]) => (
+          <link
+            rel="alternate"
+            hreflang={LOCALE_META[loc as Locale].htmlLang}
+            href={new URL(href, SITE_URL).toString()}
+          />
+        ))
+    }
+    {hreflang && <link rel="alternate" hreflang="x-default" href={new URL(hreflang.en, SITE_URL).toString()} />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -57,23 +78,38 @@ const moreActive = more.some((m) => m.href === path);
     {jsonld.map((j) => <script type="application/ld+json" set:html={JSON.stringify(j)} />)}
   </head>
   <body>
-    <a href="#main" style="position:absolute;left:-999px">Skip to content</a>
+    <a href="#main" style="position:absolute;left:-999px">{ui.skipToContent}</a>
     <header class="site">
       <div class="wrap">
-        <a class="brand" href="/">
+        <a class="brand" href={localizePath('/', locale)}>
           <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden="true"><rect x="6" y="2" width="20" height="28" rx="3" fill="#1d1b18"/><rect x="9" y="5" width="14" height="19" rx="1" fill="#faf6ee"/><path d="M26 2v9l-3-2-3 2V2z" fill="#9a3b1f"/></svg>
-          <span>{SITE_NAME} <small>{SITE_TAGLINE}</small></span>
+          <span>{SITE_NAME} <small>{ui.tagline}</small></span>
         </a>
-        <nav class="main" aria-label="Main">
-          {nav.slice(0, 4).map((n) => <a href={n.href} aria-current={path === n.href ? 'page' : undefined}>{n.label}</a>)}
-          <details class="more">
-            <summary aria-current={moreActive ? 'true' : undefined}>More guides</summary>
-            <div class="menu">
-              {more.map((m) => <a href={m.href} aria-current={path === m.href ? 'page' : undefined}>{m.label}</a>)}
-            </div>
-          </details>
-          {nav.slice(4).map((n) => <a href={n.href} aria-current={path === n.href ? 'page' : undefined}>{n.label}</a>)}
-        </nav>
+        <div class="header-tools">
+          <nav class="main" aria-label={ui.navAria}>
+            {nav.slice(0, 4).map((n) => (
+              <a href={localizePath(n.href, locale)} aria-current={path === n.href ? 'page' : undefined}>
+                {n.label}
+              </a>
+            ))}
+            <details class="more">
+              <summary aria-current={moreActive ? 'true' : undefined}>{ui.moreGuides}</summary>
+              <div class="menu">
+                {more.map((m) => (
+                  <a href={localizePath(m.href, locale)} aria-current={path === m.href ? 'page' : undefined}>
+                    {m.label}
+                  </a>
+                ))}
+              </div>
+            </details>
+            {nav.slice(4).map((n) => (
+              <a href={localizePath(n.href, locale)} aria-current={path === n.href ? 'page' : undefined}>
+                {n.label}
+              </a>
+            ))}
+          </nav>
+          <LocaleSwitch locale={locale} path={path} />
+        </div>
       </div>
     </header>
     <main id="main"><div class="wrap"><slot /></div></main>
@@ -81,38 +117,31 @@ const moreActive = more.some((m) => m.href === path);
       <div class="wrap">
         <div class="cols">
           <div>
-            <h2>Guides</h2>
+            <h2>{ui.footerGuides}</h2>
             <ul>
-              <li><a href="/kindle-accessories/">All Kindle accessories, by model</a></li>
-              <li><a href="/kindle-paperwhite/">Kindle Paperwhite: which one to buy</a></li>
-              <li><a href="/kindle-paperwhite-case/">Kindle Paperwhite case guide</a></li>
-              <li><a href="/kindle-scribe-case/">Kindle Scribe case guide</a></li>
-              <li><a href="/kindle-case/">Kindle case buying guide</a></li>
-              <li><a href="/kindle-cover/">Kindle covers explained</a></li>
-              <li><a href="/kindle-sleeve/">Kindle sleeve guide</a></li>
-              <li><a href="/kindle-stand/">Kindle stand guide</a></li>
-              <li><a href="/kindle-colorsoft-case/">Kindle Colorsoft case guide</a></li>
-              <li><a href="/kindle-charger/">Kindle charger guide</a></li>
-              <li><a href="/kindle-page-turner/">Kindle page turner guide</a></li>
-              <li><a href="/faq/">FAQ</a></li>
+              {ui.footerGuideLinks.map((l) => (
+                <li>
+                  <a href={localizePath(l.href, locale)}>{l.label}</a>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
-            <h2>Site</h2>
+            <h2>{ui.footerSite}</h2>
             <ul>
-              <li><a href="/about/">About &amp; editorial policy</a></li>
-              <li><a href="/contact/">Contact</a></li>
-              <li><a href="/privacy/">Privacy</a></li>
-              <li><a href="/affiliate-disclosure/">Affiliate disclosure</a></li>
-              <li><a href="/sitemap.xml">Sitemap</a></li>
+              {ui.footerSiteLinks.map((l) => (
+                <li>
+                  <a href={l.href === '/sitemap.xml' ? l.href : localizePath(l.href, locale)}>{l.label}</a>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
-            <h2>Legal</h2>
-            <p class="small">{SITE_NAME} is an independent publication. It is not affiliated with, endorsed by, or sponsored by Amazon. Kindle, Paperwhite, Colorsoft, and Amazon are trademarks of Amazon.com, Inc. or its affiliates. Product names are used only to identify the products discussed.</p>
+            <h2>{ui.footerLegal}</h2>
+            <p class="small">{legalBlurb}</p>
           </div>
         </div>
-        <p class="small">© 2026 {SITE_NAME}. Content is for general information; always confirm specs, price, and compatibility on the Amazon listing before buying.</p>
+        <p class="small">{copyright}</p>
       </div>
     </footer>
   </body>

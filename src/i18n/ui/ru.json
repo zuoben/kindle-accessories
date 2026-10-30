@@ -1,0 +1,145 @@
+{
+  "tagline": "Независимые гайды по покупке Kindle",
+  "skipToContent": "Перейти к содержимому",
+  "navAria": "Основное",
+  "moreGuides": "Ещё гайды",
+  "nav": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "Все аксессуары"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Чехлы Paperwhite"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Чехлы Kindle"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    },
+    {
+      "href": "/about/",
+      "label": "О сайте"
+    }
+  ],
+  "more": [
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Чехлы Kindle Scribe"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Обложки Kindle: разбор"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Рукава Kindle"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Подставки Kindle"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Чехлы Kindle Colorsoft"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Зарядки Kindle"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Перелистыватели Kindle"
+    }
+  ],
+  "footerGuides": "Гайды",
+  "footerSite": "Сайт",
+  "footerLegal": "Правовая информация",
+  "footerGuideLinks": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "Все аксессуары Kindle по моделям"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite: какой купить"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Гайд по чехлам Paperwhite"
+    },
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Гайд по чехлам Kindle Scribe"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Гайд по покупке чехлов Kindle"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Обложки Kindle: разбор"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Гайд по рукавам Kindle"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Гайд по подставкам Kindle"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Гайд по чехлам Colorsoft"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Гайд по зарядкам Kindle"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Гайд по перелистывателям"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    }
+  ],
+  "footerSiteLinks": [
+    {
+      "href": "/about/",
+      "label": "О сайте и редакционная политика"
+    },
+    {
+      "href": "/contact/",
+      "label": "Контакты"
+    },
+    {
+      "href": "/privacy/",
+      "label": "Конфиденциальность"
+    },
+    {
+      "href": "/affiliate-disclosure/",
+      "label": "Раскрытие партнёрства"
+    },
+    {
+      "href": "/sitemap.xml",
+      "label": "Карта сайта"
+    }
+  ],
+  "legalBlurb": "{site} — независимое издание. Не связано с Amazon, не одобрено и не спонсируется Amazon. Kindle, Paperwhite, Colorsoft и Amazon — товарные знаки Amazon.com, Inc. или её аффилированных лиц. Названия продуктов используются только для идентификации обсуждаемых товаров.",
+  "copyright": "© 2026 {site}. Материал носит общий информационный характер; перед покупкой всегда проверяйте характеристики, цену и совместимость на странице Amazon.",
+  "language": "Язык",
+  "home": "Главная",
+  "notFoundTitle": "Страница не найдена | Dogear",
+  "notFoundDescription": "Такой страницы нет. Попробуйте гайды по Kindle Paperwhite или чехлам.",
+  "notFoundHeading": "Страница не найдена",
+  "notFoundLede": "Такой страницы нет. Попробуйте вместо этого:"
+}

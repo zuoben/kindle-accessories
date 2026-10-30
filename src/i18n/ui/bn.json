@@ -1,0 +1,145 @@
+{
+  "tagline": "স্বাধীন Kindle কেনার গাইড",
+  "skipToContent": "মূল বিষয়বস্তুতে যান",
+  "navAria": "প্রধান",
+  "moreGuides": "আরও গাইড",
+  "nav": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "সব অ্যাক্সেসরিজ"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Paperwhite কেস"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Kindle কেস"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    },
+    {
+      "href": "/about/",
+      "label": "সম্পর্কে"
+    }
+  ],
+  "more": [
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Kindle Scribe কেস"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Kindle কভার ব্যাখ্যা"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Kindle স্লিভ"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Kindle স্ট্যান্ড"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Kindle Colorsoft কেস"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Kindle চার্জার"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Kindle পেজ টার্নার"
+    }
+  ],
+  "footerGuides": "গাইড",
+  "footerSite": "সাইট",
+  "footerLegal": "আইনি",
+  "footerGuideLinks": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "মডেল অনুযায়ী সব Kindle অ্যাক্সেসরিজ"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite: কোনটি কিনবেন"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Kindle Paperwhite কেস গাইড"
+    },
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Kindle Scribe কেস গাইড"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Kindle কেস কেনার গাইড"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Kindle কভার ব্যাখ্যা"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Kindle স্লিভ গাইড"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Kindle স্ট্যান্ড গাইড"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Kindle Colorsoft কেস গাইড"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Kindle চার্জার গাইড"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Kindle পেজ টার্নার গাইড"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    }
+  ],
+  "footerSiteLinks": [
+    {
+      "href": "/about/",
+      "label": "সম্পর্কে ও সম্পাদকীয় নীতি"
+    },
+    {
+      "href": "/contact/",
+      "label": "যোগাযোগ"
+    },
+    {
+      "href": "/privacy/",
+      "label": "গোপনীয়তা"
+    },
+    {
+      "href": "/affiliate-disclosure/",
+      "label": "অ্যাফিলিয়েট প্রকাশ"
+    },
+    {
+      "href": "/sitemap.xml",
+      "label": "সাইটম্যাপ"
+    }
+  ],
+  "legalBlurb": "{site} একটি স্বাধীন প্রকাশনা। এটি Amazon-এর সাথে সংযুক্ত, অনুমোদিত বা স্পনসরড নয়। Kindle, Paperwhite, Colorsoft এবং Amazon হলো Amazon.com, Inc. বা তার সহযোগীদের ট্রেডমার্ক। পণ্যের নাম শুধু আলোচিত পণ্য চিহ্নিত করতে ব্যবহৃত হয়।",
+  "copyright": "© 2026 {site}। বিষয়বস্তু সাধারণ তথ্যের জন্য; কেনার আগে Amazon তালিকায় স্পেক, দাম ও সামঞ্জস্য নিশ্চিত করুন।",
+  "language": "ভাষা",
+  "home": "হোম",
+  "notFoundTitle": "পৃষ্ঠা পাওয়া যায়নি | Dogear",
+  "notFoundDescription": "সেই পৃষ্ঠা নেই। আমাদের Kindle Paperwhite বা কেস গাইড দেখুন।",
+  "notFoundHeading": "পৃষ্ঠা পাওয়া যায়নি",
+  "notFoundLede": "সেই পৃষ্ঠা নেই। এর বদলে এগুলো চেষ্টা করুন:"
+}

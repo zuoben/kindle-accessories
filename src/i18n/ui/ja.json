@@ -1,0 +1,145 @@
+{
+  "tagline": "独立系Kindle購入ガイド",
+  "skipToContent": "本文へスキップ",
+  "navAria": "メイン",
+  "moreGuides": "その他のガイド",
+  "nav": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "すべてのアクセサリー"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Paperwhiteケース"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Kindleケース"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    },
+    {
+      "href": "/about/",
+      "label": "About"
+    }
+  ],
+  "more": [
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Kindle Scribeケース"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Kindleカバーの解説"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Kindleスリーブ"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Kindleスタンド"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Kindle Colorsoftケース"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Kindle充電器"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Kindleページターナー"
+    }
+  ],
+  "footerGuides": "ガイド",
+  "footerSite": "サイト",
+  "footerLegal": "法的情報",
+  "footerGuideLinks": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "Kindleアクセサリー一覧（モデル別）"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite：どれを買うか"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Paperwhiteケースガイド"
+    },
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Kindle Scribeケースガイド"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Kindleケース購入ガイド"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Kindleカバーの解説"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Kindleスリーブガイド"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Kindleスタンドガイド"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Colorsoftケースガイド"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Kindle充電器ガイド"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "ページターナーガイド"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    }
+  ],
+  "footerSiteLinks": [
+    {
+      "href": "/about/",
+      "label": "Aboutと編集方針"
+    },
+    {
+      "href": "/contact/",
+      "label": "お問い合わせ"
+    },
+    {
+      "href": "/privacy/",
+      "label": "プライバシー"
+    },
+    {
+      "href": "/affiliate-disclosure/",
+      "label": "アフィリエイト開示"
+    },
+    {
+      "href": "/sitemap.xml",
+      "label": "サイトマップ"
+    }
+  ],
+  "legalBlurb": "{site}は独立した出版物です。Amazonの関連会社・承認・スポンサーではありません。Kindle、Paperwhite、Colorsoft、AmazonはAmazon.com, Inc.またはその関連会社の商標です。製品名は識別のためのみ使用しています。",
+  "copyright": "© 2026 {site}。一般情報です。購入前に必ずAmazon商品ページで仕様・価格・互換性を確認してください。",
+  "language": "言語",
+  "home": "ホーム",
+  "notFoundTitle": "ページが見つかりません | Dogear",
+  "notFoundDescription": "そのページは存在しません。Kindle Paperwhiteまたはケースガイドをお試しください。",
+  "notFoundHeading": "ページが見つかりません",
+  "notFoundLede": "そのページは存在しません。代わりにこちらをどうぞ："
+}

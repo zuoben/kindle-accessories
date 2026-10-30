@@ -1,12 +1,16 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getUi } from '../i18n/ui';
+import { localizePath } from '../i18n/locales';
+
+const ui = getUi('en');
 ---
-<Base title="Page not found | Dogear" description="That page does not exist. Try our Kindle Paperwhite or Kindle case guides." path="/404/" noindex>
-  <h1>Page not found</h1>
-  <p class="lede">That page does not exist. Try one of these instead:</p>
+<Base title={ui.notFoundTitle} description={ui.notFoundDescription} path="/404/" noindex>
+  <h1>{ui.notFoundHeading}</h1>
+  <p class="lede">{ui.notFoundLede}</p>
   <ul>
-    <li><a href="/kindle-paperwhite/">Kindle Paperwhite: which one to buy</a></li>
-    <li><a href="/kindle-case/">Kindle case buying guide</a></li>
-    <li><a href="/">Home</a></li>
+    <li><a href={localizePath('/kindle-paperwhite/', 'en')}>Kindle Paperwhite: which one to buy</a></li>
+    <li><a href={localizePath('/kindle-case/', 'en')}>Kindle case buying guide</a></li>
+    <li><a href={localizePath('/', 'en')}>{ui.home}</a></li>
   </ul>
 </Base>

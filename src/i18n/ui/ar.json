@@ -1,0 +1,145 @@
+{
+  "tagline": "أدلة شراء Kindle مستقلة",
+  "skipToContent": "تخطَّ إلى المحتوى",
+  "navAria": " رئيسي",
+  "moreGuides": "المزيد من الأدلة",
+  "nav": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "كل الإكسسوارات"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "حافظات Paperwhite"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "حافظات Kindle"
+    },
+    {
+      "href": "/faq/",
+      "label": "الأسئلة الشائعة"
+    },
+    {
+      "href": "/about/",
+      "label": "حول"
+    }
+  ],
+  "more": [
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "حافظات Kindle Scribe"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "شرح أغطية Kindle"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "أكمام Kindle"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "حوامل Kindle"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "حافظات Kindle Colorsoft"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "شواحن Kindle"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "أدوات تقليب صفحات Kindle"
+    }
+  ],
+  "footerGuides": "أدلة",
+  "footerSite": "الموقع",
+  "footerLegal": "قانوني",
+  "footerGuideLinks": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "كل إكسسوارات Kindle حسب الطراز"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite: أيّها تشتري"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "دليل حافظات Paperwhite"
+    },
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "دليل حافظات Kindle Scribe"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "دليل شراء حافظات Kindle"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "شرح أغطية Kindle"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "دليل أكمام Kindle"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "دليل حوامل Kindle"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "دليل حافظات Colorsoft"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "دليل شواحن Kindle"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "دليل أدوات تقليب الصفحات"
+    },
+    {
+      "href": "/faq/",
+      "label": "الأسئلة الشائعة"
+    }
+  ],
+  "footerSiteLinks": [
+    {
+      "href": "/about/",
+      "label": "حول والسياسة التحريرية"
+    },
+    {
+      "href": "/contact/",
+      "label": "اتصل بنا"
+    },
+    {
+      "href": "/privacy/",
+      "label": "الخصوصية"
+    },
+    {
+      "href": "/affiliate-disclosure/",
+      "label": "إفصاح الشراكة"
+    },
+    {
+      "href": "/sitemap.xml",
+      "label": "خريطة الموقع"
+    }
+  ],
+  "legalBlurb": "{site} منشور مستقل. غير تابع لـ Amazon ولا معتمد أو مدعوم منها. Kindle وPaperwhite وColorsoft وAmazon علامات تجارية لـ Amazon.com, Inc. أو الشركات التابعة لها. تُستخدم أسماء المنتجات فقط لتعريف المنتجات المناقَشة.",
+  "copyright": "© 2026 {site}. المحتوى للمعلومات العامة؛ أكّد دائمًا المواصفات والسعر والتوافق في صفحة Amazon قبل الشراء.",
+  "language": "اللغة",
+  "home": "الرئيسية",
+  "notFoundTitle": "الصفحة غير موجودة | Dogear",
+  "notFoundDescription": "هذه الصفحة غير موجودة. جرّب أدلة Kindle Paperwhite أو الحافظات.",
+  "notFoundHeading": "الصفحة غير موجودة",
+  "notFoundLede": "هذه الصفحة غير موجودة. جرّب بدلًا من ذلك:"
+}

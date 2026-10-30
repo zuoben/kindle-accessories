@@ -80,3 +80,14 @@ footer.site a{color:var(--ink-2)}
 .example-card figcaption strong{display:block;font:700 1.02rem var(--serif);color:var(--ink);margin-bottom:6px}
 .example-card ul{margin:.4em 0 0;padding-left:1.1em}
 .example-card li{margin:.25em 0}
+
+.header-tools{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+details.lang-switch{position:relative;font:600 .78rem var(--sans)}
+details.lang-switch summary{cursor:pointer;list-style:none;border:1px solid var(--line);background:var(--card);border-radius:4px;padding:6px 10px;color:var(--ink-2)}
+details.lang-switch summary::-webkit-details-marker{display:none}
+details.lang-switch summary::after{content:" \25BE"}
+details.lang-switch ul{position:absolute;z-index:80;inset-inline-end:0;top:100%;margin:6px 0 0;padding:6px 0;min-width:10rem;max-height:min(70vh,22rem);overflow:auto;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.08)}
+details.lang-switch a{display:block;padding:6px 12px;color:var(--ink-2);text-decoration:none}
+details.lang-switch a:hover,details.lang-switch a[aria-current="true"]{color:var(--accent);background:var(--paper-2)}
+html[dir="rtl"] nav.main details.more .menu{left:auto;right:0}
+.loc-body{display:contents}

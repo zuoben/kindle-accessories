@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import { localizeHtml, LOCALE_META, type Locale } from '../i18n/locales';
+import { getPageCopy } from '../i18n/pages';
+import { breadcrumbs, article } from '../data/schema';
+import { getUi } from '../i18n/ui';
+
+interface Props {
+  locale: Locale;
+  path: string;
+}
+const { locale, path } = Astro.props;
+const copy = getPageCopy(locale, path);
+const body = localizeHtml(copy.body, locale);
+const ui = getUi(locale);
+const meta = LOCALE_META[locale];
+
+const crumbHome = { name: ui.home, path: '/' };
+const ld: object[] = [breadcrumbs([crumbHome, { name: copy.title.split('|')[0].trim(), path }])];
+const guidePaths = new Set([
+  '/kindle-accessories/',
+  '/kindle-paperwhite/',
+  '/kindle-case/',
+  '/kindle-paperwhite-case/',
+  '/kindle-scribe-case/',
+  '/kindle-cover/',
+  '/kindle-sleeve/',
+  '/kindle-stand/',
+  '/kindle-colorsoft-case/',
+  '/kindle-charger/',
+  '/kindle-page-turner/',
+]);
+if (guidePaths.has(path)) {
+  ld.unshift(
+    article({
+      headline: copy.title,
+      description: copy.description,
+      path,
+      inLanguage: meta.htmlLang,
+    })
+  );
+}
+---
+<Base
+  title={copy.title}
+  description={copy.description}
+  path={path}
+  locale={locale}
+  jsonld={ld}
+  ogType={path === '/' ? 'website' : 'article'}
+>
+  <div class="loc-body" set:html={body} />
+</Base>

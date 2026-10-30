@@ -1,0 +1,145 @@
+{
+  "tagline": "Guides d'achat Kindle indépendants",
+  "skipToContent": "Aller au contenu",
+  "navAria": "Principal",
+  "moreGuides": "Plus de guides",
+  "nav": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "Tous les accessoires"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Étuis Paperwhite"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Étuis Kindle"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    },
+    {
+      "href": "/about/",
+      "label": "À propos"
+    }
+  ],
+  "more": [
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Étuis Kindle Scribe"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Housses Kindle expliquées"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Housses souples Kindle"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Supports Kindle"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Étuis Kindle Colorsoft"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Chargeurs Kindle"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Tourne-pages Kindle"
+    }
+  ],
+  "footerGuides": "Guides",
+  "footerSite": "Site",
+  "footerLegal": "Mentions légales",
+  "footerGuideLinks": [
+    {
+      "href": "/kindle-accessories/",
+      "label": "Tous les accessoires Kindle, par modèle"
+    },
+    {
+      "href": "/kindle-paperwhite/",
+      "label": "Kindle Paperwhite : lequel acheter"
+    },
+    {
+      "href": "/kindle-paperwhite-case/",
+      "label": "Guide des étuis Paperwhite"
+    },
+    {
+      "href": "/kindle-scribe-case/",
+      "label": "Guide des étuis Kindle Scribe"
+    },
+    {
+      "href": "/kindle-case/",
+      "label": "Guide d'achat des étuis Kindle"
+    },
+    {
+      "href": "/kindle-cover/",
+      "label": "Housses Kindle expliquées"
+    },
+    {
+      "href": "/kindle-sleeve/",
+      "label": "Guide des housses souples Kindle"
+    },
+    {
+      "href": "/kindle-stand/",
+      "label": "Guide des supports Kindle"
+    },
+    {
+      "href": "/kindle-colorsoft-case/",
+      "label": "Guide des étuis Colorsoft"
+    },
+    {
+      "href": "/kindle-charger/",
+      "label": "Guide des chargeurs Kindle"
+    },
+    {
+      "href": "/kindle-page-turner/",
+      "label": "Guide des tourne-pages Kindle"
+    },
+    {
+      "href": "/faq/",
+      "label": "FAQ"
+    }
+  ],
+  "footerSiteLinks": [
+    {
+      "href": "/about/",
+      "label": "À propos et politique éditoriale"
+    },
+    {
+      "href": "/contact/",
+      "label": "Contact"
+    },
+    {
+      "href": "/privacy/",
+      "label": "Confidentialité"
+    },
+    {
+      "href": "/affiliate-disclosure/",
+      "label": "Divulgation d'affiliation"
+    },
+    {
+      "href": "/sitemap.xml",
+      "label": "Plan du site"
+    }
+  ],
+  "legalBlurb": "{site} est une publication indépendante. Elle n'est ni affiliée, ni approuvée, ni sponsorisée par Amazon. Kindle, Paperwhite, Colorsoft et Amazon sont des marques d'Amazon.com, Inc. ou de ses affiliés. Les noms de produits ne servent qu'à identifier les produits discutés.",
+  "copyright": "© 2026 {site}. Contenu à titre informatif ; vérifiez toujours les specs, le prix et la compatibilité sur la fiche Amazon avant d'acheter.",
+  "language": "Langue",
+  "home": "Accueil",
+  "notFoundTitle": "Page introuvable | Dogear",
+  "notFoundDescription": "Cette page n'existe pas. Essayez nos guides Kindle Paperwhite ou étuis Kindle.",
+  "notFoundHeading": "Page introuvable",
+  "notFoundLede": "Cette page n'existe pas. Essayez plutôt :"
+}
